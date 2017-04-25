@@ -23,7 +23,7 @@ Temes que tractare i explicare:
 
 A mesura que passin els dias anire omplint aquest repositori amb mes informació.
 
-**Links on estic extreient tota l'informació:**
+## Links on estic extreient tota l'informació:
 
 * [Archlinux Systemd][archlinux]
 * [Blog Systemd][blogsystemd]
