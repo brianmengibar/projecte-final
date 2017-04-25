@@ -116,9 +116,10 @@ Podem observar que abans de la grafica ens sorten **dos missatges**:
 * **The time the unit takes to start is printed after the "+" character**. Vol dir que el caracter ``+`` es el temps que tarda en carregar el servei durant l'arrencada.
 
 
-** SEGUIR CON CRITICAL-CHAIN, SE PUEDE CAMBIAR DE UNIT DESPUES**
+**SEGUIR CON CRITICAL-CHAIN, SE PUEDE CAMBIAR DE UNIT DESPUES**
 
 ``systemd-analyze critical-chain rescue.target``
+
 ``systemd-analyze critical-chain emergency.target``
 
 **EXPLICAR TODO ESTO**
