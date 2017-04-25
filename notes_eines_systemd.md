@@ -1,10 +1,10 @@
-**Nom: Brian Mengibar Garcia**
+### Nom: Brian Mengibar Garcia
 
-**Identificador: isx39441584**
+### Identificador: isx39441584
 
-**Curs: HISX2**
+### Curs: HISX2
 
-**Projecte: _Serveis informatius de Systemd_**
+### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
 # Eines per analitzar i gestionar Systemd

@@ -1,16 +1,13 @@
-**Nom: Brian Mengibar Garcia**
+### Nom: Brian Mengibar Garcia
 
-**Identificador: isx39441584**
+### Identificador: isx39441584
 
-**Curs: HISX2**
+### Curs: HISX2
 
-**Projecte: _Serveis informatius de Systemd_**
+### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
-# Systemd
-
-**Lo primer de tot es sapiguer, que es _systemd_:**
-
+# Que és Systemd?
 És un gestor del sistema i dels serveis per a Linux, compatible amb els 
 ``initscript SysV i LSB``. Systemd proporciona una notable capacitat de 
 paral·lelització, utilitza l'activació de socket i D-Bus per iniciar 
@@ -20,7 +17,7 @@ suport _snapshotting_ i la restauració de l'estat del sistema, manté els
 punts muntatge i serveis de muntatge automàtic e implementa un elaborat 
 sistema de gestió de dependències basat en un control lògic dels serveis.
 
-**Us basic de systemd**
+## Us basic de systemd
 
 La principal ordre per controlar _systemd_ es ``systemctl``. Quina utilitat
 te? **Controlar el sistema i gestor de serveis systemd**. Per mes informació
@@ -28,7 +25,7 @@ sobre l'ordre ``systemctl`` podem consultar  des de la nostra consola
 ``man 1 systemctl``. Cal mencionar que en el moment que volem engegar, aturar,
 veure l'estat, etc d'un servei, sempre caldra ser **#root**.
 
-**Analitzar l'estat del sistema**
+## Analitzar l'estat del sistema
 
 A continuació comentare una serie de ordres de la familia systemd:
 

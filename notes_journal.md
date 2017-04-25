@@ -1,10 +1,10 @@
-**Nom: Brian Mengibar Garcia**
+### Nom: Brian Mengibar Garcia
 
-**Identificador: isx39441584**
+### Identificador: isx39441584
 
-**Curs: HISX2**
+### Curs: HISX2
 
-**Projecte: _Serveis informatius de Systemd_**
+### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
 
 # Que es journal?
@@ -30,14 +30,14 @@ poden portar un identificador **únic.** El servei ``journald`` recull nombrosos
 camps de metadades per a cada missatge de registre. Els arxius de journal 
 reals estan assegurats, i per tant **no es poden editar manualment.**
 
-**Visualització de registres**
+## Visualització de registres
 
 Be, per accedir als logs de ``journal`` s'utilitza l'eina ``journalctl``.
 Que mostra journalctl? Doncs una llista de tots els fitxers de registre
 generats en el sistema, incloent missatges generats pel sistema o per els
 propis usuaris.
 
-**Que ens proporcionen aquests fitxers?**
+## Que ens proporcionen aquests fitxers?
 
 * Línies de prioritat més alta d'error i es destaquen en color **vermell** 
 i amb una font en **negreta**, s'utilitza per a línies amb notificació i
@@ -45,7 +45,7 @@ prioritat d'alerta.
 * Les marques de temps es converteixen per a la zona horària local del nostre sistema.
 * El començament d'una arrencada de sistema esta marcat amb una línia diferent
 
-**Parametres de journalctl**
+## Parametres de journalctl
 
 A continuació es mostraran una serie de parametres que conte l'ordre
 ``journalctl``:
@@ -61,14 +61,10 @@ moure'ns amb les tecles del cursor a esquerra i dreta per veure el
 contingut complet. I si volem veure les altres entrades, podem pressionar 
 la tecla **d'espai** per desplaçar-nos pantalles senceres cap a munt, i cap avall.
 
-
-
 * ``journalctl -n numero``
 En molts casos, només les últimes entrades al registre journal són 
 rellevants. Gracies al parametre ``-n`` podem especificar les ultimes **n**
 linies que volem veure.
-
-
 
 * ``journalctl -o option``
 L'ordre ``journalctl`` permet controlar la forma de la sortida gracies
@@ -76,50 +72,37 @@ al parametre ``-o``, cal substituir ``option`` amb una paraula clau que
 especifiqui una forma desitjada de sortida. Hi ha diverses opcions com:
   * ``verbose`` 
   Que retorna els elements amb tots els camps.
-  
-
-  
+    
   * ``export``
   Que crea un flux binari adequat per a còpies de seguretat i transferència
   de la xarxa. Com per exemple nomes exportar on el hostname sigui
   localhost
   
-
-  
   * ``json``
   Que dóna format a les entrades com les estructures de dades JSON. 
-  
-
   
   * ``json-pretty``
   Entrades de dades JSON, però en formats de múltiples 
   línies per tal que siguin més llegibles pels humans.
   
-
-  
   * ``json-sse``
   Entrades de dades JSON, però envoltades en un format adequat per
   esdeveniments enviats pel servidor.
-  
-
   
   * ``cat``
   Genera una sortida molt concisa, només es mostra el missatge real de 
   cada entrada del journal sense metadades, ni tan sols una marca de temps.
   
 
-  
   * ``short``
   Mostra identicament lo mateix que cridar ``journalctl`` sense parametres
   
 
-  
   * ``short-iso``
   Es molt similar pero mostrant les marques de temps en el format
   **ISO 8601**
   
 
-  
   * ``short-precise``
   Es molt similar, però mostra les marques de temps amb una precisió de 
   microsegons completa.
@@ -159,7 +142,7 @@ el **kernel** i gracies al parametre ``-k`` es possible observar-los.
 
 
 
-**El filtrat de missatges**
+## El filtrat de missatges
 
 Com hem parlat abans, el executar ``journalctl`` sense parametres,
 dona una informació massa extensa, per tant, es pot utilitzar diversos
@@ -172,7 +155,7 @@ filtrar per i despres desplegarem cadascuna per sapiguer com fer-ho:
 * Per prioritat i temps
 * Per filtrat avançat
 
-  **Per prioritat**
+  ### Per prioritat
   
   * ``journalctl -p prioritat``
   Cal substituir la paraula _prioritat_ amb una de les següents paraules 
@@ -197,7 +180,7 @@ filtrar per i despres desplegarem cadascuna per sapiguer com fer-ho:
    
 
 
-  **Per temps**
+  ### Per temps
   
   * ``systemctl -b``
   Amb aquesta ordre podem veure les entrades del registre nomes des de
@@ -231,14 +214,14 @@ filtrar per i despres desplegarem cadascuna per sapiguer com fer-ho:
 
 
 
-  **Filtrat per prioritat i temps**
+  ## Filtrat per prioritat i temps
   
   Les opcions de filtrat es poden combinar, per exemple podem veure
   els missatges que ens donen d'error des de fa **1 mes** que seria aixi:
   ``journalctl -p error --sice "1 month ago"``
   
   
-  **Filtrat Avançat**
+  ## Filtrat Avançat
   
   ``journalctl fieldname=value``
   Idem al parametre ``export`` que hem vist abans en l'opció ``-o``.
