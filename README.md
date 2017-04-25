@@ -30,10 +30,10 @@ A mesura que passin els dias anire omplint aquest repositori amb mes informació
 * [Blog Journalctl][blogjournal]
 * [FedoraProject Systemd][fedoraproject]
 * [F.D. Systemd][DocumentationSystemd]
-* [Fedora D. Journal] [JournalDocumentation]
-* [Logs Graphical] [graphical]
-* [Mes Logs Graphical] [more-graphical-visual]
-* [Ordres-systemd] [eines-systemd]
+* [JournalDocumentation]
+* [graphical]
+* [more-graphical-visual]
+* [eines-systemd]
 
 [archlinux]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
 [blogsystemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
