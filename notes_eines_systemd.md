@@ -10,7 +10,7 @@
 # Eines per analitzar i gestionar Systemd
 En l'altre document ja hem parlat sobre systemd i molts dels seus parametres,
 si encara no ho habeu llegit, aqui teniu un enllaç per llegir-ho
-abans de llegir aquest [Systemd] [notes_systemd].
+abans de llegir aquest: [Systemd].
 
 Hi ha moltes eines per poder gestionar i analitzar ``systemd``, en aquest
 document explicaré totes les que he trobat, que paso a llistar-les per
@@ -88,22 +88,22 @@ The time the unit takes to start is printed after the "+" character.
 
 graphical.target @15.576s
 └─multi-user.target @15.576s
-  └─**mariadb.service @936ms +12.120s**
+  └─mariadb.service @936ms +12.120s
     └─network.target @935ms
-      └─**wpa_supplicant.service @14.619s +12ms**
+      └─wpa_supplicant.service @14.619s +12ms
         └─dbus.service @756ms
           └─basic.target @744ms
             └─sockets.target @744ms
               └─iscsiuio.socket @744ms
                 └─sysinit.target @736ms
-                  └─**systemd-update-utmp.service @730ms +5ms**
-                    └─**auditd.service @715ms +14ms**
-                      └─**systemd-tmpfiles-setup.service @692ms +21ms**
-                        └─**fedora-import-state.service @674ms +17ms**
+                  └─systemd-update-utmp.service @730ms +5ms
+                    └─auditd.service @715ms +14ms
+                      └─**systemd-tmpfiles-setup.service @692ms +21ms
+                        └─**fedora-import-state.service @674ms +17ms
                           └─local-fs.target @671ms
                             └─run-user-42.mount @12.137s
                               └─local-fs-pre.target @670ms
-                                └─**lvm2-monitor.service @236ms +434ms**
+                                └─**lvm2-monitor.service @236ms +434ms
                                   └─lvm2-lvmetad.service @275ms
                                     └─lvm2-lvmetad.socket @235ms
                                       └─-.mount
@@ -117,11 +117,8 @@ Podem observar que abans de la grafica ens sorten **dos missatges**:
 
 
 
-Some Markdown text with <span style="color:blue">some *blue* text</span>
 
 
 
-
-
-[notes_systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md
+[Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md
 
