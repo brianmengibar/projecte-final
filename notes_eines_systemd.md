@@ -98,12 +98,12 @@ graphical.target @15.576s
                 └─sysinit.target @736ms
                   └─systemd-update-utmp.service @730ms +5ms
                     └─auditd.service @715ms +14ms
-                      └─**systemd-tmpfiles-setup.service @692ms +21ms
-                        └─**fedora-import-state.service @674ms +17ms
+                      └─systemd-tmpfiles-setup.service @692ms +21ms
+                        └─fedora-import-state.service @674ms +17ms
                           └─local-fs.target @671ms
                             └─run-user-42.mount @12.137s
                               └─local-fs-pre.target @670ms
-                                └─**lvm2-monitor.service @236ms +434ms
+                                └─lvm2-monitor.service @236ms +434ms
                                   └─lvm2-lvmetad.service @275ms
                                     └─lvm2-lvmetad.socket @235ms
                                       └─-.mount
@@ -116,9 +116,12 @@ Podem observar que abans de la grafica ens sorten **dos missatges**:
 * **The time the unit takes to start is printed after the "+" character**. Vol dir que el caracter ``+`` es el temps que tarda en carregar el servei durant l'arrencada.
 
 
+** SEGUIR CON CRITICAL-CHAIN, SE PUEDE CAMBIAR DE UNIT DESPUES**
 
+``systemd-analyze critical-chain rescue.target``
+``systemd-analyze critical-chain emergency.target``
 
-
+**EXPLICAR TODO ESTO**
 
 [Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md
 
