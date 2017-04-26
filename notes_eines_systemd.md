@@ -111,16 +111,48 @@ graphical.target @15.576s
                                           └─-.slice
 ```
 
-Podem observar que abans de la grafica ens sorten **dos missatges**:
+Podem observar que abans de la grafica ens surten **dos missatges**:
 * **The time after the unit is active or started is printed after the "@" character**. Aquesta frase esta mal redactada, llavors no podem saber si es refereix quan esta actiu? O estarted.
 * **The time the unit takes to start is printed after the "+" character**. Vol dir que el caracter ``+`` es el temps que tarda en carregar el servei durant l'arrencada.
 
+En el cas de no especificar l'opció **UNIT**, el target que es mostra es el 
+que té el sistema per defecte, es a dir, nosaltres podem visualitzar la grafica
+del target que nosaltres volguem, com per exemple el target ``emergency.target``
 
-**SEGUIR CON CRITICAL-CHAIN, SE PUEDE CAMBIAR DE UNIT DESPUES**
+```
+systemd-analyze critical-chain emergency.target
+The time after the unit is active or started is printed after the "@" character.
+The time the unit takes to start is printed after the "+" character.
 
-``systemd-analyze critical-chain rescue.target``
+└─fedora-import-state.service @746ms +17ms
+  └─local-fs.target @734ms
+    └─run-user-42.mount @12.387s
+      └─local-fs-pre.target @734ms
+        └─lvm2-monitor.service @240ms +492ms
+          └─lvm2-lvmetad.service @289ms
+            └─lvm2-lvmetad.socket @230ms
+              └─-.slice
+```
 
-``systemd-analyze critical-chain emergency.target``
+### Targets en systemd
+Estem veient que gracies a ``systemd-analyze critical-chain [UNIT]`` podem
+veure les grafiques dels diferents targets del nostre sistema, pero clar,
+quins son tots els _Targets Units_ que tenim en el sistema?
+A continuació, mostro una taula que contindrà:
+* runlevel
+* Targets Units
+* Descripció
+
+|runlevel   |Target Units                         |Descripció                                                                    |
+|-----------|:-----------------------------------:|-----------------------------------------------------------------------------:|
+| 0         | runlevel0.target, poweroff.target   | Apaga el sistema                                                             |
+| 1         | runlevel1.target, rescue.target     | Mode mono-usuari                                                             |
+| 2         | runlevel2.target, multi-user.target | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
+| 3         | runlevel3.target, multi-user.target | Multiusuari, entorn grafic                                                   |
+| 4         | runlevel4.target, multi-user.target | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
+| 5         | runlevel5.target, graphical.target  | Mutiusuari, entorn grafic, tots els serveis del mode 3 mes un entorn grafic  |
+| 6         | runlevel6.target, reboot.target     | Reiniciar                                                                    |
+| emergency | emergency.target                    | Shell d'emergencia                                                           |
 
 **EXPLICAR TODO ESTO**
 
