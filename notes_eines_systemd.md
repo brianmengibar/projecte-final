@@ -134,7 +134,7 @@ The time the unit takes to start is printed after the "+" character.
               └─-.slice
 ```
 
-### Targets en systemd
+#### Targets en systemd
 Estem veient que gracies a ``systemd-analyze critical-chain [UNIT]`` podem
 veure les grafiques dels diferents targets del nostre sistema, pero clar,
 quins son tots els _Targets Units_ que tenim en el sistema?
@@ -143,7 +143,7 @@ A continuació, mostro una taula que contindrà:
 * Targets Units
 * Descripció
 
-| runlevel  | Target Units                            | Descripció                                                                   |
+| Runlevel  | Target Units                            | Descripció                                                                   |
 |-----------|:---------------------------------------:|-----------------------------------------------------------------------------:|
 | 0         | runlevel0.target, ``poweroff.target``   | Apaga el sistema                                                             |
 | 1         | runlevel1.target, ``rescue.target``     | Mode mono-usuari                                                             |
@@ -154,7 +154,44 @@ A continuació, mostro una taula que contindrà:
 | 6         | runlevel6.target, ``reboot.target``     | Reiniciar                                                                    |
 | emergency | ``emergency.target``                    | Shell d'emergencia                                                           |
 
-**EXPLICAR TODO ESTO**
+* ``systemd-analyze plot``
+Crea un archiu amb format ``.svg`` que descriu el procés d'arrancada de 
+forma gráfica. 
 
-[Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md
+```
+[isx39441584@i10 projecte-final]$ systemd-analyze plot > grafica.svg && echo "Si surt aquest missatge? Significa que a anat be"
+Si surt aquest missatge? Significa que a anat be
+[isx39441584@i10 projecte-final]$ ll | grep grafica.svg
+-rw-r--r--. 1 isx39441584 hisx2 116182 Apr 26 12:36 grafica.svg
+```
+
+**AÑADIR IMAGEN**
+
+* ``systemd-analyze time``
+Aquest parametre ens dona el mateix resultat que si executem ``systemd-analyze``,
+que tal i com hem dit a dalt es **el temps total de l'ultima arrencada del sistema**, 
+especificant:
+* El temps empleat en carregar el ``kernel``
+* La carrega de ``initrd``
+* El temps en l'espai de **l'usuari**
+
+* ``systemd-analyze dot``
+També crea un archiu amb format ``.svg`` que mostra un grafic de l'us
+del sistema pero cal dir, que es una mica "lio". Lo primer que cal fer
+es instal·lar el paquet **graphviz**. Una vegada instal·lat, ja podem 
+executar l'ordre, que com podem veure, el resultat s'emmagatzemara en un
+archiu ``.svg`` que en aquest cas s'anomenarà **systemd.svg**.
+
+```
+systemd-analyze dot --require | dot -Tsvg > systemd.svg
+   Color legend: black     = Requires
+                 dark blue = Requisite
+                 dark grey = Wants
+                 red       = Conflicts
+                 green     = After
+```
+
+**AÑADIR IMAGEN**
+
+[Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
 
