@@ -143,16 +143,16 @@ A continuació, mostro una taula que contindrà:
 * Targets Units
 * Descripció
 
-|runlevel   |Target Units                         |Descripció                                                                    |
-|-----------|:-----------------------------------:|-----------------------------------------------------------------------------:|
-| 0         | runlevel0.target, poweroff.target   | Apaga el sistema                                                             |
-| 1         | runlevel1.target, rescue.target     | Mode mono-usuari                                                             |
-| 2         | runlevel2.target, multi-user.target | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
-| 3         | runlevel3.target, multi-user.target | Multiusuari, entorn grafic                                                   |
-| 4         | runlevel4.target, multi-user.target | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
-| 5         | runlevel5.target, graphical.target  | Mutiusuari, entorn grafic, tots els serveis del mode 3 mes un entorn grafic  |
-| 6         | runlevel6.target, reboot.target     | Reiniciar                                                                    |
-| emergency | emergency.target                    | Shell d'emergencia                                                           |
+| runlevel  | Target Units                            | Descripció                                                                   |
+|-----------|:---------------------------------------:|-----------------------------------------------------------------------------:|
+| 0         | runlevel0.target, ``poweroff.target``   | Apaga el sistema                                                             |
+| 1         | runlevel1.target, ``rescue.target``     | Mode mono-usuari                                                             |
+| 2         | runlevel2.target, ``multi-user.target`` | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
+| 3         | runlevel3.target, ``multi-user.target`` | Multiusuari, entorn grafic                                                   |
+| 4         | runlevel4.target, ``multi-user.target`` | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
+| 5         | runlevel5.target, ``graphical.target``  | Mutiusuari, entorn grafic, tots els serveis del mode 3 mes un entorn grafic  |
+| 6         | runlevel6.target, ``reboot.target``     | Reiniciar                                                                    |
+| emergency | ``emergency.target``                    | Shell d'emergencia                                                           |
 
 **EXPLICAR TODO ESTO**
 
