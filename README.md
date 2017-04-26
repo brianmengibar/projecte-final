@@ -23,6 +23,8 @@ Temes que tractare i explicare:
 
 A mesura que passin els dias anire omplint aquest repositori amb mes informació.
 
+[journal](https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#que-es-journal)
+
 ### Links on estic extreient tota l'informació:
 
 * [Archlinux Systemd][archlinux]
