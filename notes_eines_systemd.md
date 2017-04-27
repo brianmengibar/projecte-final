@@ -165,7 +165,7 @@ Si surt aquest missatge? Significa que a anat be
 -rw-r--r--. 1 isx39441584 hisx2 116182 Apr 26 12:36 grafica.svg
 ```
 
-**AÑADIR IMAGEN**
+![Grafica plot](./grafiques/grafica_plot.svg)
 
 * ``systemd-analyze time``
 Aquest parametre ens dona el mateix resultat que si executem ``systemd-analyze``,
@@ -191,7 +191,96 @@ systemd-analyze dot --require | dot -Tsvg > systemd.svg
                  green     = After
 ```
 
-**AÑADIR IMAGEN**
+![Grafica dot](./grafiques/grafica_dot.svg)
+
+* ``systemd-analyze dump``
+Aquest parametre dóna sortida __(en general molt llarg)__ a una serialització
+llegible de l'estat del servidor complet. El seu format està subjecta a 
+canvis sense **previ avís** i no ha de ser analitzat per les aplicacions.
+
+Obviament la sortida es molt mes llarga, pero amb un fragment crec que
+es suficient.
+
+```
+systemd-analyze dump 
+-> Unit multi-user.target:
+        Description: Multi-User System
+        Instance: n/a
+        Unit Load State: loaded
+        Unit Active State: active
+        State Change Timestamp: Thu 2017-04-27 08:12:54 CEST
+        Inactive Exit Timestamp: Thu 2017-04-27 08:12:54 CEST
+        Active Enter Timestamp: Thu 2017-04-27 08:12:54 CEST
+        Active Exit Timestamp: n/a
+        Inactive Enter Timestamp: n/a
+        GC Check Good: yes
+        Need Daemon Reload: no
+        Transient: no
+        Slice: n/a
+        CGroup: n/a
+        CGroup realized: no
+        CGroup mask: 0x0
+        CGroup members mask: 0x0
+        Name: runlevel3.target
+        Name: runlevel2.target
+        Name: multi-user.target
+        Name: runlevel4.target
+```
+
+ ``systemd-analyze set-log-level``
+Cambia el nivell de registre actual del daemon de systemd al nivell que
+nosaltres volguem, que per defecte tenim el nivell **info**. Els nivells
+son:
+
+* **alert**
+* **crit**
+* **debug**
+* **emerg**
+* **err**
+* **info**
+* **notice**
+* **warning**
+
+``systemd-analyze set-log-target``
+Cambia el target del registre actual del daemon de systemd al target que
+nosaltres volguem, que per defecte en aquest moment tenim el target
+**graphical.target**. Els targets com els hem anomenat abans son:
+
+* **poweroff.target**
+* **rescue.target**
+* **multi-user.target**
+* **graphical.target**
+* **reboot.target**
+
+``systemd-analyze verify``
+Una eina molt util que ens carrega files _"unit"_ (.socket, .mount, .device...),
+si en algun _"unit"_ es detecten errors es printaran per pantalla, en el cas contrari
+automaticament no sortira res per pantalla.
+
+**Verifiquem http.service**:
+
+```
+systemd-analyze verify /usr/lib/systemd/system/httpd.service && echo "Si surt aquest missatge? Tot be"
+Si surt aquest missatge? Tot be
+```
+
+**Verifiquem sftp.mount**:
+
+```
+systemd-analyze verify /usr/share/gvfs/mounts/sftp.mount
+[/usr/share/gvfs/mounts/sftp.mount:3] Unknown lvalue 'Exec' in section 'Mount'
+[/usr/share/gvfs/mounts/sftp.mount:4] Unknown lvalue 'AutoMount' in section 'Mount'
+[/usr/share/gvfs/mounts/sftp.mount:5] Unknown lvalue 'Scheme' in section 'Mount'
+[/usr/share/gvfs/mounts/sftp.mount:6] Unknown lvalue 'SchemeAliases' in section 'Mount'
+[/usr/share/gvfs/mounts/sftp.mount:7] Unknown lvalue 'DefaultPort' in section 'Mount'
+[/usr/share/gvfs/mounts/sftp.mount:8] Unknown lvalue 'HostnameIsInetAddress' in section 'Mount'
+sftp.mount: What= setting is missing. Refusing.
+sftp.mount: Failed to create sftp.mount/start: Unit sftp.mount is not loaded properly: Bad message.
+```
+
+Comprovem que aquest _"unit"_ te linies erroneas i a l'hora de verificar ens donen
+els **missatges d'error**.
+
 
 [Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
 
