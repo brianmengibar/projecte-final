@@ -165,7 +165,7 @@ Si surt aquest missatge? Significa que a anat be
 -rw-r--r--. 1 isx39441584 hisx2 116182 Apr 26 12:36 grafica.svg
 ```
 
-![Grafica-plot](./grafiques/grafica_plot.svg)
+![Grafica-plot] (./grafiques/grafica_plot.svg)
 
 * ``systemd-analyze time``
 Aquest parametre ens dona el mateix resultat que si executem ``systemd-analyze``,
@@ -191,7 +191,7 @@ systemd-analyze dot --require | dot -Tsvg > systemd.svg
                  green     = After
 ```
 
-![Grafica-dot](./grafiques/grafica_dot.svg)
+![Grafica-dot] (./grafiques/grafica_dot.svg)
 
 * ``systemd-analyze dump``
 Aquest parametre dóna sortida __(en general molt llarg)__ a una serialització
