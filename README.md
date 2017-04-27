@@ -17,11 +17,11 @@ totes les ordres i opcions relacionadas amb aquest tema.
 ### Index
 
 * **Systemd**
-  * Que es Systemd
-  * Eines de Systemd
+  * [Que es Systemd]
+  * [Eines de Systemd]
 * **Journal**
-  * Que es journal
-  * Ordres de journal
+  * [Que es journal]
+  * [Parametres de journal]
 * Ordres visuals d'informació del funcionament de **systemd** i **serveis**
 * Reports elaborats
 * Reports dinamics
@@ -50,3 +50,9 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Graphical-util?]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/s1-managing_log_files_in_a_graphical_environment.html
 [More-graphical-visual-util?]: http://www.estrellateyarde.org/logs-en-linux
 [Eines-systemd]: https://diversidadyunpocodetodo.blogspot.com.es/2016/07/systemd-analyze-kcm-systemadm-systemctl.html
+
+
+[Que es Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
+[Eines de Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
+[Que es journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#que-es-journal
+[Parametres de journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#parametres-de-journalctl
