@@ -284,3 +284,141 @@ els **missatges d'error**.
 
 [Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
 
+## Opcions de Systemd-analyze
+Una vegada hem vist tots els parametres que té l'ordre ``systemd-analyze``,
+paso a comentar totes les opcions que té que son aquestes:
+
+* ``--user``
+Si posem aquesta opció, significa que funcionara en l'espai de l'usuari,
+es a dir, per que quedi mes clar posare un exemple:
+
+```
+[isx39441584@i10 projecte-final]$ systemd-analyze blame --user
+           154ms evolution-source-registry.service
+           150ms evolution-calendar-factory.service
+            89ms evolution-addressbook-factory.service
+            88ms gvfs-goa-volume-monitor.service
+            57ms gnome-terminal-server.service
+            16ms at-spi-dbus-bus.service
+            14ms gvfs-udisks2-volume-monitor.service
+            11ms gvfs-daemon.service
+             8ms gvfs-gphoto2-volume-monitor.service
+             5ms gvfs-afc-volume-monitor.service
+             5ms gvfs-mtp-volume-monitor.service
+             3ms gvfs-metadata.service
+             3ms dbus.socket
+```
+
+Com hem dit a dalt, ``blame`` ens mostra **detalladament**, el temps 
+empleat en carregar cadascuna de les unitats que **SON NECESSARIES PER
+AQUEST USUARI**.
+
+* ``--system``
+Aquesta opció mostra lo mateix que si executem ``systemd-analyze`` sense
+parametres i opcions.
+
+```
+[isx39441584@i10 projecte-final]$ systemd-analyze blame --system
+         15.093s plymouth-quit-wait.service
+         12.350s mariadb.service
+         12.102s postgresql.service
+         11.464s udisks2.service
+         11.365s accounts-daemon.service
+         11.176s polkit.service
+          2.445s dovecot.service
+          1.039s plymouth-start.service
+           696ms httpd.service
+           615ms postfix.service
+           485ms libvirtd.service
+           469ms lvm2-monitor.service
+           384ms lvm2-pvscan@9:0.service
+```
+
+* ``--host``
+Aquesta opció ens permet executar l'ordre remotament, cal especificar
+el nom de l'usuari i nom del host, obviament separat per **@**, es la mateixa
+sintaxis. Cal dir que es necessari que les dues maquines tinguin el servei
+``ssh`` engegat.
+
+```
+[isx39441584@i10 projecte-final]$ systemd-analyze blame --host=root@i12
+root@i12's password: 
+          3.658s plymouth-quit-wait.service
+          1.273s mariadb.service
+          1.162s postgresql.service
+          1.044s plymouth-start.service
+           727ms mongod.service
+           560ms postfix.service
+           497ms libvirtd.service
+           494ms httpd.service
+           328ms dev-sda5.device
+           287ms named.service
+           255ms systemd-journald.service
+           208ms lvm2-monitor.service
+           207ms lvm2-pvscan@9:0.service
+```
+
+Com podem comprobar, al fer l'ordre ens demana el password de l'altre
+usuari, en el moment que la posem ens surt el llistat dels units que han
+tardat mes en arrencar aquella maquina.
+
+* ``--no-pager``
+Aquesta opció, provoca que no es produeixi un _"pipe"_ de la sortida 
+STANDARD
+
+```
+systemd-analyze blame --no-pager
+         15.093s plymouth-quit-wait.service
+         12.350s mariadb.service
+         12.102s postgresql.service
+         11.464s udisks2.service
+         11.365s accounts-daemon.service
+         11.176s polkit.service
+         3ms var-lib-nfs-rpc_pipefs.mount
+         3ms systemd-update-utmp-runlevel.service
+         3ms dracut-shutdown.service
+         1ms sys-kernel-config.mount
+[isx39441584@i10 projecte-final]$ 
+```
+
+Clarament he tallat el resultat, ja que si no seria un resultat molt 
+extens.
+
+* ``--help``
+Et mostra un breu text d'ajuda
+
+```
+systemd-analyze --help
+systemd-analyze [OPTIONS...] {COMMAND} ...
+
+Profile systemd, show unit dependencies, check unit files.
+
+  -h --help               Show this help
+     --version            Show package version
+     --no-pager           Do not pipe output into a pager
+     --system             Operate on system systemd instance
+     --user               Operate on user systemd instance
+  -H --host=[USER@]HOST   Operate on remote host
+  -M --machine=CONTAINER  Operate on local container
+     --order              Show only order in the graph
+     --require            Show only requirement in the graph
+     --from-pattern=GLOB  Show only origins in the graph
+     --to-pattern=GLOB    Show only destinations in the graph
+     --fuzz=SECONDS       Also print also services which finished SECONDS
+                          earlier than the latest in the branch
+     --man[=BOOL]         Do [not] check for existence of man pages
+
+Commands:
+  time                    Print time spent in the kernel
+  blame                   Print list of running units ordered by time to init
+  critical-chain          Print a tree of the time critical chain of units
+  plot                    Output SVG graphic showing service initialization
+  dot                     Output dependency graph in dot(1) format
+  set-log-level LEVEL     Set logging threshold for manager
+  set-log-target TARGET   Set logging target for manager
+  dump                    Output state serialization of service manager
+  verify FILE...          Check unit files for correctness
+```
+
+
+
