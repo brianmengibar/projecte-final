@@ -137,3 +137,4 @@ dirà **Unknown Host Key**, ja que ja coneix aquest finger print i sap que
 si que permetem la connexió.
 
 **PROFUNDIZAR TODO EL TEMA DE SERVICES**
+**PROFUNDIZAR EL TEMA DE ACCOUNT I CAMBIAR LENGUAJE ETC**
