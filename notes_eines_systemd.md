@@ -7,6 +7,8 @@
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
+# MOVER PLOT Y DOT A eines_visuals(POR CREAR), CRITICAL-CHAIN TAMBIEN?
+
 # Eines per analitzar i gestionar Systemd
 En l'altre document ja hem parlat sobre systemd i molts dels seus parametres,
 si encara no ho habeu llegit, aqui teniu un enllaç per llegir-ho
@@ -419,26 +421,4 @@ Commands:
   dump                    Output state serialization of service manager
   verify FILE...          Check unit files for correctness
 ```
-
-**PUEDE QUE FUNCIONE ESTA**
-[root@i10 ~]# dnf -y install cockpit
-[root@i10 ~]# systemctl start cockpit
-[root@i10 ~]# systemctl status cockpit
-● cockpit.service - Cockpit Web Service
-   Loaded: loaded (/usr/lib/systemd/system/cockpit.service; static; vendor preset: disabled)
-   Active: active (running) since Fri 2017-04-28 09:36:22 CEST; 19s ago
-     Docs: man:cockpit-ws(8)
-  Process: 3604 ExecStartPre=/usr/sbin/remotectl certificate --ensure --user=root --group=cockpit-ws --selinux-type=etc_t (code=exited, status=0/SUCCESS)
- Main PID: 3615 (cockpit-ws)
-    Tasks: 2 (limit: 512)
-   CGroup: /system.slice/cockpit.service
-           └─3615 /usr/libexec/cockpit-ws
-
-Apr 28 09:36:22 i10 systemd[1]: Starting Cockpit Web Service...
-Apr 28 09:36:22 i10 remotectl[3604]: Generating temporary certificate using: openssl req -x509 -days 36500 -newkey rsa:2048 -keyout /etc/cockpit/ws-certs.d/0-
-Apr 28 09:36:22 i10 systemd[1]: Started Cockpit Web Service.
-Apr 28 09:36:22 i10 cockpit-ws[3615]: Using certificate: /etc/cockpit/ws-certs.d/0-self-signed.cert
-
-Per accedir
-**firefox**:https://192.168.2.40:9090/
 

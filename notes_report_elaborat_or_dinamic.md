@@ -7,6 +7,8 @@
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
+# METER FOTOS? PASO A PASO? SOLO UNA?
+
 # Cockpit
 
 ## Que és cockpit?
@@ -98,3 +100,40 @@ A l'esquerra tenim una serie de finestres que paso a continuació a explicar:
 * **Tools**: Aquest menu es desplega per oferir dues eines de gestió de servidors i usuaris adicionals:
   * **Accounts**: Permet afegir i administrar usuaris, configurar i canviar les contrasenyes, afegir i administrar les claus SSH públiques per a cada usuari (**Obviament sempre que siguis root**).
   * **Terminal**: Conté un terminal completament funcional, amb l'implementació del tabulador, aixo ens permet realitzar qualsevol tasca que volguem.
+
+Una vegada explicat la primera part, paso a explicar la segona finestra que tenim
+anomenada __Dashboard__. En aquesta finestra lo que trobem es una grafica
+amb **4 finestretes**, que es per veure els mateixos grafics que ens surten
+en la pagina principal.
+
+Bé, com he comentat a dalt, ``cockpit`` es un multi-server, llavors en aquest
+apartat podem fer:
+* Afegir una nova maquina
+* Editar una maquina actual
+* Esborrar una maquina actual
+
+#### Afegir una nova maquina
+Per afegir una nova maquina veiem el simbol **+** de color blau que
+significa: ``Add Server``. En el moment que cliquem ens demana la **IP** o
+el **hostname** de la maquina que volem afegir i amb quin color volem
+visualitzar-la (molt util per que si posem el mateix nom en dues maquines
+i amb el mateix color? Tindriem un gran problema). En el moment que posem
+la IP i le donem a ``Add`` ens diu **Unknown Host Key** ens esta dient que
+L'autenticitat de la IP no pot ser establerta, que si estem que volem continuar
+amb la connexió, obviament li donem a ``connect`` i ja tenim una maquina mes i al 
+ser root, podrem modificar/visualitzar, etc.
+
+### Editar una maquina actual
+Per editar una maquina actual veiem el simbol del ``tick``, quan li donem
+ens apareixen dos simbols:
+ * **Un llapis**: Si li donem al llapis ens deixara modificar:
+   * Host Name
+   * Color
+   * Avatar
+ * **Una paperera**: En el moment que cliquem no ens diu si estem segurs, si no que directament l'esborra.
+
+Que passa? Que ara si volem tornar a afegir la maquina anterior ja no ens
+dirà **Unknown Host Key**, ja que ja coneix aquest finger print i sap que
+si que permetem la connexió.
+
+**PROFUNDIZAR TODO EL TEMA DE SERVICES**

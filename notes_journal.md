@@ -7,6 +7,8 @@
 ### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
 
+# MOVER journalctl -b A REPORTS ELABORATS(por crear), ALGUNA MAS? journalctl -r? journalctl -f? ORDENES VISUALES?
+
 # Que es journal?
 
 És un component de ``systemd`` que és responsable de la **visualització i 
@@ -404,7 +406,7 @@ filtrar per i despres desplegarem cadascuna per sapiguer com fer-ho:
 
   ### Per temps
   
-  * ``systemctl -b``
+  * ``Journalctl -b``
   Amb aquesta ordre podem veure les entrades del registre nomes des de
   l'inici actual
 

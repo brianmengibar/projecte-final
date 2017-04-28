@@ -22,9 +22,9 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * **Journal**
   * [Que es journal]
   * [Parametres de journal]
-* Ordres visuals d'informació del funcionament de **systemd** i **serveis**
-* Reports elaborats
-* Reports dinamics
+* Ordres visuals d'informació del funcionament de **systemd** i **serveis** --> FALTA MOVER DOCUMENTOS PARA CREARLO
+* Reports elaborats --> FALTA MOVER DOCUMENTOS PARA CREARLO
+* [Reports dinamics]
 
 
 [journal](https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#que-es-journal)
@@ -56,3 +56,4 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Eines de Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
 [Que es journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#que-es-journal
 [Parametres de journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#parametres-de-journalctl
+[Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/notes_report_elaborat_or_dinamic.md#cockpit
