@@ -88,7 +88,7 @@ A l'esquerra tenim una serie de finestres que paso a continuació a explicar:
   * Restart
   * Enable/Disable
   * Reload
-* **Containers**: Permet gestionar els nostres _"contenidors"_ de Docker(cal dir que aquesta no me he mirat res, ja que no faig res amb Docker), podem:
+* **Containers**: Permet gestionar els nostres _"contenidors"_ de Docker (**cal dir que aquesta no me he mirat res, ja que no faig res amb Docker**), podem:
   * Cercar nous contenidors
   * Afegir o eliminar els recipients
   * Iniciar i aturar ells
