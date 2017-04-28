@@ -40,6 +40,9 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * [Graphical-util?]
 * [More-graphical-visual-util?]
 * [Eines-systemd]
+* [Cockpit]
+* [Docuntation-Oficial-Cockpit]
+* [ArchWiki-Journal]
 
 [archlinux]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
 [blogsystemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
@@ -50,7 +53,9 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Graphical-util?]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/s1-managing_log_files_in_a_graphical_environment.html
 [More-graphical-visual-util?]: http://www.estrellateyarde.org/logs-en-linux
 [Eines-systemd]: https://diversidadyunpocodetodo.blogspot.com.es/2016/07/systemd-analyze-kcm-systemadm-systemctl.html
-
+[Cockpit]: https://www.liquidweb.com/kb/how-to-use-cockpit-in-fedora-23/
+[Docuntation-Oficial-Cockpit]: http://cockpit-project.org/guide/latest/
+[ArchWiki-Journal]: https://wiki.archlinux.org/index.php/Systemd#Journal
 
 [Que es Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
 [Eines de Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
