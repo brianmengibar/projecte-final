@@ -64,8 +64,37 @@ Apr 28 09:36:22 i10 cockpit-ws[3615]: Using certificate: /etc/cockpit/ws-certs.d
 
 Una vegada hem vist que el servei està arrancat, cal accedir mediant el
 **navegador Firefox**, com? Afegint la teva IP i redirigint al port 9090
-que per defecte es el que escolta ``cockpit``
+que per defecte es el que escolta el servei ``cockpit``
 ```
 https://192.168.2.40:9090/
 ```
 
+Al accedir ens demanarà un usuari i un password, en el meu cas em logeare
+amb **root** amb el seu password corresponent.
+
+### Funcionament de cockpit
+En el moment que accedim, la primera pagina ens mostra els detalls del
+nostre ordinador i grafics que mostren:
+* CPU
+* Us de memoria
+* Disc I/O
+* Trafic de xarxa
+
+A l'esquerra tenim una serie de finestres que paso a continuació a explicar:
+
+* **Sistema**: Es la pagina principal, lo que es mostra res mes accedir a la pagina
+* **Llistat de tots els serveis**: Aquesta es la part que profundiré, al fer clic a qualsevol servei, ens porta a una pàgina de detallada que mostra un registre del servei i que ens permet:
+  * Start/Stop
+  * Restart
+  * Enable/Disable
+  * Reload
+* **Containers**: Permet gestionar els nostres _"contenidors"_ de Docker(cal dir que aquesta no me he mirat res, ja que no faig res amb Docker), podem:
+  * Cercar nous contenidors
+  * Afegir o eliminar els recipients
+  * Iniciar i aturar ells
+* **Logs**: Conté tots els logs del sistema, es a dir, de tots els serveis, ens permet fer clic a qualsevol entrada per obtenir informació més detallada, com la identificació de procés.
+* **Storage**: Dóna un aspecte gràfic en el disc que llegeix i escriu, també ens permet veure els registres pertinents. A més, es pot configurar i administrar els dispositius RAID i grups de volums, donar format, partició, i muntar/desmuntar unitats.
+* **Networking**: ENs mostra una visió general de trànsit entrant i sortint, juntament amb els registres pertinents i informació d'interfície de xarxa.
+* **Tools**: Aquest menu es desplega per oferir dues eines de gestió de servidors i usuaris adicionals:
+  * **Accounts**: Permet afegir i administrar usuaris, configurar i canviar les contrasenyes, afegir i administrar les claus SSH públiques per a cada usuari (**Obviament sempre que siguis root**).
+  * **Terminal**: Conté un terminal completament funcional, amb l'implementació del tabulador, aixo ens permet realitzar qualsevol tasca que volguem.
