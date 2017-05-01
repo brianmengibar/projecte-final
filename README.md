@@ -23,7 +23,7 @@ totes les ordres i opcions relacionadas amb aquest tema.
   * [Que es journal]
   * [Parametres de journal]
 * [Ordres visuals]
-* Reports elaborats --> FALTA MOVER DOCUMENTOS PARA CREARLO
+* [Reports elaborats]
 * [Reports dinamics]
 
 ### Links on estic extreient tota l'informació:
@@ -60,3 +60,4 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Parametres de journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#parametres-de-journalctl
 [Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/notes_report_elaborat_or_dinamic.md#cockpit
 [Ordres visuals]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#ordres-visuals
+[Reports elaborats]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#reports-elaborats
