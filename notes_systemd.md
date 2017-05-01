@@ -87,7 +87,7 @@ graphical.target            kexec.target                runlevel0.target        
 
 Al donar-li al tabulador veiem tots els targets en els qual podem accedir(cal dir
 que la explicació dels runlevels i targets ho tenim en l'altre document
-on seguim parlant sobre systemd).
+on seguim parlant sobre [systemd]).
 
 * ``systemctl get-default``
 Gràcies a aquesta opció, podem sapiguer en quin target estem actualment
@@ -236,3 +236,5 @@ Recarga systemd, escanejant en busca de serveis nous o modificats.
 ```
 systemctl daemon-reload
 ```
+
+[systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#targets-en-systemd
