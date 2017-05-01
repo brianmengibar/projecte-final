@@ -7,20 +7,12 @@
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
-# MOVER PLOT Y DOT A eines_visuals(POR CREAR), CRITICAL-CHAIN TAMBIEN?
+# MOVER CRITICAL-CHAIN A eines_visuals?
 
 # Eines per analitzar i gestionar Systemd
 En l'altre document ja hem parlat sobre systemd i molts dels seus parametres,
 si encara no ho habeu llegit, aqui teniu un enllaç per llegir-ho
 abans de llegir aquest: [Systemd].
-
-Hi ha moltes eines per poder gestionar i analitzar ``systemd``, en aquest
-document explicaré totes les que he trobat, que paso a llistar-les per
-despres explicar **exhaustivament** cadascuna:
-* ``systemd-analyze``
-* ``Systemadm``
-* ``Systemd-kcm``
-* ``Administrador de servicios`` --> de Yast????
 
 ## Systemd-analyze
 Permet evaluar el proces d'arrencada amb el fi de mostrar quines unitats
@@ -156,19 +148,6 @@ A continuació, mostro una taula que contindrà:
 | 6         | runlevel6.target, ``reboot.target``     | Reiniciar                                                                    |
 | emergency | ``emergency.target``                    | Shell d'emergencia                                                           |
 
-* ``systemd-analyze plot``
-Crea un archiu amb format ``.svg`` que descriu el procés d'arrancada de 
-forma gráfica. 
-
-```
-[isx39441584@i10 projecte-final]$ systemd-analyze plot > grafica.svg && echo "Si surt aquest missatge? Significa que a anat be"
-Si surt aquest missatge? Significa que a anat be
-[isx39441584@i10 projecte-final]$ ll | grep grafica.svg
--rw-r--r--. 1 isx39441584 hisx2 116182 Apr 26 12:36 grafica.svg
-```
-
-![Grafica-plot](./grafiques/grafica_plot.svg)
-
 * ``systemd-analyze time``
 Aquest parametre ens dona el mateix resultat que si executem ``systemd-analyze``,
 que tal i com hem dit a dalt es **el temps total de l'ultima arrencada del sistema**, 
@@ -176,24 +155,6 @@ especificant:
 * El temps empleat en carregar el ``kernel``
 * La carrega de ``initrd``
 * El temps en l'espai de **l'usuari**
-
-* ``systemd-analyze dot``
-També crea un archiu amb format ``.svg`` que mostra un grafic de l'us
-del sistema pero cal dir, que es una mica "lio". Lo primer que cal fer
-es instal·lar el paquet **graphviz**. Una vegada instal·lat, ja podem 
-executar l'ordre, que com podem veure, el resultat s'emmagatzemara en un
-archiu ``.svg`` que en aquest cas s'anomenarà **systemd.svg**.
-
-```
-systemd-analyze dot --require | dot -Tsvg > systemd.svg
-   Color legend: black     = Requires
-                 dark blue = Requisite
-                 dark grey = Wants
-                 red       = Conflicts
-                 green     = After
-```
-
-![Grafica-dot](./grafiques/grafica_dot.svg)
 
 * ``systemd-analyze dump``
 Aquest parametre dóna sortida __(en general molt llarg)__ a una serialització
