@@ -26,9 +26,6 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * Reports elaborats --> FALTA MOVER DOCUMENTOS PARA CREARLO
 * [Reports dinamics]
 
-
-[journal](https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#que-es-journal)
-
 ### Links on estic extreient tota l'informació:
 
 * [Archlinux Systemd][archlinux]
@@ -62,3 +59,4 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Que es journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#que-es-journal
 [Parametres de journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#parametres-de-journalctl
 [Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/notes_report_elaborat_or_dinamic.md#cockpit
+[Ordres visuals]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#ordres-visuals
