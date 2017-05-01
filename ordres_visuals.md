@@ -8,8 +8,8 @@
 ------------------------------------------------------
 
 # Ordres visuals
-Dins del sistema podem trobar diferents tipus d'eines visuals, podem
-trobar eines que ens retornen una imatge, eines que ens retornen una
+Dins del sistema podem trobar diferents tipus d'ordres visuals, podem
+trobar ordres que ens retornen una imatge, ordres que ens retornen una
 grafica etc. Aquestes son les que jo he trobat i crec que les millors
 que tenim en el sistema:
 

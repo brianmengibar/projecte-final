@@ -22,7 +22,7 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * **Journal**
   * [Que es journal]
   * [Parametres de journal]
-* Ordres visuals d'informació del funcionament de **systemd** i **serveis** --> FALTA MOVER DOCUMENTOS PARA CREARLO
+* [Ordres visuals]
 * Reports elaborats --> FALTA MOVER DOCUMENTOS PARA CREARLO
 * [Reports dinamics]
 
