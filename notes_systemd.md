@@ -120,7 +120,6 @@ systemctl get-default
 
 Ara si fessim un reboot, automaticament entrariem en mode __rescue__.
 
-
 * ``systemctl list-unit-files``
 Les unitats disponibles es troben llistades en els directoris **/lib/systemd/system**
 i en **/etc/systemd/system**. Pero amb aquesta opció, tambe es poden llistar.
@@ -212,6 +211,28 @@ disabled
 
 systemctl is-enabled httpd
 enabled
+```
+
+* ``systemctl -t service -a``
+S'utilitza per llistar tots els serveis que tenim en el sistema, gracies
+al parametre ``-a``, es mostren tots els serveis, ja estiguin actius o
+inactius, si treiesim el parametre ``-a``, nomes es veurien els serveis
+que estan actius. **EDITAR, MIRAR QUE -t PUEDE TENER MAS, NO SOLO SERVICE**
+
+```
+systemctl -t service -a
+  UNIT                                                LOAD      ACTIVE   SUB     DESCRIPTION
+  abrt-ccpp.service                                   loaded    active   exited  Install ABRT coredump hook
+  abrt-oops.service                                   loaded    active   running ABRT kernel log watcher
+  abrt-vmcore.service                                 loaded    inactive dead    Harvest vmcores for ABRT
+  abrt-xorg.service                                   loaded    active   running ABRT Xorg log watcher
+  abrtd.service                                       loaded    active   running ABRT Automated Bug Reporting Tool
+  accounts-daemon.service                             loaded    active   running Accounts Service
+  alsa-restore.service                                loaded    inactive dead    Save/Restore Sound Card State
+  alsa-state.service                                  loaded    active   running Manage Sound Card State (restore and store)
+● apparmor.service                                    not-found inactive dead    apparmor.service
+  atd.service                                         loaded    active   running Job spooling tools
+  auditd.service                                      loaded    active   running Security Auditing Service
 ```
 
 * ``systemctl help``

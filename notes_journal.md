@@ -7,7 +7,7 @@
 ### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
 
-# MOVER journalctl -b A REPORTS ELABORATS(por crear), ALGUNA MAS? journalctl -r? journalctl -f? ORDENES VISUALES?
+# MOVER journalctl -b, journalctl -r, journalctl -f, A REPORTS ELABORATS?
 
 # Que es journal?
 
@@ -75,7 +75,7 @@ sep 15 19:55:07 localhost.localdomain kernel: x86/fpu: Supporting XSAVE feature 
 sep 15 19:55:07 localhost.localdomain kernel: x86/fpu: Enabled xstate features 0x3, context size is 576 bytes, using 'standard' format.
 ```
 
-* ``journalctl -n numero``
+* ``journalctl -n nombre``
 En molts casos, només les últimes entrades al registre journal són 
 rellevants. Gracies al parametre ``-n`` podem especificar les ultimes **n**
 linies que volem veure.
@@ -328,28 +328,6 @@ oct 13 20:43:40 localhost.localdomain systemd[1]: Stopping The Apache HTTP Serve
 oct 13 20:43:41 localhost.localdomain systemd[1]: Stopped The Apache HTTP Server.
 ```
 
-* ``systemctl -t service -a``
-S'utilitza per llistar tots els serveis que tenim en el sistema, gracies
-al parametre ``-a``, es mostren tots els serveis, ja estiguin actius o
-inactius, si treiesim el parametre ``-a``, nomes es veurien els serveis
-que estan actius. **EDITAR, MIRAR QUE -t PUEDE TENER MAS, NO SOLO SERVICE**
-
-```
-systemctl -t service -a
-  UNIT                                                LOAD      ACTIVE   SUB     DESCRIPTION
-  abrt-ccpp.service                                   loaded    active   exited  Install ABRT coredump hook
-  abrt-oops.service                                   loaded    active   running ABRT kernel log watcher
-  abrt-vmcore.service                                 loaded    inactive dead    Harvest vmcores for ABRT
-  abrt-xorg.service                                   loaded    active   running ABRT Xorg log watcher
-  abrtd.service                                       loaded    active   running ABRT Automated Bug Reporting Tool
-  accounts-daemon.service                             loaded    active   running Accounts Service
-  alsa-restore.service                                loaded    inactive dead    Save/Restore Sound Card State
-  alsa-state.service                                  loaded    active   running Manage Sound Card State (restore and store)
-● apparmor.service                                    not-found inactive dead    apparmor.service
-  atd.service                                         loaded    active   running Job spooling tools
-  auditd.service                                      loaded    active   running Security Auditing Service
-```
-
 * ``journalctl -k``
 Una altra forma de veure informació és veure els missatges que ens proporciona
 el **kernel** i gracies al parametre ``-k`` es possible observar-los.
@@ -379,82 +357,130 @@ filtrar per i despres desplegarem cadascuna per sapiguer com fer-ho:
 * Per prioritat i temps
 * Per filtrat avançat
 
-  ### Per prioritat
-  
-  * ``journalctl -p prioritat``
-  Cal substituir la paraula _prioritat_ amb una de les següents paraules 
-  clau (o amb un nombre): 
-   * debug --> **7**
-   * info --> **6**
-   * notice --> **5**
-   * warning --> **4**
-   * err --> **3**
-   * crit --> **2**
-   * alert --> **1**
-   * emerg --> **0**
-   
+### Per prioritat
+* ``journalctl -p prioritat``
+Cal substituir la paraula _prioritat_ amb una de les següents paraules 
+clau (o amb un nombre): 
+  * debug --> **7**
+  * info --> **6**
+  * notice --> **5**
+  * warning --> **4**
+  * err --> **3**
+  * crit --> **2**
+  * alert --> **1**
+  * emerg --> **0**
 
-   
-   O si no tambe podem escriure ``PRIORITY=N```on substituim **N** per un
-   numero
-   
+```
+journalctl -p crit
+-- Logs begin at jue 2016-09-15 19:55:07 CEST, end at lun 2017-05-01 14:01:03 CEST. --
+sep 15 20:20:13 localhost.localdomain gnome-session-binary[1124]: GLib-GObject-CRITICAL: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+sep 15 20:20:13 localhost.localdomain gnome-session-binary[1124]: GLib-GObject-CRITICAL: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+sep 15 20:20:13 localhost.localdomain gnome-session-binary[1124]: GLib-GObject-CRITICAL: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+```
 
-   
-   O escriure despres del parametre ``-p`` la paraula clau
-   
+O si no tambe podem escriure ``--priority=N```on substituim **N** per un
+nombre
 
+```
+journalctl --priority=4
+-- Logs begin at jue 2016-09-15 19:55:07 CEST, end at lun 2017-05-01 14:06:58 CEST. --
+sep 15 19:55:07 localhost.localdomain kernel: ACPI: RSDP 0x00000000000FE020 000024 (v02 HPQOEM)
+sep 15 19:55:07 localhost.localdomain kernel: ACPI: XSDT 0x00000000B9FF6120 000064 (v01 HPQOEM SLIC-MPC 00000001      01000013)
+sep 15 19:55:07 localhost.localdomain kernel: ACPI: FACP 0x00000000B9FF5000 0000F4 (v04 HPQOEM SLIC-MPC 00000001 MSFT 01000013)
+sep 15 19:55:07 localhost.localdomain kernel: ACPI: DSDT 0x00000000B9FE3000 00DC2D (v01 HPQOEM SLIC-MPC 00000001 MSFT 01000013)
+```
 
-  ### Per temps
-  
-  * ``Journalctl -b``
-  Amb aquesta ordre podem veure les entrades del registre nomes des de
-  l'inici actual
+### Per temps
+* ``Journalctl -b``
+Amb aquesta ordre podem veure les entrades del registre nomes des de
+l'inici actual, si reiniciem el sistema només de tant en tant, el parametre ``-b`` 
+no reduirà significativament la sortida de ``journalctl.``
 
- 
+```
+journalctl -b 
+-- Logs begin at jue 2016-09-15 19:55:07 CEST, end at lun 2017-05-01 14:08:27 CEST. --
+may 01 14:42:48 localhost.localdomain systemd-journald[151]: Runtime journal (/run/log/journal/) is 8.0M, max 192.7M, 184.7M free.
+may 01 14:42:48 localhost.localdomain kernel: microcode: microcode updated early to revision 0xa0b, date = 2010-09-28
+may 01 14:42:48 localhost.localdomain kernel: Linux version 4.7.3-200.fc24.x86_64 (mockbuild@bkernel01.phx2.fedoraproject.org) (gcc version 6.1.1 20160621 (Red Hat 6.1.1-3) (GCC) ) #1 SMP Wed Sep 7 17:31:21 UTC 2016
+may 01 14:42:48 localhost.localdomain kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-4.7.3-200.fc24.x86_64 root=UUID=a1692407-20c5-4cf0-b6a1-4eb3a3fbe249 ro
+may 01 14:42:48 localhost.localdomain kernel: x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+```
 
-  Si reiniciem el sistema només de tant en tant, el parametre ``-b`` 
-  no reduirà significativament la sortida de ``journalctl.``
-  En aquests casos, el filtrat basat en el temps és més útil amb aquests
-  **parametres**:
-  
-  * ``journalctl --since "data hora" --until "data hora"``
-  S'utilitza per filtrar la sortida per temps,i mostrar únicament els logs
-  de certa data i hora, o un **rang de temps.**
+En aquests casos, el filtrat basat en el temps és més útil amb aquests
+**parametres**:
 
-  Els temps es poden especificar seguint el format: ``YYYY-MM-DD HH:MM:SS``.
-  D'altra banda, aquest fragment de temps pot anar acompanyat d'un ``"--since"``
-  per indicar "des de quina data/hora", o un ``"--until"`` per indicar "fins a quina
-  data/hora".
+* ``journalctl --since "data hora" --until "data hora"``
+S'utilitza per filtrar la sortida per temps,i mostrar únicament els logs
+de certa data i hora, o un **rang de temps.** Els temps es pot 
+especificar seguint el format: ``YYYY-MM-DD HH:MM:SS``. Aquest fragment 
+de temps pot anar acompanyat de:
+  * ``"--since"`` per indicar "des de quina data/hora"
+  * ``"--until"`` per indicar "fins a quina data/hora". 
 
-  Per exemple, podem dir que es mostrin les entrades des del **_4 de març de
-  2017_** fins al **_2 de abril de 2017_**
+Per exemple, podem dir que es mostrin les entrades des del **_4 de març 
+de 2017_** fins al **_2 de abril de 2017_**
 
+```
+journalctl --since "2017-03-04" --until "2017-04-02"
+-- Logs begin at jue 2016-09-15 19:55:07 CEST, end at lun 2017-05-01 14:12:06 CEST. --
+mar 04 13:10:08 localhost.localdomain systemd-journald[157]: Runtime journal (/run/log/journal/) is 8.0M, max 192.7M, 184.7M free.
+mar 04 13:10:08 localhost.localdomain kernel: microcode: microcode updated early to revision 0xa0b, date = 2010-09-28
+mar 04 13:10:08 localhost.localdomain kernel: Linux version 4.7.3-200.fc24.x86_64 (mockbuild@bkernel01.phx2.fedoraproject.org) (gcc version 6.1.1 20160621 (Red Hat 6.1.1-3) (GCC) ) #1 SMP Wed Sep 7 17:31:21 UTC 2016
+```
 
+Obviament, tambe podem ometre el parametre ``--since`` o ``--until``
+com en aquest cas que nomes utilitzo ``--since`` per mostrar tota l'informació
+d'avui des de les **12:59:59**
 
-  Obviament, tambe podem ometre el parametre ``--since`` o ``--until``
-  com en aquest cas que nomes utilizem ``--since`` i en un format
-  mes llegible per els humans dient que ens mostrin les entrades del mes
-  anterior.
+```
+journalctl --since "2017-05-01 12:59:59"
+-- Logs begin at jue 2016-09-15 19:55:07 CEST, end at lun 2017-05-01 14:12:51 CEST. --
+may 01 13:00:46 localhost.localdomain kernel: perf: interrupt took too long (3129 > 3128), lowering kernel.perf_event_max_sample_rate to 63000
+may 01 13:01:01 localhost.localdomain CROND[2755]: (root) CMD (run-parts /etc/cron.hourly)
+may 01 13:01:01 localhost.localdomain run-parts[2758]: (/etc/cron.hourly) starting 0anacron
+may 01 13:01:01 localhost.localdomain anacron[2766]: Anacron started on 2017-05-01
+may 01 13:01:01 localhost.localdomain run-parts[2768]: (/etc/cron.hourly) finished 0anacron
+```
 
+## Filtrat per prioritat i temps
+Les opcions de filtrat es poden combinar, per exemple podem veure
+els missatges que ens donen d'error des de fa **1 mes** que seria aixi:
+```
+journalctl -p err --since "1 month ago"
+-- Logs begin at jue 2016-09-15 19:55:07 CEST, end at lun 2017-05-01 14:15:26 CEST. --
+abr 03 14:01:03 localhost.localdomain avahi-daemon[591]: chroot.c: open() failed: No such file or directory
+abr 03 14:01:33 localhost.localdomain libvirtd[648]: sql_select option missing
+abr 03 14:01:33 localhost.localdomain libvirtd[648]: auxpropfunc error no mechanism available
+abr 03 14:01:40 localhost.localdomain libvirtd[648]: no es posible abrir  la ruta '/run/media/brian/BRIAN': No such file or directory
+abr 03 14:01:40 localhost.localdomain libvirtd[648]: Falló al iniciar automáticamente el grupo de almacenamiento 'BRIAN': no es posible abrir  la ruta '/run/media/brian/BRIAN': No such file or directory
+abr 03 14:01:44 localhost.localdomain setroubleshoot[816]: SELinux is preventing postfix from read access on the lnk_file log. For complete SELinux messages. run sealert -l bb31f7f3-8252-4368-87af-408e0a5946d4
+```
 
+## Filtrat Avançat
+``journalctl fieldname=value``
+Idem al parametre ``export`` que hem vist abans en l'opció ``-o``.
+Cal substituir _fieldname_ amb un nom d'un camp (**Per exemple 
+HOSTNAME**) i _value_ amb un valor especific del camp que hem posat, llavors
+com a resultat, nomes es retornaran es linies que coincideixin amb
+aquesta condició.
+```
+journalctl _HOSTNAME=localhost.localdomain 
+-- Logs begin at jue 2016-09-15 19:55:07 CEST, end at lun 2017-05-01 14:17:32 CEST. --
+sep 15 19:55:07 localhost.localdomain systemd-journald[158]: Runtime journal (/run/log/journal/) is 8.0M, max 192.7M, 184.7M free.
+sep 15 19:55:07 localhost.localdomain kernel: microcode: microcode updated early to revision 0xa0b, date = 2010-09-28
+sep 15 19:55:07 localhost.localdomain kernel: Linux version 4.7.3-200.fc24.x86_64 (mockbuild@bkernel01.phx2.fedoraproject.org) (gcc version 6.1.1 20160621 (Red Hat 6.1.1-3) (GCC) ) #1 S
+```
 
-  ## Filtrat per prioritat i temps
-  
-  Les opcions de filtrat es poden combinar, per exemple podem veure
-  els missatges que ens donen d'error des de fa **1 mes** que seria aixi:
-  ``journalctl -p error --sice "1 month ago"``
-  
-  
-  ## Filtrat Avançat
-  
-  ``journalctl fieldname=value``
-  Idem al parametre ``export`` que hem vist abans en l'opció ``-o``.
-  Cal substituir _fieldname_ amb un nom d'un camp (**Per exemple 
-  HOSTNAME**) i _value_ amb un valor especific del camp que hem posat, llavors
-  com a resultat, nomes es retornaran es linies que coincideixin amb
-  aquesta condició.
-  
-  Podem dir per exemple que es mostrin totes les linies que son del
-  **executable** _/usr/bin/passwd_ que seria aixi:
-  ``journalctl _EXE=/usr/bin/passwd``.
-  
+Podem dir per exemple que es mostrin totes les linies que son del
+**executable** _/usr/bin/passwd_.
+
+```
+journalctl _EXE=/usr/bin/passwd 
+-- Logs begin at jue 2016-09-15 19:55:07 CEST, end at lun 2017-05-01 14:17:32 CEST. --
+oct 21 19:41:55 localhost.localdomain passwd[2097]: pam_unix(passwd:chauthtok): password changed for julia
+oct 21 19:41:55 localhost.localdomain passwd[2097]: gkr-pam: couldn't update the login keyring password: no old password was entered
+-- Reboot --
+oct 23 11:49:02 localhost.localdomain passwd[2508]: pam_unix(passwd:chauthtok): password changed for anna
+oct 23 12:33:47 localhost.localdomain passwd[3512]: pam_pwquality(passwd:chauthtok): pam_parse: unknown or broken option; nullok
+oct 23 12:33:47 localhost.localdomain passwd[3512]: pam_pwquality(passwd:chauthtok): pam_parse: unknown or broken option; nullok
+```
