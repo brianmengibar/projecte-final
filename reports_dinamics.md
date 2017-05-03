@@ -7,9 +7,13 @@
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
-# METER FOTOS? PASO A PASO? SOLO UNA?
-
-# Cockpit
+# Reports Dinamics
+En aquest apartat comentaré les eines que he trobat per veure reports
+dinamics, la veritat es que no sabia l'existencia d'aquestes ordres,
+pot ser no tenen molt que veure pero es lo mes assemblant que he trobat.
+Aquestes son les dues que he trobat:
+* Cockpit
+* Systemd-manager
 
 ## Que és cockpit?
 És un **administrador de servidor** que fa que sigui fàcil d'administrar
@@ -152,3 +156,93 @@ Quan cliquem ens mostra una pagina detallada on podem engegar/aturar el servei
 i tambe a sota veure els logs que ens dona actualment. Gràcies a l'apartat
 ``tools``, podem veure l'estat en el que esta en el nostre servei per
 comprobar que si que esta funcionant correctament.
+
+## Que és systemd-manager?
+Systemd-manager es un programa construit amb llenguatge de programació
+__RUST__, que s'integra a la perfecció en entorns d'escriptori **GTK**.
+
+### Característiques de systemd-manager
+Es molt semblant a l'eina ``cockpit`` pero aquesta son les seves característiques:
+* Enable/disable als units (serveis, sockets...)
+* Start/Stop als units (serveis, sockets...)
+* Veure i modificar els arxius de configuració del unit
+* Veure els logs que es crean al instant
+* Comprovar el temps d'arrencada utilitzant l'eina ``systemd-analyze`` (comentada en l'altre [document])
+
+### Instal·lació systemd-manager
+Per poder utilitzar-lo en **Fedora**, necessitem descarregarnos un paquet,
+ja que per defecte aquesta eina no la podem instalar al nostre sistema.
+```
+[root@i10 ~]# dnf install systemd-manager
+Last metadata expiration check: 1:12:22 ago on Wed May  3 09:21:18 2017.
+No package systemd-manager available.
+Error: Unable to find a match.
+```
+
+En el moment que ho probaba veia que em deia que no trobaba coincidencies,
+llavors, explorant per webs he trobat com es pot instal·lar, cal descarregar-se
+un paquet exclusiu per **Fedora 24** (també he trobat per la versió 22 i 23 pero
+en el meu cas no cal).
+
+```
+[root@i10 ~]# wget https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/repo/fedora-24/nunodias-systemd-manager-fedora-24.repo -O /etc/yum.repos.d/nunodias-systemd-manager-fedora-24.repo
+--2017-05-03 10:33:56--  https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/repo/fedora-24/nunodias-systemd-manager-fedora-24.repo
+Resolving copr.fedorainfracloud.org (copr.fedorainfracloud.org)... 209.132.184.54
+Connecting to copr.fedorainfracloud.org (copr.fedorainfracloud.org)|209.132.184.54|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 374 [text/plain]
+Saving to: ‘/etc/yum.repos.d/nunodias-systemd-manager-fedora-24.repo’
+
+/etc/yum.repos.d/nunodias-systemd-manag 100%[=============================================================================>]     374  --.-KB/s    in 0s      
+
+2017-05-03 10:33:57 (50.3 MB/s) - ‘/etc/yum.repos.d/nunodias-systemd-manager-fedora-24.repo’ saved [374/374]
+```
+
+Amb aquesta ordre ja esta instal·lat el paquet que necessitem, una vegada
+ho tenim cal instal·lar ``systemd-manager``
+```
+[root@i10 ~]# dnf -y install systemd-manager
+```
+
+Ho he buscat, pero aquesta ordre no es pot cridar des de terminal, te que
+ser en mode grafic y posar: ``systemd-manager``. Al clicar ens dirà que
+tenim que ser root, llavors fiquem el password i ja estem dins de l'aplicació.
+
+### Funcionament systemd-manager
+En el moment que executem aquesta aplicació, podem escollir amb dos opcions:
+* Systemd Units
+* Systemd Analyze
+
+#### Systemd Units
+En aquest apartat podem trobar:
+* Services: 
+* Sockets
+* Timers
+
+##### Services
+Aquesta es la part on podem iniciar i aturar serveis, també podem veure 
+els que estan enabled, disabled i statics, veure els logs que es crean 
+automaticament, aixi sabriem si ens ha fallat alguna cosa o tot funciona
+be i també poder editar el fitxer de configuració, que la veritat que ho
+veig molt util. Trobem al costat del serveis dues rodones:
+* La primera significa si esta enabled(color verd) o disabled(color vermell)
+* La segona significa si esta start(color verd) o disabled(color vermell)
+
+Al clicar sobre un servei, podem observar tres apartats:
+* File: Ens surt el fitxer de configuració, on podrem mirar-ho o editar-ho i en el cas de editar-ho guardar la nova configuració.
+* Journal: Ens mostra els logs del servei que nosaltres hem clicat, lo bo d'aquest log es que es com ``journalctl -f`` en el moment que aturem/engeguem fem enable/disable algun servei ens sortira al moment el missatge en aquest apartat.
+* Dependencies: Ens diu de quins serveis depèn el servei que nosaltres hem clicat per que s'engegui
+
+Per ultim, tenim dos icones mes:
+* Enabled: Nomes clicant en aquest icone podem fer el servei enable o disable
+* Start/Stop: Si el servei esta aturat, ens sortira l'icona blau i posara Start, llavors l'icona pasara a ser de color vermell i posara Stop
+
+##### Sockets and Timers
+Mateixes condicions que l'apartat **Services**.
+
+#### Systemd Analyze
+Aquest apartat lo que fa simplement es comprovar el temps d'arrencada dels
+serveis que tarden de menys a mes temps durant el procés d'arrencada.
+
+[document]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
+
