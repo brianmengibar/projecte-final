@@ -25,6 +25,8 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * [Ordres visuals]
 * [Reports elaborats]
 * [Reports dinamics]
+  * [Cockpit]
+  * [Systemd-Manager]
 
 ### Links on estic extreient tota l'informació:
 
@@ -41,7 +43,7 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * [Docuntation-Oficial-Cockpit]
 * [ArchWiki-Journal]
 * [Para rellenar journal o systemd?]
-* [systemd-manager] --> PAQUETE E INSTALAR
+* [Systemd-Manager]
 
 [archlinux]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
 [blogsystemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
@@ -55,13 +57,15 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Cockpit]: https://www.liquidweb.com/kb/how-to-use-cockpit-in-fedora-23/
 [Docuntation-Oficial-Cockpit]: http://cockpit-project.org/guide/latest/
 [ArchWiki-Journal]: https://wiki.archlinux.org/index.php/Systemd#Journal
+[Para rellenar journal o systemd?]: http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/
+[systemd-manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
 
 [Que es Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
 [Eines de Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
 [Que es journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#que-es-journal
 [Parametres de journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#parametres-de-journalctl
-[Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/notes_report_elaborat_or_dinamic.md#cockpit
+[Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#reports-dinamics
 [Ordres visuals]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#ordres-visuals
 [Reports elaborats]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#reports-elaborats
-[Para rellenar journal o systemd?]: http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/
-[systemd-manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
+[Cockpit]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-cockpit
+[Systemd-Manager]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-systemd-manager
