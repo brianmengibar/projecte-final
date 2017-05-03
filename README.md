@@ -40,6 +40,8 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * [Cockpit]
 * [Docuntation-Oficial-Cockpit]
 * [ArchWiki-Journal]
+* [Para rellenar journal o systemd?]
+* [systemd-manager] --> PAQUETE E INSTALAR
 
 [archlinux]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
 [blogsystemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
@@ -61,3 +63,5 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/notes_report_elaborat_or_dinamic.md#cockpit
 [Ordres visuals]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#ordres-visuals
 [Reports elaborats]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#reports-elaborats
+[Para rellenar journal o systemd?]: http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/
+[systemd-manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/

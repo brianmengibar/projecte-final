@@ -258,4 +258,21 @@ Recarga systemd, escanejant en busca de serveis nous o modificats.
 systemctl daemon-reload
 ```
 
+* ``systemd-cgls``
+Per veure l'arbre de procesos iniciat per cada servei
+```
+systemd-cgls
+Control group /:
+-.slice
+├─init.scope
+│ └─1 /usr/lib/systemd/systemd --switched-root --system --deserialize 26
+├─system.slice
+│ ├─avahi-daemon.service
+│ │ ├─816 avahi-daemon: running [linux-8.local
+│ │ └─822 avahi-daemon: chroot helpe
+│ ├─cockpit.service
+│ │ ├─2789 /usr/libexec/cockpit-ws
+│ │ └─2874 /usr/bin/ssh-agent
+```
+
 [systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#targets-en-systemd
