@@ -45,7 +45,6 @@ Com podem observar, es un servei, aixi que caldrà iniciar aquest **servei**.
 ```
 
 Abans de continuar, cal comprobar que s'ha iniciat correctament.
-
 ```
 [root@i10 ~]# systemctl status cockpit
 ● cockpit.service - Cockpit Web Service
@@ -84,8 +83,8 @@ nostre ordinador i grafics que mostren:
 
 A l'esquerra tenim una serie de finestres que paso a continuació a explicar:
 
-* **Sistema**: Es la pagina principal, lo que es mostra res mes accedir a la pagina
-* **Llistat de tots els serveis**: Aquesta es la part que profundiré, al fer clic a qualsevol servei, ens porta a una pàgina de detallada que mostra un registre del servei i que ens permet:
+* **System**: Es la pagina principal, lo que es mostra res mes accedir a la pagina
+* **Services**: Aquesta es la part que profundiré, al fer clic a qualsevol servei, ens porta a una pàgina de detallada que mostra un registre del servei i que ens permet:
   * Start/Stop
   * Restart
   * Enable/Disable
@@ -106,7 +105,7 @@ anomenada __Dashboard__. En aquesta finestra lo que trobem es una grafica
 amb **4 finestretes**, que es per veure els mateixos grafics que ens surten
 en la pagina principal.
 
-Bé, com he comentat a dalt, ``cockpit`` es un multi-server, llavors en aquest
+Bé, com he comentat a dalt, ``cockpit`` es un __multi-server__, llavors en aquest
 apartat podem fer:
 * Afegir una nova maquina
 * Editar una maquina actual
@@ -123,7 +122,7 @@ L'autenticitat de la IP no pot ser establerta, que si estem que volem continuar
 amb la connexió, obviament li donem a ``connect`` i ja tenim una maquina mes i al 
 ser root, podrem modificar/visualitzar, etc.
 
-### Editar una maquina actual
+#### Editar una maquina actual
 Per editar una maquina actual veiem el simbol del ``tick``, quan li donem
 ens apareixen dos simbols:
  * **Un llapis**: Si li donem al llapis ens deixara modificar:
@@ -136,5 +135,20 @@ Que passa? Que ara si volem tornar a afegir la maquina anterior ja no ens
 dirà **Unknown Host Key**, ja que ja coneix aquest finger print i sap que
 si que permetem la connexió.
 
-**PROFUNDIZAR TODO EL TEMA DE SERVICES**
-**PROFUNDIZAR EL TEMA DE ACCOUNT I CAMBIAR LENGUAJE ETC**
+#### Apartat services
+Com he dit abans a dalt, aquest apartat ens deixa poder veure tots els serveis
+que tenim actius, desactivats, engegats, aturats, etc. Pero també tenim
+mes apartats dins de services:
+* Targets: Ens motra tots els targets que tenim en el sistema, es a dir, els que tenim enabled, disabled i statics. Vaig probar cambiar d'un runlevel a un altre, clicant per exemple al target ``rescue.target`` i clicant a **start**, pero sempre que ho faig es queda el sistema penjat i tinc que reiniciar manualment.
+* System services: Aquesta es la part on podem iniciar i aturar serveis, es molt util aquesta part ja que tambe podem veure els que estan enabled, disabled i statics, també podem veure els logs que es crean automaticament, aixi sabriem si ens ha fallat alguna cosa o tot funciona be.
+* Sockets: Idem que els anteriors, ens mostren tots els sockets i podem iniciar o aturar el que nosaltres volguem
+* Timer: Aquest apartat conté tots els ``.timer``, son temporizadors que li diuen al servei quan es te que executar.
+* Paths: 
+
+##### System services
+Aquesta eina un dels defectes que té es que no te una busqueda de filtratge,
+si no que per buscar podem fer ``ctrl+f`` i buscar per exemple __httpd.service__.
+Quan cliquem ens mostra una pagina detallada on podem engegar/aturar el servei
+i tambe a sota veure els logs que ens dona actualment. Gràcies a l'apartat
+``tools``, podem veure l'estat en el que esta en el nostre servei per
+comprobar que si que esta funcionant correctament.
