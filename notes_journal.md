@@ -7,7 +7,7 @@
 ### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
 
-# MOVER journalctl -b, journalctl -r, journalctl -f, A REPORTS ELABORATS?
+# MOVER: journalctl -b, journalctl -r, journalctl -f, A REPORTS ELABORATS?
 
 # Que es journal?
 És un component de ``systemd`` que és responsable de la **visualització i 
