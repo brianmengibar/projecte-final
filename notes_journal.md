@@ -56,12 +56,13 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 Per defecte, si utilitzem l'ordre sense arguments, mostra tots els 
 continguts del ``journal``, començant amb l'entrada més antiga que va ser guardada.
 
-**OJO**: Cal dir que per defecte, les entrades més antigues es mostren 
+> Cal dir que per defecte, les entrades més antigues es mostren 
 al principi. La sortida és mostrada per la sortida standard i no es veu 
 tota l'informacio ja que les línies estan truncades, tot i això podem 
 moure'ns amb les tecles del cursor a esquerra i dreta per veure el 
 contingut complet. I si volem veure les altres entrades, podem pressionar 
-la tecla **d'espai** per desplaçar-nos pantalles senceres cap a munt, i cap avall.
+la tecla **d'espai** per desplaçar-nos pantalles senceres cap a munt, i 
+cap avall.
 
 ```
 journalctl

@@ -25,7 +25,7 @@ sobre l'ordre ``systemctl`` podem consultar  des de la nostra consola
 veure l'estat, etc d'un servei, sempre caldra ser **#root**.
 
 ## Analitzar l'estat del sistema
-A continuació comentare una serie de ordres de la familia systemd:
+A continuació comentare una serie d'ordres de la familia systemd:
 
 * ``systemctl list-units``
 Amb aquesta ordre podem llistar les unitats que tenim en execució.
@@ -158,6 +158,20 @@ Ens permet poder reiniciar un servei.
 systemctl restart httpd
 ```
 
+* ``systemctl try-restart``
+Similar a ``systemctl restart`` pero aquesta renicia el servei si s'esta
+executant, es a dir, si el servei esta aturat? Aquesta ordre no farà 
+**res**.
+
+* ``systemctl reboot``
+Ens permet reiniciar el sistema
+
+* ``systemctl poweroff``
+Ens permet apagar el sistema
+
+* ``systemctl halt``
+Ens permet tancar **tot** i apagar el sistema
+
 * ``systemctl status``
 Ens mostra l'estat del servei, inclós si esta en execució o no. A part
 de tambe mostrar-nos un petit log com el que fa ``journalctl`` pero
@@ -227,7 +241,7 @@ al parametre ``-a``, es mostren tots els serveis, ja estiguin actius o
 inactius, si treiesim el parametre ``-a``, nomes es veurien els serveis
 que estan actius. **EDITAR, MIRAR QUE -t PUEDE TENER MAS, NO SOLO SERVICE**
 
-```javascript
+```
 systemctl -t service -a
   UNIT                                                LOAD      ACTIVE   SUB     DESCRIPTION
   abrt-ccpp.service                                   loaded    active   exited  Install ABRT coredump hook
@@ -282,5 +296,74 @@ Control group /:
 │ │ ├─2789 /usr/libexec/cockpit-ws
 │ │ └─2874 /usr/bin/ssh-agent
 ```
+
+* ``systemctl kill``
+La veritat, es que no conexia aquesta ordre, per lo que he vist, a l'hora
+de ver un **kill** a un servei per defecte fa un **SIGTERM** (numero 15
+en el llistat al fer ``kill -l``). **SIGTERM** lo que fa es finalitzar
+el proces quan ja hagi acabat tot, a diferencia de **SIGKILL** (numero 9
+en el llistat), que directament mata el proces i si ha coses per fer
+doncs mala sort.
+
+```
+systemctl status httpd
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Thu 2017-05-04 08:29:24 CEST; 1s ago
+ Main PID: 2833 (httpd)
+   Status: "Processing requests..."
+    Tasks: 33 (limit: 512)
+```
+Podem comprobar que el servei **httpd** esta actiu, llavors executem
+l'ordre i veiem que passa:
+
+```
+systemctl kill httpd
+
+systemctl status httpd
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: inactive (dead) since Thu 2017-05-04 08:30:18 CEST; 1s ago
+  Process: 2833 ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND (code=exited, status=0/SUCCESS)
+ Main PID: 2833 (code=exited, status=0/SUCCESS)
+   Status: "Total requests: 0; Idle/Busy workers 100/0;Requests/sec: 0; Bytes served/sec:   0 B/sec"
+```
+
+Com podem comprobar, el servei s'ha aturat ja que no hi ha cap procés
+en marxa. Pero me fixat que aquesta ordre te el parametre ``-s`` que
+ens permet especificar la senyal que volem enviar.
+```
+systemctl status sshd
+● sshd.service - OpenSSH server daemon
+   Loaded: loaded (/usr/lib/systemd/system/sshd.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2017-05-04 08:32:48 CEST; 3s ago
+     Docs: man:sshd(8)
+           man:sshd_config(5)
+  Process: 2914 ExecStart=/usr/sbin/sshd $OPTIONS (code=exited, status=0/SUCCESS)
+ Main PID: 2916 (sshd)
+```
+
+Podem comprobar que el servei sshd esta actiu, llavors passem a mirar
+els procesos que te corren fent ``ps ax | grep sshd``
+
+```
+ps ax | grep sshd
+ 2916 ?        Ss     0:00 /usr/sbin/sshd
+ 2929 pts/0    S+     0:00 grep --color=auto sshd
+```
+
+Veiem que el nº de proces es el **2916**, ara executem l'ordre amb el
+parametre -s i diem que fassi un **SIGHUP** (numero 1 al fer el llistat)
+que lo que farà serà reiniciar el servei.
+```
+systemctl kill -s SIGHUP sshd
+
+[root@i10 ~]# ps ax | grep sshd
+ 3037 ?        Ss     0:00 /usr/sbin/sshd
+```
+
+Es el mateix procediment que si en terminal busquesim el PID del procés
+i fessim un ``kill -numero nº proces `` pero m'he donat compte que també
+es pot fer en el conjunt de parametres de ``systemctl``.
 
 [systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#targets-en-systemd
