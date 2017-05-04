@@ -14,7 +14,7 @@ trobar ordres que ens retornen una imatge, ordres que ens retornen una
 grafica etc. Aquestes son les que jo he trobat i crec que les millors
 que tenim en el sistema:
 
-* ``systemd-analyze plot``
+## Systemd-analyze plot
 Crea un archiu amb format ``.svg`` que descriu el procés d'arrancada de 
 forma gráfica. 
 
@@ -27,10 +27,10 @@ Si surt aquest missatge? Significa que a anat be
 
 ![Grafica-plot](./grafiques/grafica_plot.png)
 
-  * Significat colors
+### Significat colors
   
 
-* ``systemd-analyze dot``
+## Systemd-analyze dot
 També crea un archiu amb format ``.svg`` que mostra un grafic de l'us
 del sistema pero cal dir, que es una mica "lio". Lo primer que cal fer
 es instal·lar el paquet **graphviz**. Una vegada instal·lat, ja podem 
