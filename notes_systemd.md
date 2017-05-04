@@ -40,9 +40,9 @@ sys-devices-pci0000:00-0000:00:1c.0-0000:02:00.0-net-wlo1.device                
 sys-devices-pci0000:00-0000:00:1c.1-0000:03:00.0-net-enp3s0.device                                         loaded active plugged   RTL8101/2/6E PCI Express Fast/Gigabit Ethernet controller
 ```
 
-* ``systemctl list-units -t target``
-Amb el parametre ``-t``, podem veure tots els targets(nivells d'execució
-disponibles en el sistema).
+* ``systemctl list-units -t``
+Amb el parametre ``-t``, podem veure per exemple tots els targets del 
+sistema **ACTIUS**
 
 ```
 systemctl list-units -t target 
@@ -71,6 +71,37 @@ LOAD   = Reflects whether the unit definition was properly loaded.
 ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
 SUB    = The low-level unit activation state, values depend on unit type.
 ```
+
+Per poder veure tots els targets del sistema, ja estiguin actius o inactius
+seria:
+```
+systemctl list-units -t target --all 
+  UNIT                   LOAD      ACTIVE   SUB    DESCRIPTION
+  basic.target           loaded    active   active Basic System
+  cryptsetup.target      loaded    active   active Encrypted Volumes
+● dirsrv.target          not-found inactive dead   dirsrv.target
+  emergency.target       loaded    inactive dead   Emergency Mode
+  getty.target           loaded    active   active Login Prompts
+  graphical.target       loaded    active   active Graphical Interface
+  local-fs-pre.target    loaded    active   active Local File Systems (Pre)
+  local-fs.target        loaded    active   active Local File Systems
+  multi-user.target      loaded    active   active Multi-User System
+  network-online.target  loaded    inactive dead   Network is Online
+```
+
+> Cal mencionar que no només podem veure amb -t els targets, si no que
+podem veure tots els units que son:
+* automount
+* busname
+* device
+* mount
+* path
+* scope
+* service
+* slice
+* socket
+* swap
+* timer
 
 * ``systemctl isolate``
 Opció molt util, ja que amb ``isolate`` podem pasar d'un runlevel a un 
@@ -162,15 +193,27 @@ systemctl restart httpd
 Similar a ``systemctl restart`` pero aquesta renicia el servei si s'esta
 executant, es a dir, si el servei esta aturat? Aquesta ordre no farà 
 **res**.
+```
+systemctl try-restart sshd
+```
 
 * ``systemctl reboot``
 Ens permet reiniciar el sistema
+```
+systemctl reboot
+```
 
 * ``systemctl poweroff``
 Ens permet apagar el sistema
+```
+systemctl poweroff
+```
 
 * ``systemctl halt``
 Ens permet tancar **tot** i apagar el sistema
+```
+systemctl halt
+```
 
 * ``systemctl status``
 Ens mostra l'estat del servei, inclós si esta en execució o no. A part
