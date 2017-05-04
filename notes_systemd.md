@@ -40,7 +40,6 @@ sys-devices-pci0000:00-0000:00:1c.0-0000:02:00.0-net-wlo1.device                
 sys-devices-pci0000:00-0000:00:1c.1-0000:03:00.0-net-enp3s0.device                                         loaded active plugged   RTL8101/2/6E PCI Express Fast/Gigabit Ethernet controller
 ```
 
-
 * ``systemctl list-units -t target``
 Amb el parametre ``-t``, podem veure tots els targets(nivells d'execució
 disponibles en el sistema).
@@ -204,7 +203,6 @@ Removed symlink /etc/systemd/system/multi-user.target.wants/sshd.service.
 
 * ``systemctl is-enabled``
 Molt util per comprobar si un servei especific ja esta habilitat o no.
-
 ```
 systemctl is-enabled sshd
 disabled
@@ -213,13 +211,23 @@ systemctl is-enabled httpd
 enabled
 ```
 
+* ``systemctl is-active``
+Aquesta opció ens diu si un servei esta engegat o no.
+```
+systemctl is-active dovecot
+inactive
+
+systemctl is-active httpd
+active
+```
+
 * ``systemctl -t service -a``
 S'utilitza per llistar tots els serveis que tenim en el sistema, gracies
 al parametre ``-a``, es mostren tots els serveis, ja estiguin actius o
 inactius, si treiesim el parametre ``-a``, nomes es veurien els serveis
 que estan actius. **EDITAR, MIRAR QUE -t PUEDE TENER MAS, NO SOLO SERVICE**
 
-```
+```javascript
 systemctl -t service -a
   UNIT                                                LOAD      ACTIVE   SUB     DESCRIPTION
   abrt-ccpp.service                                   loaded    active   exited  Install ABRT coredump hook
