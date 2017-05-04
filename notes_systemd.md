@@ -42,7 +42,7 @@ sys-devices-pci0000:00-0000:00:1c.1-0000:03:00.0-net-enp3s0.device              
 
 * ``systemctl list-units -t``
 Amb el parametre ``-t``, podem veure per exemple tots els targets del 
-sistema **ACTIUS**
+sistema **actius**.
 
 ```
 systemctl list-units -t target 
@@ -72,8 +72,8 @@ ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
 SUB    = The low-level unit activation state, values depend on unit type.
 ```
 
-Per poder veure tots els targets del sistema, ja estiguin actius o inactius
-seria:
+Llavors, gracies al parametre ``--all`` podem veure tots els units 
+.targets del sistema, ja estiguin **actius** o **inactius**.
 ```
 systemctl list-units -t target --all 
   UNIT                   LOAD      ACTIVE   SUB    DESCRIPTION
@@ -268,11 +268,23 @@ systemctl is-active httpd
 active
 ```
 
-* ``systemctl -t service -a``
-S'utilitza per llistar tots els serveis que tenim en el sistema, gracies
-al parametre ``-a``, es mostren tots els serveis, ja estiguin actius o
-inactius, si treiesim el parametre ``-a``, nomes es veurien els serveis
-que estan actius. **EDITAR, MIRAR QUE -t PUEDE TENER MAS, NO SOLO SERVICE**
+* ``systemctl -t``
+S'utilitza per llistar per exemple els units .services que tenim en el 
+sistema **actius**.
+```
+systemctl -t service
+  UNIT                                            LOAD   ACTIVE SUB     DESCRIPTION
+  abrt-ccpp.service                               loaded active exited  Install ABRT coredump hook
+  abrt-oops.service                               loaded active running ABRT kernel log watcher
+  abrt-xorg.service                               loaded active running ABRT Xorg log watcher
+  abrtd.service                                   loaded active running ABRT Automated Bug Reporting Tool
+  accounts-daemon.service                         loaded active running Accounts Service
+  alsa-state.service                              loaded active running Manage Sound Card State (restore and store)
+  atd.service                                     loaded active running Job spooling tools
+```
+
+Gracies al parametre ``-a``, es mostren tots els serveis, ja estiguin 
+**actius** o **inactius**.
 
 ```
 systemctl -t service -a
@@ -289,6 +301,10 @@ systemctl -t service -a
   atd.service                                         loaded    active   running Job spooling tools
   auditd.service                                      loaded    active   running Security Auditing Service
 ```
+
+> Cal mencionar que també en aquesta ordre, no només podem veure els .services,
+si no que podem veure tots els units (**automount, busname, device, mount,
+path, scope, slice, socket, swap, target, timer**)
 
 * ``systemctl help``
 Et mostra la pagina del manual asociada al servei especific que nosaltres
