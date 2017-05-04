@@ -24,7 +24,7 @@ Si surt aquest missatge? Significa que a anat be
 -rw-r--r--. 1 isx39441584 hisx2 116182 Apr 26 12:36 grafica.svg
 ```
 
-![Grafica-plot](./grafiques/grafica_plot.svg)
+![Grafica-plot](./grafiques/grafica_plot.png)
 
 * ``systemd-analyze dot``
 També crea un archiu amb format ``.svg`` que mostra un grafic de l'us
@@ -42,7 +42,7 @@ systemd-analyze dot --require | dot -Tsvg > systemd.svg
                  green     = After
 ```
 
-![Grafica-dot-system](./grafiques/grafica_dot.svg)
+![Grafica-dot-system](./grafiques/grafica_dot.png)
 
 Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
 pero també podem crear el grafic a partir d'un punt especific, per exemple
