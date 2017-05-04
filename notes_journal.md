@@ -341,6 +341,57 @@ abr 25 19:41:38 localhost.localdomain kernel: x86/fpu: Enabled xstate features 0
 abr 25 19:41:38 localhost.localdomain kernel: x86/fpu: Using 'eager' FPU context switches.
 ```
 
+* ``journalctl --disk-usage``
+Parametre molt util per el tema de **quotes**, ja que amb aquest parametre
+podem sapiguer quant ocupen els registres de ``journald``.
+```
+journalctl --disk-usage
+Archived and active journals take up 3.9G on disk.
+```
+Comprobem que ens ocupa **3.9G** en el disc.
+
+* ``journalctl --vacum-size=``
+Amb l'altre parametre hem vist que podem sapiguer quant ens ocupa en disc
+els registres de journald, doncs amb ``--vacum-size`` podem eliminar espai
+i retenir per exemple com a maxim 1.5G.
+```
+journalctl --vacuum-size=1.5G
+Deleted archived journal /var/log/journal/0dd3a45452b340e3bece923b3eab00ec/system@49bcec464fa749b48d64ac9350ed5a71-0000000000000001-00053c87046aa4c2.journal (72.0M).
+Deleted archived journal /var/log/journal/0dd3a45452b340e3bece923b3eab00ec/user-202190@242b978f1090476ab350467551edacb9-000000000000150a-00053c8759bd5b0b.journal (24.0M).
+```
+
+> No poso tota la sortida ja que es massa extensa.
+
+Una vegada fet, tornem a comprobar quant ens ocupa ara els registres
+de journald.
+```
+journalctl --disk-usage
+Archived and active journals take up 1.7G on disk.
+```
+
+Comprovem que ha baixat bastant comparat amb abans.
+
+* ``journalctl --vacum-time=``
+Té la mateixa finalitat que ``--vacum-size`` pero en aquest cas, podem
+eliminar espai i retenir per exemple els registres de l'ultim mes.
+```
+journalctl --vacuum-time="1 months"
+Deleted archived journal /var/log/journal/0dd3a45452b340e3bece923b3eab00ec/system@fb325ac2f8a94f57a074211c7cd4590e-0000000000243090-00054b4dba74528a.journal (128.0M).
+Deleted archived journal /var/log/journal/0dd3a45452b340e3bece923b3eab00ec/system@fb325ac2f8a94f57a074211c7cd4590e-000000000027122f-00054b4dceb938da.journal (128.0M).
+```
+
+> No poso tota la sortida ja que es massa extensa.
+
+Una vegada fet, tornem a comprobar quant ens ocupa ara els registres
+de journald.
+
+```
+journalctl --disk-usage
+Archived and active journals take up 480.1M on disk.
+```
+
+I de nou hem comprovat que ha baixat bastant comparat amb abans.
+
 ## El filtrat de missatges
 
 Com hem parlat abans, el executar ``journalctl`` sense parametres,

@@ -42,4 +42,22 @@ systemd-analyze dot --require | dot -Tsvg > systemd.svg
                  green     = After
 ```
 
-![Grafica-dot](./grafiques/grafica_dot.svg)
+![Grafica-dot-system](./grafiques/grafica_dot.svg)
+
+Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
+pero també podem crear el grafic a partir d'un punt especific, per exemple
+podem dir que comenci el grafic a partir de httpd.service.
+
+```
+systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg
+   Color legend: black     = Requires
+                 dark blue = Requisite
+                 dark grey = Wants
+                 red       = Conflicts
+                 green     = After
+```
+
+![Grafica-dot-httpd](./grafiques/httpd.svg)
+
+> He agafat httpd per que la grafica es molt mes petita, ja que en
+la imatge d'abans de tot el sistema no es veu practicament **res**.
