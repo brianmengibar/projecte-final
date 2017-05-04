@@ -25,6 +25,8 @@ totes les ordres i opcions relacionadas amb aquest tema.
   * [Filtrat de missatges]
 * [Ordres visuals]
 * [Reports elaborats]
+  * [Plot]
+  * [Dot]
 * [Reports dinamics]
   * [Cockpit]
   * [Systemd-Manager]
@@ -71,3 +73,5 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Cockpit]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-cockpit
 [Systemd-Manager]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-systemd-manager
 [Filtrat de missatges]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#el-filtrat-de-missatges
+[Plot]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#systemd-analyze-plot
+[Dot]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#systemd-analyze-dot
