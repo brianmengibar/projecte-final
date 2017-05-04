@@ -6,10 +6,7 @@
 
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
-.brian {
-	overflow-x:scroll;
-	overflow-y:scroll
-}
+
 
 # Ordres visuals
 Dins del sistema podem trobar diferents tipus d'ordres visuals, podem
@@ -46,7 +43,7 @@ systemd-analyze dot --require | dot -Tsvg > systemd.svg
                  green     = After
 ```
 
-![Grafica-dot-system](./grafiques/grafica_dot.png){.brian}
+![Grafica-dot-system](./grafiques/grafica_dot.png){:style="overflow-x:scroll; overflow-y:scroll;"}
 
 Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
 pero també podem crear el grafic a partir d'un punt especific, per exemple
