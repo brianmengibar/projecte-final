@@ -47,6 +47,7 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * [ArchWiki-Journal]
 * [Para rellenar journal o systemd?]
 * [Systemd-Manager]
+* [Otros de la familia systemd?]
 
 [archlinux]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
 [blogsystemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
@@ -62,6 +63,8 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [ArchWiki-Journal]: https://wiki.archlinux.org/index.php/Systemd#Journal
 [Para rellenar journal o systemd?]: http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/
 [How-to-systemd-manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
+[Otros de la familia systemd?]: https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl
+
 
 [Que es Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
 [Eines de Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
