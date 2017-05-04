@@ -43,7 +43,7 @@ systemd-analyze dot --require | dot -Tsvg > systemd.svg
                  green     = After
 ```
 
-![Grafica-dot-system](./grafiques/grafica_dot.png){:style="overflow-x:scroll; overflow-y:scroll;"}
+![Grafica-dot-system](./grafiques/grafica_dot.png)
 
 Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
 pero també podem crear el grafic a partir d'un punt especific, per exemple
