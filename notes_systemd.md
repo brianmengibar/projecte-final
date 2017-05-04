@@ -441,10 +441,10 @@ Created symlink from /etc/systemd/system/sshd.service to /dev/null.
 ```
 
 > Ojo, el servei com esta engegat? Si que el podem aturar, pero clar,
-despres llavors no podem engegar-ho per que te el link creat
+despres llavors no podem engegar-ho per que te el link creat.
 
 Una vegada creat, tornem a comprobar que el servei segueix actiu i
-l'aturem
+l'aturem.
 ```
 systemctl status sshd
 ● sshd.service
