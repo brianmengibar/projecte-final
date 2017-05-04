@@ -58,6 +58,7 @@ systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg
 ```
 
 ![Grafica-dot-httpd](./grafiques/httpd.svg)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 > He agafat httpd per que la grafica es molt mes petita, ja que en
 la imatge d'abans de tot el sistema no es veu practicament **res**.
