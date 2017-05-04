@@ -49,6 +49,9 @@ Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
 pero també podem crear el grafic a partir d'un punt especific, per exemple
 podem dir que comenci el grafic a partir de httpd.service.
 
+> He agafat httpd per que la grafica es molt mes petita, ja que en
+la imatge d'abans de tot el sistema no es veu practicament **res**.
+
 ```
 systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg
    Color legend: black     = Requires
@@ -60,5 +63,9 @@ systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg
 
 ![Grafica-dot-httpd](./grafiques/httpd.png)
 
-> He agafat httpd per que la grafica es molt mes petita, ja que en
-la imatge d'abans de tot el sistema no es veu practicament **res**.
+> Les imatges son en format ``.png`` per que he vist que **Github** no
+soporta el format ``.svg``, llavors des d'aquesta [pagina] he cambiat
+el format de ``.svg`` a ``.png``.
+
+
+[pagina]: http://svgtopng.com/es/
