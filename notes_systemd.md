@@ -415,4 +415,78 @@ Es el mateix procediment que si en terminal busquesim el PID del procés
 i fessim un ``kill -numero nº proces `` pero m'he donat compte que també
 es pot fer en el conjunt de parametres de ``systemctl``.
 
+
+* ``systemctl mask servei.service``
+Aquest parametre no ho coneixia i la veritat es que la veig molt util,
+a l'hora d'emmascarar un servei, a part de deshabilitar-ho, evitem que
+es pugui iniciar ja sigui manualment o automaticament.
+
+Lo primer que hi ha que comprobar es mostrar que el servei **sshd** esta
+engegat
+```
+systemctl status sshd
+● sshd.service - OpenSSH server daemon
+   Loaded: loaded (/usr/lib/systemd/system/sshd.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2017-05-04 10:12:07 CEST; 39s ago
+     Docs: man:sshd(8)
+           man:sshd_config(5)
+```
+
+Llavors, ara executem l'ordre per que es deshabiliti i aixi que no es
+pugui iniciar
+
+```
+systemctl mask sshd
+Created symlink from /etc/systemd/system/sshd.service to /dev/null.
+```
+
+> Ojo, el servei com esta engegat? Si que el podem aturar, pero clar,
+despres llavors no podem engegar-ho per que te el link creat
+
+Una vegada creat, tornem a comprobar que el servei segueix actiu i
+l'aturem
+```
+systemctl status sshd
+● sshd.service
+   Loaded: masked (/dev/null; bad)
+   Active: active (running) since Thu 2017-05-04 10:12:07 CEST; 7min ago
+ Main PID: 4356 (sshd)
+   CGroup: /system.slice/sshd.service
+           └─4356 /usr/sbin/sshd
+
+systemctl stop sshd
+```
+
+Llavors, ara l'unic que falta es comprobar que el servei sshd no es pot
+iniciar.
+```
+systemctl start sshd
+Failed to start sshd.service: Unit sshd.service is masked.
+```
+
+I com tenia que ser, ens diu que no es pot iniciar per que aquest servei
+esta **enmasquerat**.
+
+* ``systemctl unmask servei.service``
+Clarament, serveix per per desemmascarar un servei.
+```
+systemctl unmask sshd
+Removed symlink /etc/systemd/system/sshd.service.
+```
+
+En el moment que desemmascarem el servei, tornem a intentar engegar el
+servei.
+```
+systemctl start sshd
+
+systemctl status sshd
+● sshd.service - OpenSSH server daemon
+   Loaded: loaded (/usr/lib/systemd/system/sshd.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2017-05-04 10:24:53 CEST; 13s ago
+     Docs: man:sshd(8)
+           man:sshd_config(5)
+```
+
+Tot torna a la normalitat i en funcionament.
+
 [systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#targets-en-systemd

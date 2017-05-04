@@ -10,7 +10,6 @@
 # MOVER journalctl -b, journalctl -r, journalctl -f, A REPORTS ELABORATS?
 
 # Que es journal?
-
 És un component de ``systemd`` que és responsable de la **visualització i 
 gestió d'arxius de registre.** Va ser desenvolupat per fer front als 
 problemes relacionats amb l'explotació tradicional. 
@@ -33,14 +32,12 @@ camps de metadades per a cada missatge de registre. Els arxius de journal
 reals estan assegurats, i per tant **no es poden editar manualment.**
 
 ## Visualització de registres
-
-Be, per accedir als logs de ``journal`` s'utilitza l'eina ``journalctl``.
+Bé, per accedir als logs de ``journal`` s'utilitza l'eina ``journalctl``.
 Que mostra journalctl? Doncs una llista de tots els fitxers de registre
 generats en el sistema, incloent missatges generats pel sistema o per els
 propis usuaris.
 
 ## Que ens proporcionen aquests fitxers?
-
 * Línies de prioritat més alta d'error i es destaquen en color **vermell** 
 i amb una font en **negreta**, s'utilitza per a línies amb notificació i
 prioritat d'alerta.
@@ -48,7 +45,6 @@ prioritat d'alerta.
 * El començament d'una arrencada de sistema esta marcat amb una línia diferent
 
 ## Parametres de journalctl
-
 A continuació es mostraran una serie de parametres que conte l'ordre
 ``journalctl``:
 
