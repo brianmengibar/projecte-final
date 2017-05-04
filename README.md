@@ -16,10 +16,10 @@ totes les ordres i opcions relacionadas amb aquest tema.
 
 ### Index
 
-* **Systemd**
+* [Systemd]
   * [Que es Systemd]
   * [Eines de Systemd]
-* **Journal**
+* [Journal]
   * [Que es journal]
   * [Parametres de journal]
   * [Filtrat de missatges]
@@ -65,9 +65,10 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [How-to-systemd-manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
 [Otros de la familia systemd?]: https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl
 
-
+[Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md
 [Que es Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
 [Eines de Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
+[Journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md
 [Que es journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#que-es-journal
 [Parametres de journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#parametres-de-journalctl
 [Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#reports-dinamics
