@@ -27,6 +27,9 @@ Si surt aquest missatge? Significa que a anat be
 
 ![Grafica-plot](./grafiques/grafica_plot.png)
 
+  * Significat colors
+  
+
 * ``systemd-analyze dot``
 També crea un archiu amb format ``.svg`` que mostra un grafic de l'us
 del sistema pero cal dir, que es una mica "lio". Lo primer que cal fer
