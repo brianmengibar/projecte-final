@@ -90,18 +90,8 @@ systemctl list-units -t target --all
 ```
 
 > Cal mencionar que no només podem veure amb -t els targets, si no que
-podem veure tots els units que son:
-* automount
-* busname
-* device
-* mount
-* path
-* scope
-* service
-* slice
-* socket
-* swap
-* timer
+podem veure tots els units (automount, busname, device, mount, path, scope,
+service, slice, socket, swap, timer)
 
 * ``systemctl isolate``
 Opció molt util, ja que amb ``isolate`` podem pasar d'un runlevel a un 
