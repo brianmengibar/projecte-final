@@ -47,7 +47,7 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * [More-graphical-visual-util?]
 * [Eines-systemd]
 * [How-to-Cockpit]
-* [Docuntation-Oficial-Cockpit]
+* [Documentation-Oficial-Cockpit]
 * [ArchWiki-Journal]
 * [Para rellenar journal o systemd?]
 * [Systemd-Manager]
