@@ -11,11 +11,18 @@
 
 Benvinguts al meu projecte sobre **"Serveis informatius de Systemd"**.
 
-El proposit d'aquest projecte es presentar de forma absolutament exhaustiva 
-totes les ordres i opcions relacionadas amb aquest tema.
+El proposit d'aquest projecte es:
+* Presentar de forma absolutament **exhaustiva** totes les ordres i opcions relacionadas amb:
+  * **Systemd**
+  * **Journalctl**
+* Trobar **Ordres visuals**
+* Trobar **Reports Elaborats**
+* Trobar si existeixen **reports dinamics**
+
+A continuació teniu un breu **index** que conté tots els apartats que
+he realitzat.
 
 ### Index
-
 * [Systemd]
   * [Que es Systemd]
   * [Eines de Systemd]
@@ -35,8 +42,10 @@ totes les ordres i opcions relacionadas amb aquest tema.
   * [Cockpit]
   * [Systemd-Manager]
 
-### Links on estic extreient tota l'informació:
+A continuació, podeu veure un llistat de **links** d'on estic extreient 
+tota l'informació per poder realitzar el projecte:
 
+### Links
 * [Archlinux Systemd][archlinux]
 * [Blog Systemd][blogsystemd]
 * [Blog Journalctl][blogjournal]
