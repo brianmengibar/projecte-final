@@ -204,9 +204,16 @@ ho tenim cal instal·lar ``systemd-manager``
 [root@i10 ~]# dnf -y install systemd-manager
 ```
 
-Ho he buscat, pero aquesta ordre no es pot cridar des de terminal, te que
-ser en mode grafic y posar: ``systemd-manager``. Al clicar ens dirà que
-tenim que ser root, llavors fiquem el password i ja estem dins de l'aplicació.
+Una vegada instal·lada, des de terminal posem ``systemd-manager`` i ja 
+estem dins de l'aplicació.
+
+> Cal dir que si no som root, també s'executa, pero en el moment que
+volem per exemple aturar el servei **bluetooh**, clarament no ens deixa
+i en la terminal ens surt aquest missatge: 
+``systemd-manager: bluetooth.service failed to stop: 
+"Interactive authentication required."`` que basicament ens diu que
+necessitem autenticació per poder aturar el servei.
+
 
 ### Funcionament systemd-manager
 En el moment que executem aquesta aplicació, podem escollir amb dos opcions:
