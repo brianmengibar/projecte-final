@@ -72,7 +72,7 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#systemd
 [Que es Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
 [Eines de Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
-[Journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md
+[Journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#journal
 [Que es journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#que-es-journal
 [Parametres de journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#parametres-de-journalctl
 [Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#reports-dinamics
