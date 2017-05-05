@@ -386,9 +386,9 @@ Archived and active journals take up 480.1M on disk.
 ```
 
 I de nou hem comprovat que ha baixat bastant comparat amb abans.
-
+------------------------------------------------------------------------
 # DEJARLO AQUI? SI? NO?
-```
+
 ## El filtrat de missatges
 
 Com hem parlat abans, el executar ``journalctl`` sense parametres,
@@ -580,4 +580,20 @@ May 04 08:08:08 localhost.localdomain kernel: x86/fpu: xstate_offset[2]:  576, x
 ```
   > Si ens fixem, quan he fet ``journalctl --list-boots`` el ID del -1
     es el mateix que he fet ara per realitzar l'exemple.
+------------------------------------------------------------------------
+
+* ``journalctl /dev/sda``
+No sàvia que podem mirar els logs de /dev/sda i la veritat és que ho 
+veig molt útil per si tenim algun problema en algun dels nostres discos.
+```
+journalctl /dev/sda
+-- Logs begin at Thu 2016-09-15 09:44:47 CEST, end at Fri 2017-05-05 12:46:53 CEST. --
+May 05 09:02:09 localhost.localdomain kernel: pci 0000:00:17.0: [8086:a102] type 00 class 0x010601
+May 05 09:02:09 localhost.localdomain kernel: pci 0000:00:17.0: reg 0x10: [mem 0xdf228000-0xdf229fff]
+May 05 09:02:09 localhost.localdomain kernel: pci 0000:00:17.0: reg 0x14: [mem 0xdf22c000-0xdf22c0ff]
+May 05 09:02:09 localhost.localdomain kernel: pci 0000:00:17.0: reg 0x24: [mem 0xdf22b000-0xdf22b7ff]
+May 05 09:02:09 localhost.localdomain kernel: ahci 0000:00:17.0: AHCI 0001.0301 32 slots 6 ports 6 Gbps 0x3f impl SATA mode
+May 05 09:02:09 localhost.localdomain kernel: ahci 0000:00:17.0: flags: 64bit ncq sntf pm led clo only pio slum part ems deso sadm sds apst 
+May 05 09:02:09 localhost.localdomain kernel: scsi host3: ahci
+May 05 09:02:09 localhost.localdomain kernel: scsi 3:0:0:0: Direct-Access     ATA      KINGSTON SHFS37A BBF0 PQ: 0 ANSI: 5
 ```
