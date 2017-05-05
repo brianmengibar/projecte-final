@@ -7,7 +7,9 @@
 ### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
 
-# Que es journal?
+# Journal
+
+## Que es journal?
 És un component de ``systemd`` que és responsable de la **visualització i 
 gestió d'arxius de registre.** Va ser desenvolupat per fer front als 
 problemes relacionats amb l'explotació tradicional. 

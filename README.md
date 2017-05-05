@@ -69,7 +69,7 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [How-to-systemd-manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
 [Otros de la familia systemd?]: https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl
 
-[Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md
+[Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#systemd
 [Que es Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
 [Eines de Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
 [Journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md
