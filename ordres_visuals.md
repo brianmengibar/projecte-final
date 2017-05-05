@@ -29,11 +29,11 @@ Si surt aquest missatge? Significa que a anat be
 ### Significat colors
 Com podem comprobar en aquesta grafica, a sota podem veure diferents colors tenim diferents colors que
 i al costat un nom, que cadascun vol dir:
-* Activating: Mostra el temps exacte que tarda a activar-se els units mentres esta en procés l'arrencada.
-* Active: Ens diu en que moment exacte s'activen els units.
-* Deactivating: El temps que tarda en ser desactivar-se un unit per el motiu que sigui (ja sigui per un error, un problema, etc).
-* Setting up security module: El temps que tarda Systemd en configurar el modul de seguretat.
-* Loading Unit Files: El temps que tarda Systemd en carregar els archius dels units.
+* ``Activating`` Mostra el temps exacte que tarda a activar-se els units mentres esta en procés l'arrencada.
+* ``Active`` Ens diu en que moment exacte s'activen els units.
+* ``Deactivating`` El temps que tarda en ser desactivar-se un unit per el motiu que sigui (ja sigui per un error, un problema, etc).
+* ``Setting up security module`` El temps que tarda Systemd en configurar el modul de seguretat.
+* ``Loading Unit Files`` El temps que tarda Systemd en carregar els archius dels units.
 
 ## Systemd-analyze dot
 També crea un archiu amb format ``.svg`` que mostra un grafic de l'us
