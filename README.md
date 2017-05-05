@@ -63,7 +63,7 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [More-graphical-visual-util?]: http://www.estrellateyarde.org/logs-en-linux
 [Eines-systemd]: https://diversidadyunpocodetodo.blogspot.com.es/2016/07/systemd-analyze-kcm-systemadm-systemctl.html
 [How-to-Cockpit]: https://www.liquidweb.com/kb/how-to-use-cockpit-in-fedora-23/
-[Docuntation-Oficial-Cockpit]: http://cockpit-project.org/guide/latest/
+[Documentation-Oficial-Cockpit]: http://cockpit-project.org/guide/latest/
 [ArchWiki-Journal]: https://wiki.archlinux.org/index.php/Systemd#Journal
 [Para rellenar journal o systemd?]: http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/
 [How-to-systemd-manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
