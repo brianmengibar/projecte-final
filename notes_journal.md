@@ -555,7 +555,7 @@ May 05 09:02:09 localhost.localdomain kernel: x86/fpu: xstate_offset[2]:  576, x
 
 Si per algun cas necessitesim veure algun dels anteriors podem optar
 per dues opcions:
-   * Utilitzant un compte regressiva
+  1. Utilitzant un compte regressiva
 ```
 journalctl -b -2
 -- Logs begin at Thu 2016-09-15 09:44:47 CEST, end at Fri 2017-05-05 12:14:17 CEST. --
@@ -567,7 +567,7 @@ May 03 09:11:00 localhost.localdomain kernel: x86/fpu: xstate_offset[2]:  576, x
   
   > En aquest cas estem dient que ens mostri el de fa 2 dies
 
-   * Utilitzar el ID del boot que ens va apareixer al llistar els processos
+  2. Utilitzar el ID del boot que ens va apareixer al llistar els processos
   d'arrencada amb ``--list-boots``.
 ```
 journalctl _BOOT_ID=8675532f691d4a85bb5ee21713193289
