@@ -7,9 +7,6 @@
 ### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
 
-# MOVER: journalctl -b, journalctl -r, journalctl -f, A REPORTS ELABORATS?
-# MOVER: journalctl --since? --until? Priority?
-
 # Que es journal?
 És un component de ``systemd`` que és responsable de la **visualització i 
 gestió d'arxius de registre.** Va ser desenvolupat per fer front als 
@@ -388,6 +385,8 @@ Archived and active journals take up 480.1M on disk.
 
 I de nou hem comprovat que ha baixat bastant comparat amb abans.
 
+# DEJARLO AQUI? SI? NO?
+```
 ## El filtrat de missatges
 
 Com hem parlat abans, el executar ``journalctl`` sense parametres,
@@ -400,6 +399,7 @@ filtrar per i despres desplegarem cadascuna per sapiguer com fer-ho:
 * Per temps
 * Per prioritat i temps
 * Per filtrat avançat
+* Per boot
 
 ### Per prioritat
 * ``journalctl -p prioritat``
@@ -471,7 +471,7 @@ may 01 13:01:01 localhost.localdomain anacron[2766]: Anacron started on 2017-05-
 may 01 13:01:01 localhost.localdomain run-parts[2768]: (/etc/cron.hourly) finished 0anacron
 ```
 
-## Filtrat per prioritat i temps
+### Filtrat per prioritat i temps
 Les opcions de filtrat es poden combinar, per exemple podem veure
 els missatges que ens donen d'error des de fa **1 mes** que seria aixi:
 ```
@@ -485,7 +485,7 @@ abr 03 14:01:40 localhost.localdomain libvirtd[648]: Falló al iniciar automáti
 abr 03 14:01:44 localhost.localdomain setroubleshoot[816]: SELinux is preventing postfix from read access on the lnk_file log. For complete SELinux messages. run sealert -l bb31f7f3-8252-4368-87af-408e0a5946d4
 ```
 
-## Filtrat Avançat
+### Filtrat Avançat
 ``journalctl fieldname=value``
 Idem al parametre ``export`` que hem vist abans en l'opció ``-o``.
 Cal substituir _fieldname_ amb un nom d'un camp (**Per exemple 
@@ -514,7 +514,7 @@ oct 23 12:33:47 localhost.localdomain passwd[3512]: pam_pwquality(passwd:chautht
 oct 23 12:33:47 localhost.localdomain passwd[3512]: pam_pwquality(passwd:chauthtok): pam_parse: unknown or broken option; nullok
 ```
 
-## Filtrar per boots
+### Filtrar per boots
 En les altres comandes, si si ens fixem, el numero dels missatges la veritat
 es que es molt gran, aixi que explorant m'he donat compte que podem
 filtrar per els diferents processos d'arrancada que hagi tingut el nostre
@@ -538,7 +538,6 @@ journalctl --list-boots
 ```
 
 > Com es pot veure, he tallat el resultat pero si no, quedaria molt extens
-
 
 * ``journalctl -b``
 Amb aquest parametre podem veure les entrades del registre nomes des de
@@ -564,7 +563,7 @@ May 03 09:11:00 localhost.localdomain kernel: Linux version 4.5.5-300.fc24.x86_6
 May 03 09:11:00 localhost.localdomain kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-4.5.5-300.fc24.x86_64 root=UUID=dc3c8a0c-7f04-45aa-be36-55f6ea1cb15d ro
 May 03 09:11:00 localhost.localdomain kernel: x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
 ```
-  
+
   > En aquest cas estem dient que ens mostri el de fa 2 dies
 
   2. Utilitzar el ID del boot que ens va apareixer al llistar els processos
@@ -579,3 +578,4 @@ May 04 08:08:08 localhost.localdomain kernel: x86/fpu: xstate_offset[2]:  576, x
 ```
   > Si ens fixem, quan he fet ``journalctl --list-boots`` el ID del -1
     es el mateix que he fet ara per realitzar l'exemple.
+```
