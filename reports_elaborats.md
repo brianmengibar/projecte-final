@@ -7,6 +7,8 @@
 ### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
 
+# TODO EL TEMA DE PODER FILTRAR DE AQUI A AQUI (TEMA --SINCE, --UNTIL, ETC), MOVERLO DE JOURNAL A ESTE
+
 # Reports elaborats
 Respecte a reports elaborats, podem trobar moltes de journalctl, ja
 que ens retorna l'informació sobre la carrega del sistema o sobre avui
