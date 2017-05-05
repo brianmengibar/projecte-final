@@ -222,7 +222,7 @@ En el moment que executem aquesta aplicació, podem escollir amb dos opcions:
 
 #### Systemd Units
 En aquest apartat podem trobar:
-* Services: 
+* Services
 * Sockets
 * Timers
 
