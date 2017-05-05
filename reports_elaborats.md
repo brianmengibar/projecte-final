@@ -7,7 +7,7 @@
 ### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
 
-# TODO EL TEMA DE PODER FILTRAR DE AQUI A AQUI (TEMA --SINCE, --UNTIL, ETC), MOVERLO DE JOURNAL A ESTE
+# TODO EL TEMA DE PODER FILTRAR DE AQUI A AQUI (TEMA --SINCE, --UNTIL, ETC), MOVERLO DE JOURNAL A ESTE!
 
 # Reports elaborats
 Respecte a reports elaborats, podem trobar moltes de journalctl, ja
