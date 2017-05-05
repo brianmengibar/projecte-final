@@ -135,7 +135,7 @@ oct 23 12:33:47 localhost.localdomain passwd[3512]: pam_pwquality(passwd:chautht
 oct 23 12:33:47 localhost.localdomain passwd[3512]: pam_pwquality(passwd:chauthtok): pam_parse: unknown or broken option; nullok
 ```
 
-## Filtrar per boots
+## Filtrat per boots
 En les altres comandes, si si ens fixem, el numero dels missatges la veritat
 es que es molt gran, aixi que explorant m'he donat compte que podem
 filtrar per els diferents processos d'arrancada que hagi tingut el nostre
