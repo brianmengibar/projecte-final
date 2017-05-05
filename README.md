@@ -22,11 +22,15 @@ totes les ordres i opcions relacionadas amb aquest tema.
 * [Journal]
   * [Que es journal]
   * [Parametres de journal]
-  * [Filtrat de missatges]
 * [Ordres visuals]
   * [Plot]
   * [Dot]
 * [Reports elaborats]
+  * [Prioritat]
+  * [Temps]
+  * [Prioritat i temps]
+  * [Avançat]
+  * [Boots]
 * [Reports dinamics]
   * [Cockpit]
   * [Systemd-Manager]
@@ -76,6 +80,10 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Reports elaborats]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#reports-elaborats
 [Cockpit]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-cockpit
 [Systemd-Manager]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-systemd-manager
-[Filtrat de missatges]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#el-filtrat-de-missatges
 [Plot]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#systemd-analyze-plot
 [Dot]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#systemd-analyze-dot
+[Prioritat]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#per-prioritat
+[Temps]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#per-temps
+[Prioritat i temps]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-per-prioritat-i-temps
+[Avançats]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-avan%C3%A7at
+[Boots]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-per-boots
