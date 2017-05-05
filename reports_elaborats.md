@@ -19,6 +19,8 @@ automaticament les veurem a sota ja que es queda en **_background_** i
 consumeix tota l'entrada standard
 ```
 journalctl -f
+-- Logs begin at Thu 2016-09-15 09:44:47 CEST. --
+May 05 09:30:52 i10 python3[3020]: SELinux is preventing 57656220436F6E74656E74 from open access on the file /home/users/inf/hisx2/isx39441584/.config/user-dirs.dirs.
 May 05 09:35:38 i10 systemd[1]: Stopped The Apache HTTP Server.
 May 05 09:35:38 i10 audit[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=httpd comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
 May 05 09:35:38 i10 systemd[1]: Starting The Apache HTTP Server...
@@ -28,6 +30,8 @@ May 05 09:36:22 i10 systemd[1]: Stopped The Apache HTTP Server.
 May 05 09:36:22 i10 audit[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=httpd comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
 May 05 09:36:22 i10 polkitd[855]: Unregistered Authentication Agent for unix-process:3253:205261 (system bus name :1.88, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
 ```
+
+> Només fico un fragment, ja que si no seria molt llarga la sortida.
 
 * ``journalctl -u servei.service``
 Amb aquest parametre, podem veure els logs generats d'un servei
