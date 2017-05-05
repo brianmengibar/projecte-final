@@ -17,18 +17,16 @@ Emula el clàssic ``"tail -f"``. Aquesta ordre ens permet veure les entrades
 en temps reals, vol dir que en el moment que es processin noves entrades,
 automaticament les veurem a sota ja que es queda en **_background_** i
 consumeix tota l'entrada standard
-
 ```
 journalctl -f
--- Logs begin at jue 2016-09-15 19:55:07 CEST. --
-abr 25 20:08:54 localhost.localdomain gnome-terminal-server[1857]: (gnome-terminal-server:1857): Gtk-WARNING **: Allocating size to GtkScrollbar 0x55f017ac75d0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
-abr 25 20:08:54 localhost.localdomain gnome-terminal-server[1857]: (gnome-terminal-server:1857): Gtk-WARNING **: Allocating size to GtkScrollbar 0x55f017ac75d0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
-abr 25 20:08:54 localhost.localdomain gnome-terminal-server[1857]: (gnome-terminal-server:1857): Gtk-WARNING **: Allocating size to GtkScrollbar 0x55f017ac75d0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
-ARA SORTIRA NOU AL FER UN START DEL SERVEI HTTPD
-abr 25 20:14:59 localhost.localdomain gnome-terminal-server[1857]: (gnome-terminal-server:1857): Gtk-WARNING **: Allocating size to GtkScrollbar 0x55f017ac77c0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
-abr 25 20:15:00 localhost.localdomain dbus-daemon[596]: [system] Activating via systemd: service name='net.reactivated.Fprint' unit='fprintd.service'
-abr 25 20:15:00 localhost.localdomain audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=fprintd comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
-abr 25 20:15:00 localhost.localdomain systemd[1]: Starting Fingerprint Authentication Daemon...
+May 05 09:35:38 i10 systemd[1]: Stopped The Apache HTTP Server.
+May 05 09:35:38 i10 audit[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=httpd comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+May 05 09:35:38 i10 systemd[1]: Starting The Apache HTTP Server...
+May 05 09:35:38 i10 httpd[3208]: AH00548: NameVirtualHost has no effect and will be removed in the next release /etc/httpd/conf.d/moodle.conf:1
+May 05 09:35:39 i10 systemd[1]: Started The Apache HTTP Server.
+May 05 09:36:22 i10 systemd[1]: Stopped The Apache HTTP Server.
+May 05 09:36:22 i10 audit[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=httpd comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+May 05 09:36:22 i10 polkitd[855]: Unregistered Authentication Agent for unix-process:3253:205261 (system bus name :1.88, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
 ```
 
 * ``journalctl -u servei.service``
