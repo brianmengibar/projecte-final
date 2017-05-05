@@ -85,5 +85,5 @@ totes les ordres i opcions relacionadas amb aquest tema.
 [Prioritat]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#per-prioritat
 [Temps]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#per-temps
 [Prioritat i temps]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-per-prioritat-i-temps
-[Avançats]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-avan%C3%A7at
+[Avançat]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-avan%C3%A7at
 [Boots]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-per-boots
