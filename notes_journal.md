@@ -207,7 +207,6 @@ data: { "__CURSOR" : "s=78aab514ed50497e9d0c225a94bdc38a;i=3;b=80d79a0d0fe9408da
 data: { "__CURSOR" : "s=78aab514ed50497e9d0c225a94bdc38a;i=4;b=80d79a0d0fe9408dacc70b62cce3a019;m=27fdbb;t=53c8f8bcf47f8;x=1edbd9a4e3e5e4af", "__REALT...}
 ```
 
-  
   * ``cat``
   Genera una sortida molt concisa, només es mostra el missatge real de 
   cada entrada del journal sense metadades, ni tan sols una marca de temps.
@@ -436,21 +435,6 @@ sep 15 19:55:07 localhost.localdomain kernel: ACPI: DSDT 0x00000000B9FE3000 00DC
 ```
 
 ### Per temps
-* ``Journalctl -b``
-Amb aquesta ordre podem veure les entrades del registre nomes des de
-l'inici actual, si reiniciem el sistema només de tant en tant, el parametre ``-b`` 
-no reduirà significativament la sortida de ``journalctl.``
-
-```
-journalctl -b 
--- Logs begin at jue 2016-09-15 19:55:07 CEST, end at lun 2017-05-01 14:08:27 CEST. --
-may 01 14:42:48 localhost.localdomain systemd-journald[151]: Runtime journal (/run/log/journal/) is 8.0M, max 192.7M, 184.7M free.
-may 01 14:42:48 localhost.localdomain kernel: microcode: microcode updated early to revision 0xa0b, date = 2010-09-28
-may 01 14:42:48 localhost.localdomain kernel: Linux version 4.7.3-200.fc24.x86_64 (mockbuild@bkernel01.phx2.fedoraproject.org) (gcc version 6.1.1 20160621 (Red Hat 6.1.1-3) (GCC) ) #1 SMP Wed Sep 7 17:31:21 UTC 2016
-may 01 14:42:48 localhost.localdomain kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-4.7.3-200.fc24.x86_64 root=UUID=a1692407-20c5-4cf0-b6a1-4eb3a3fbe249 ro
-may 01 14:42:48 localhost.localdomain kernel: x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
-```
-
 En aquests casos, el filtrat basat en el temps és més útil amb aquests
 **parametres**:
 
@@ -529,3 +513,69 @@ oct 23 11:49:02 localhost.localdomain passwd[2508]: pam_unix(passwd:chauthtok): 
 oct 23 12:33:47 localhost.localdomain passwd[3512]: pam_pwquality(passwd:chauthtok): pam_parse: unknown or broken option; nullok
 oct 23 12:33:47 localhost.localdomain passwd[3512]: pam_pwquality(passwd:chauthtok): pam_parse: unknown or broken option; nullok
 ```
+
+## Filtrar per boots
+En les altres comandes, si si ens fixem, el numero dels missatges la veritat
+es que es molt gran, aixi que explorant m'he donat compte que podem
+filtrar per els diferents processos d'arrancada que hagi tingut el nostre
+ordinador.
+
+* ``journalctl --list-boots``
+Amb aquest parametre, podem veure:
+  * Un llistat de tots els nombres d'arrencada, es a dir els logs de cada vegada que s'ha arrencat el sistema.
+  * Els seus documents d'identitat
+  * El timestamp d'inici de l'arrencada i un altre timestamp quan finalitza l'arrencada.
+```
+journalctl --list-boots
+-42 fe907fa8428d4a8ba5c03d7ebf247425 Thu 2016-09-15 09:44:47 CEST—Thu 2016-09-15 10:02:23 CEST
+-41 af599e84c38342f985cabac14f48cb2b Thu 2016-09-15 10:02:55 CEST—Thu 2016-09-15 10:24:21 CEST
+-40 1a8e1ee9945b42368a3878a50cfb2abf Fri 2016-10-21 12:06:03 CEST—Fri 2016-10-21 13:00:21 CEST
+-39 83ae824440d74b5490346f645e5abd89 Wed 2016-10-26 12:13:31 CEST—Wed 2016-10-26 13:00:36 CEST
+-38 a9be61942e204275b22e78b40f6f2dd2 Thu 2016-10-27 08:39:01 CEST—Thu 2016-10-27 09:41:00 CEST
+ -2 0ec93da26186419493da77a9515f4c55 Wed 2017-05-03 09:11:00 CEST—Wed 2017-05-03 13:06:20 CEST
+ -1 8675532f691d4a85bb5ee21713193289 Thu 2017-05-04 08:08:08 CEST—Thu 2017-05-04 13:57:55 CEST
+  0 83e2602aee6947d4ba47d1cf123e57c6 Fri 2017-05-05 09:02:09 CEST—Fri 2017-05-05 11:57:44 CEST
+```
+
+> Com es pot veure, he tallat el resultat pero si no, quedaria molt extens
+
+
+* ``journalctl -b``
+Amb aquest parametre podem veure les entrades del registre nomes des de
+**l'inici actual**, es a dir, si fessim un ``--list-boots`` seria el 
+numero 0.
+```
+journalctl -b
+-- Logs begin at Thu 2016-09-15 09:44:47 CEST, end at Fri 2017-05-05 12:09:11 CEST. --
+May 05 09:02:09 localhost.localdomain systemd-journald[208]: Runtime journal (/run/log/journal/) is 8.0M, max 796.2M, 788.2M free.
+May 05 09:02:09 localhost.localdomain kernel: Linux version 4.5.5-300.fc24.x86_64 (mockbuild@bkernel01.phx2.fedoraproject.org) (gcc version 6.1.1 20160510 (Re
+May 05 09:02:09 localhost.localdomain kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-4.5.5-300.fc24.x86_64 root=UUID=dc3c8a0c-7f04-45aa-be36-55f6ea1cb15d ro
+May 05 09:02:09 localhost.localdomain kernel: x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+```
+
+Si per algun cas necessitesim veure algun dels anteriors podem optar
+per dues opcions:
+  * Utilitzant un compte regressiva
+```
+journalctl -b -2
+-- Logs begin at Thu 2016-09-15 09:44:47 CEST, end at Fri 2017-05-05 12:14:17 CEST. --
+May 03 09:11:00 localhost.localdomain systemd-journald[212]: Runtime journal (/run/log/journal/) is 8.0M, max 796.2M, 788.2M free.
+May 03 09:11:00 localhost.localdomain kernel: Linux version 4.5.5-300.fc24.x86_64 (mockbuild@bkernel01.phx2.fedoraproject.org) (gcc version 6.1.1 20160510 (Re
+May 03 09:11:00 localhost.localdomain kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-4.5.5-300.fc24.x86_64 root=UUID=dc3c8a0c-7f04-45aa-be36-55f6ea1cb15d ro
+May 03 09:11:00 localhost.localdomain kernel: x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+```
+  
+  > En aquest cas estem dient que ens mostri el de fa 2 dies
+
+  * Utilitzar el ID del boot que ens va apareixer al llistar els processos
+  d'arrencada amb ``--list-boots``.
+```
+journalctl _BOOT_ID=8675532f691d4a85bb5ee21713193289
+-- Logs begin at Thu 2016-09-15 09:44:47 CEST, end at Fri 2017-05-05 12:14:17 CEST. --
+May 04 08:08:08 localhost.localdomain systemd-journald[214]: Runtime journal (/run/log/journal/) is 8.0M, max 796.2M, 788.2M free.
+May 04 08:08:08 localhost.localdomain kernel: Linux version 4.5.5-300.fc24.x86_64 (mockbuild@bkernel01.phx2.fedoraproject.org) (gcc version 6.1.1 20160510 (Re
+May 04 08:08:08 localhost.localdomain kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-4.5.5-300.fc24.x86_64 root=UUID=dc3c8a0c-7f04-45aa-be36-55f6ea1cb15d ro
+May 04 08:08:08 localhost.localdomain kernel: x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+```
+  > Si ens fixem, quan he fet ``journalctl --list-boots`` el ID del -1
+    es el mateix que he fet ara per realitzar l'exemple.
