@@ -8,6 +8,7 @@
 ----------------------------------------------
 
 # MOVER: journalctl -b, journalctl -r, journalctl -f, A REPORTS ELABORATS?
+# MOVER: journalctl --since? --until? Priority?
 
 # Que es journal?
 És un component de ``systemd`` que és responsable de la **visualització i 
@@ -76,7 +77,6 @@ sep 15 19:55:07 localhost.localdomain kernel: x86/fpu: Enabled xstate features 0
 En molts casos, només les últimes entrades al registre journal són 
 rellevants. Gracies al parametre ``-n`` podem especificar les ultimes **n**
 linies que volem veure.
-
 ```
 journalctl -n 5
 -- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:01:01 CEST. --
@@ -93,7 +93,6 @@ al parametre ``-o``, cal substituir ``option`` amb una paraula clau que
 especifiqui una forma desitjada de sortida. Hi ha diverses opcions com:
   * ``verbose`` 
   Que retorna els elements amb tots els camps.
-  
 ```
   journalctl -o verbose
   -- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:01:01 CEST. --
@@ -116,7 +115,6 @@ especifiqui una forma desitjada de sortida. Hi ha diverses opcions com:
   Que crea un flux binari adequat per a còpies de seguretat i transferència
   de la xarxa. Com per exemple nomes exportar on el hostname sigui
   localhost
-  
 ```
   journalctl -o export _HOSTNAME=localhost.localdomain 
   __CURSOR=s=78aab514ed50497e9d0c225a94bdc38a;i=1;b=80d79a0d0fe9408dacc70b62cce3a019;m=27fcb7;t=53c8f8bcf46f2;x=11b855cd1e8380fe
@@ -135,7 +133,6 @@ especifiqui una forma desitjada de sortida. Hi ha diverses opcions com:
   Que dóna format a les entrades com les estructures de dades JSON. (En l'exemple
   no esta posat tot el codi sencer, per que es massa gran i amb un exemple d'un
   troç de fragment crec que ja es suficient).
-  
 ```
   journalctl -o json
 { "__CURSOR" : "s=78aab514ed50497e9d0c225a94bdc38a;i=1;b=80d79a0d0fe9408dacc70b62cce3a019;m=27fcb7;t=53c8f8bcf46f2;x=11b855cd1e8380fe", "__REALTIME_TIMESTAMP" : "1473962107160306"}
@@ -150,7 +147,6 @@ especifiqui una forma desitjada de sortida. Hi ha diverses opcions com:
   * ``json-pretty``
   Entrades de dades JSON, però en formats de múltiples 
   línies per tal que siguin més llegibles pels humans.
-  
 ```
   journalctl -o json-pretty 
 {
@@ -215,7 +211,6 @@ data: { "__CURSOR" : "s=78aab514ed50497e9d0c225a94bdc38a;i=4;b=80d79a0d0fe9408da
   * ``cat``
   Genera una sortida molt concisa, només es mostra el missatge real de 
   cada entrada del journal sense metadades, ni tan sols una marca de temps.
-  
 ```
   journalctl -o cat
 Runtime journal (/run/log/journal/) is 8.0M, max 192.7M, 184.7M free.
@@ -229,7 +224,6 @@ x86/fpu: Enabled xstate features 0x3, context size is 576 bytes, using 'standard
 
   * ``short``
   Mostra identicament lo mateix que cridar ``journalctl`` sense parametres
-
 ```
 journalctl -o short
 -- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:11:44 CEST. --
@@ -245,7 +239,6 @@ sep 15 19:55:07 localhost.localdomain kernel: x86/fpu: Enabled xstate features 0
   * ``short-iso``
   Es molt similar pero mostrant les marques de temps en el format
   **ISO 8601**
-
 ```
   journalctl -o short-iso 
 -- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:11:44 CEST. --
@@ -262,7 +255,6 @@ sep 15 19:55:07 localhost.localdomain kernel: x86/fpu: Enabled xstate features 0
   * ``short-precise``
   Es molt similar, però mostra les marques de temps amb una precisió de 
   microsegons completa.
-  
 ```
   journalctl -o short-precise 
 -- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:11:44 CEST. --
@@ -279,7 +271,6 @@ sep 15 19:55:07.160638 localhost.localdomain kernel: x86/fpu: Using 'eager' FPU 
 * ``journalctl -r``
 Ens permet mostrar la sortida en ordre invers, els primers a sota, 
 i els últims a sobre.
-
 ```
  journalctl -r
 -- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:11:44 CEST. --
@@ -296,7 +287,6 @@ Emula el clàssic ``"tail -f"``. Aquesta ordre ens permet veure les entrades
 en temps reals, vol dir que en el moment que es processin noves entrades,
 automaticament les veurem a sota ja que es queda en **_background_** i
 consumeix tota l'entrada standard
-
 ```
 journalctl -f
 -- Logs begin at jue 2016-09-15 19:55:07 CEST. --
@@ -313,7 +303,6 @@ abr 25 20:15:00 localhost.localdomain systemd[1]: Starting Fingerprint Authentic
 * ``journalctl -u servei.service``
 Amb aquest parametre, podem veure els logs generats d'un servei
 especific com per exemple el del servei ``httpd``
-
 ```
 journalctl -u httpd.service
 -- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:16:21 CEST. --
@@ -328,7 +317,6 @@ oct 13 20:43:41 localhost.localdomain systemd[1]: Stopped The Apache HTTP Server
 * ``journalctl -k``
 Una altra forma de veure informació és veure els missatges que ens proporciona
 el **kernel** i gracies al parametre ``-k`` es possible observar-los.
-
 ```
  journalctl -k
 -- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:16:21 CEST. --
@@ -373,12 +361,21 @@ Comprovem que ha baixat bastant comparat amb abans.
 
 * ``journalctl --vacum-time=``
 Té la mateixa finalitat que ``--vacum-size`` pero en aquest cas, podem
-eliminar espai i retenir per exemple els registres de l'ultim mes.
+eliminar espai i retenir per exemple els registres de __l'ultim mes__.
 ```
 journalctl --vacuum-time="1 months"
 Deleted archived journal /var/log/journal/0dd3a45452b340e3bece923b3eab00ec/system@fb325ac2f8a94f57a074211c7cd4590e-0000000000243090-00054b4dba74528a.journal (128.0M).
 Deleted archived journal /var/log/journal/0dd3a45452b340e3bece923b3eab00ec/system@fb325ac2f8a94f57a074211c7cd4590e-000000000027122f-00054b4dceb938da.journal (128.0M).
 ```
+
+A part de per **mes** podem especificar per:
+* ``s`` segons
+* ``min`` minuts
+* ``h`` hora
+* ``days`` dies
+* ``months`` mesos
+* ``weeks`` setmanes
+* ``suffixes`` suffixos dels anys
 
 > No poso tota la sortida ja que es massa extensa.
 
