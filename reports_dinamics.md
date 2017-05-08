@@ -7,6 +7,8 @@
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
+# INSERTAR FOTOS DE PASO A PASO
+
 # Reports Dinamics
 En aquest apartat comentaré les eines que he trobat per veure reports
 dinamics, la veritat es que no sabia l'existencia d'aquestes ordres,
