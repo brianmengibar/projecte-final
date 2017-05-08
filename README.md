@@ -62,6 +62,7 @@ tota l'informació per poder realitzar el projecte:
 * [Systemd-Manager]
 * [Otros de la familia systemd?]
 * [Crear un service?]
+* [Puede servir?]
 
 [archlinux]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
 [blogsystemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
@@ -79,6 +80,7 @@ tota l'informació per poder realitzar el projecte:
 [How-to-systemd-manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
 [Otros de la familia systemd?]: https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl
 [Crear un service?]: https://www.tecmint.com/create-new-service-units-in-systemd/
+[Puede servir?]: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
 
 [Systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#systemd
 [Que es Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
