@@ -493,8 +493,8 @@ Tot torna a la normalitat i en funcionament.
 
 * ``systemctl list-dependencies``
 Aquest parametre ens pot servir per sapiguer la dependencia d'un
-unit especific o per defecte, si no especifiquem res, ens tots els units
-que depenen del target actual que te el sistema
+unit especific o per defecte, si no especifiquem res, ens mostra tots 
+els units que depenen del target actual que te el sistema
 ```
 systemctl list-dependencies 
 default.target
@@ -547,7 +547,7 @@ els units que depenen de despres d'un unit especific, etc.
 
   * ``systemctl list-dependencies unit --before`` Amb aquesta opció
   estem dient que ens mostri tots els units que fan falta abans de que
-  s'activi aquest unit.
+  s'activi aquest unit. Per exemple mirarem el servei **httpd**.
 ```
   systemctl list-dependencies --before httpd
 httpd.service
@@ -558,10 +558,37 @@ httpd.service
 ● └─shutdown.target
 ```
 
-
+  * ``systemctl list-dependencies --after unit`` Per lo que he deduït,
+  en teoria ``--after`` mostra tots els units que els cal aquest unit 
+  específic.
+```
+systemctl list-dependencies --after httpd
+httpd.service
+● ├─-.mount
+● ├─system.slice
+● ├─systemd-journald.socket
+● ├─tmp.mount
+● ├─basic.target
+● │ ├─-.mount
+● │ ├─dnf-makecache.timer
+● │ ├─fedora-import-state.service
+● │ ├─systemd-ask-password-plymouth.path
+● │ ├─tmp.mount
+```
+  > No poso tot el resultat perque si no es massa extens.
   
+  * ``systemctl list-dependencies --reverse unit`` Amb ``--reverse``
+  podem veure els units que no depenen d'un unit especific (o aixo crec).
+```
+httpd.service
+● └─multi-user.target
+●   └─graphical.target
+```
 
+  * ``systemctl list-dependencies --all unit`` Per lo que veig, desplega
+  tots els units amb tots els seus **"subcamps"**.
 
-  
+> REVISAR ESTE APARTADO Y ENTENDERLO BIEN
+
 
 [systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#targets-en-systemd
