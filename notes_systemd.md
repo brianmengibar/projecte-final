@@ -491,4 +491,77 @@ systemctl status sshd
 
 Tot torna a la normalitat i en funcionament.
 
+* ``systemctl list-dependencies``
+Aquest parametre ens pot servir per sapiguer la dependencia d'un
+unit especific o per defecte, si no especifiquem res, ens tots els units
+que depenen del target actual que te el sistema
+```
+systemctl list-dependencies 
+default.target
+● ├─accounts-daemon.service
+● ├─gdm.service
+● ├─rtkit-daemon.service
+● ├─systemd-update-utmp-runlevel.service
+● ├─udisks2.service
+● └─multi-user.target
+●   ├─abrt-ccpp.service
+●   ├─abrt-oops.service
+●   ├─abrt-vmcore.service
+●   ├─abrt-xorg.service
+```
+
+> Com podem comprobar ens surt **default.target** que sabem que es **graphical.target**
+ja que ho podem confirmar fent l'ordre ``systemctl get-default`` (ja comentada
+a dalt). Clarament no fico tot el resultat per que no sigui massa extens.
+
+Ara hem vist tots els units que depenen de **default.target**, podem
+també especificar un unit com per exemple, que ens mostri tots els
+units que depenen de **reboot.target**.
+```
+systemctl list-dependencies reboot.target 
+reboot.target
+● ├─plymouth-reboot.service
+● └─systemd-reboot.service
+```
+
+O per exemple que ens mostri tots els units que depenen del servei
+**sshd**.
+```
+systemctl list-dependencies sshd
+sshd.service
+● ├─system.slice
+● ├─sshd-keygen.target
+● │ ├─sshd-keygen@ecdsa.service
+● │ ├─sshd-keygen@ed25519.service
+● │ └─sshd-keygen@rsa.service
+● ├─sshd-keygen.target
+● │ ├─sshd-keygen@ecdsa.service
+● │ ├─sshd-keygen@ed25519.service
+● │ └─sshd-keygen@rsa.service
+● └─sysinit.target
+```
+
+Després de veure varis exemples, m'he donat compte de que també podem
+especificar si volem veure els units que depenen abans d'un unit especific
+els units que depenen de despres d'un unit especific, etc.
+
+  * ``systemctl list-dependencies unit --before`` Amb aquesta opció
+  estem dient que ens mostri tots els units que fan falta abans de que
+  s'activi aquest unit.
+```
+  systemctl list-dependencies --before httpd
+httpd.service
+● ├─multi-user.target
+● │ ├─systemd-update-utmp-runlevel.service
+● │ └─graphical.target
+● │   └─systemd-update-utmp-runlevel.service
+● └─shutdown.target
+```
+
+
+  
+
+
+  
+
 [systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#targets-en-systemd
