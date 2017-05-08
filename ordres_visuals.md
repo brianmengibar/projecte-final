@@ -7,6 +7,8 @@
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
+# DEJAR LA QUE SE VE PEQUEÑA O SOLO PONER LA DE HTTPD?
+
 # Ordres visuals
 Dins del sistema podem trobar diferents tipus d'ordres visuals, podem
 trobar ordres que ens retornen una imatge, ordres que ens retornen una
