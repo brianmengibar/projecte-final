@@ -7,7 +7,7 @@
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
-# INSERTAR FOTOS DE PASO A PASO
+# INSERTAR FOTOS DE PASO A PASO (IR RECORTANDOLAS EN CASA)
 
 # Reports Dinamics
 En aquest apartat comentaré les eines que he trobat per veure reports
