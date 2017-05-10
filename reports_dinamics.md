@@ -76,8 +76,10 @@ que per defecte es el que escolta el servei ``cockpit``
 https://192.168.2.40:9090/
 ```
 
-Al accedir ens demanarà un usuari i un password, en el meu cas em logeare
-amb **root** amb el seu password corresponent.
+![login-cockpit](./images/cockpit/login-cockpit.png)
+
+Al accedir ens demanarà un usuari i un password, en el meu cas amb 
+**root**.
 
 ### Funcionament de cockpit
 En el moment que accedim, la primera pagina ens mostra els detalls del
@@ -101,15 +103,19 @@ A l'esquerra tenim una serie de finestres que paso a continuació a explicar:
   * Iniciar i aturar ells
 * **Logs**: Conté tots els logs del sistema, es a dir, de tots els serveis, ens permet fer clic a qualsevol entrada per obtenir informació més detallada, com la identificació de procés.
 * **Storage**: Dóna un aspecte gràfic en el disc que llegeix i escriu, també ens permet veure els registres pertinents. A més, es pot configurar i administrar els dispositius RAID i grups de volums, donar format, partició, i muntar/desmuntar unitats.
-* **Networking**: ENs mostra una visió general de trànsit entrant i sortint, juntament amb els registres pertinents i informació d'interfície de xarxa.
+* **Networking**: Ens mostra una visió general de trànsit entrant i sortint, juntament amb els registres pertinents i informació d'interfície de xarxa.
 * **Tools**: Aquest menu es desplega per oferir dues eines de gestió de servidors i usuaris adicionals:
   * **Accounts**: Permet afegir i administrar usuaris, configurar i canviar les contrasenyes, afegir i administrar les claus SSH públiques per a cada usuari (**Obviament sempre que siguis root**).
   * **Terminal**: Conté un terminal completament funcional, amb l'implementació del tabulador, aixo ens permet realitzar qualsevol tasca que volguem.
+
+![intro-cockpit](./images/cockpit/intro-cockpit.png)
 
 Una vegada explicat la primera part, paso a explicar la segona finestra que tenim
 anomenada __Dashboard__. En aquesta finestra lo que trobem es una grafica
 amb **4 finestretes**, que es per veure els mateixos grafics que ens surten
 en la pagina principal.
+
+![dashboard-cockpit](./images/cockpit/dashboard-cockpit.png)
 
 Bé, com he comentat a dalt, ``cockpit`` es un __multi-server__, llavors en aquest
 apartat podem fer:
@@ -122,11 +128,21 @@ Per afegir una nova maquina veiem el simbol **+** de color blau que
 significa: ``Add Server``. En el moment que cliquem ens demana la **IP** o
 el **hostname** de la maquina que volem afegir i amb quin color volem
 visualitzar-la (molt util per que si posem el mateix nom en dues maquines
-i amb el mateix color? Tindriem un gran problema). En el moment que posem
+i amb el mateix color? Tindriem un gran problema). 
+
+![add-machine-cockpit](./images/cockpit/add-machine-cockpit.png)
+
+En el moment que posem
 la IP i le donem a ``Add`` ens diu **Unknown Host Key** ens esta dient que
-L'autenticitat de la IP no pot ser establerta, que si estem que volem continuar
-amb la connexió, obviament li donem a ``connect`` i ja tenim una maquina mes i al 
-ser root, podrem modificar/visualitzar, etc.
+l'autenticitat de la IP no pot ser establerta, que si estem que volem continuar
+amb la connexió.
+
+![unknown-host-cockpit](./images/cockpit/unknown-host-cockpit.png)
+
+Obviament li donem a ``connect`` i ja tenim una maquina més i al 
+ser **root**, podrem modificar/visualitzar, etc.
+
+![new-machine-cockpit](./images/cockpit/new-machine-cockpit.png)
 
 #### Editar una maquina actual
 Per editar una maquina actual veiem el simbol del ``tick``, quan li donem
@@ -135,7 +151,14 @@ ens apareixen dos simbols:
    * Host Name
    * Color
    * Avatar
+
+Per exemple, cambiar el nom i el color com veiem a continuació
+
+![edit-machine-cockpit](./images/cockpit/edit-machine-cockpit.png)
+
  * **Una paperera**: En el moment que cliquem no ens diu si estem segurs, si no que directament l'esborra.
+
+![delete-machine-cockpit](./images/cockpit/delete-machine-cockpit.png)
 
 Que passa? Que ara si volem tornar a afegir la maquina anterior ja no ens
 dirà **Unknown Host Key**, ja que ja coneix aquest finger print i sap que
@@ -151,13 +174,26 @@ mes apartats dins de services:
 * Timer: Aquest apartat conté tots els ``.timer``, son temporizadors que li diuen al servei quan es te que executar.
 * Paths: 
 
+![list-services-cockpit](./images/cockpit/list-services-cockpit.png)
+
 ##### System services
 Aquesta eina un dels defectes que té es que no te una busqueda de filtratge,
 si no que per buscar podem fer ``ctrl+f`` i buscar per exemple __httpd.service__.
 Quan cliquem ens mostra una pagina detallada on podem engegar/aturar el servei
-i tambe a sota veure els logs que ens dona actualment. Gràcies a l'apartat
-``tools``, podem veure l'estat en el que esta en el nostre servei per
-comprobar que si que esta funcionant correctament.
+i tambe a sota veure els logs que ens dona actualment.
+
+![service-httpd-cockpit](./images/cockpit/service-httpd-cockpit.png)
+
+Com podem comprobar, ara mateix esta el servei engegat, ara cliquem
+a **stop** i podem veure com l'apartat ``Service Logs`` s'actualitza
+automaticament dient que s'aturat el servei
+
+![stop-httpd-cockpit](./images/cockpit/stop-httpd-cockpit.png)
+
+Gràcies a l'apartat ``tools``, podem veure l'estat del nostre servei 
+per comprobar que funciona correctament.
+
+![status-httpd-cockpit](./images/cockpit/status-httpd-cockpit.png)
 
 ## Que és systemd-manager?
 Systemd-manager es un programa construit amb llenguatge de programació
@@ -209,13 +245,14 @@ ho tenim cal instal·lar ``systemd-manager``
 Una vegada instal·lada, des de terminal posem ``systemd-manager`` i ja 
 estem dins de l'aplicació.
 
+![intro-systemd-manager](./images/systemd-manager/intro-systemd-manager.png)
+
 > Cal dir que si no som root, també s'executa, pero en el moment que
 volem per exemple aturar el servei **bluetooh**, clarament no ens deixa
 i en la terminal ens surt aquest missatge: 
 ``systemd-manager: bluetooth.service failed to stop: 
 "Interactive authentication required."`` que basicament ens diu que
 necessitem autenticació per poder aturar el servei.
-
 
 ### Funcionament systemd-manager
 En el moment que executem aquesta aplicació, podem escollir amb dos opcions:
@@ -242,9 +279,19 @@ Al clicar sobre un servei, podem observar tres apartats:
 * Journal: Ens mostra els logs del servei que nosaltres hem clicat, lo bo d'aquest log es que es com ``journalctl -f`` en el moment que aturem/engeguem fem enable/disable algun servei ens sortira al moment el missatge en aquest apartat.
 * Dependencies: Ens diu de quins serveis depèn el servei que nosaltres hem clicat per que s'engegui
 
+![service-sshd-systemd-manager](./images/systemd-manager/service-sshd-systemd-manager.png)
+
 Per ultim, tenim dos icones mes:
 * Enabled: Nomes clicant en aquest icone podem fer el servei enable o disable
+
+Com podem veure, el servei ``sshd`` ara mateix esta **disable**, en el moment
+que cliquem automaticament es posa enable
+
+![service-sshd-enable-systemd-manager](./images/service-sshd-enable-systemd-manager.png)
+
 * Start/Stop: Si el servei esta aturat, ens sortira l'icona blau i posara Start, llavors l'icona pasara a ser de color vermell i posara Stop
+
+**SEGUIR AQUI METIENDO FOTOS**
 
 ##### Sockets and Timers
 Mateixes condicions que l'apartat **Services**.
