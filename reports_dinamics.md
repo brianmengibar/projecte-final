@@ -287,7 +287,7 @@ Per ultim, tenim dos icones mes:
 Com podem veure, el servei ``sshd`` ara mateix esta **disable**, en el moment
 que cliquem automaticament es posa enable
 
-![service-sshd-enable-systemd-manager](./images/service-sshd-enable-systemd-manager.png)
+![service-sshd-enable-systemd-manager](./images/systemd-manager/service-sshd-enable-systemd-manager.png)
 
 * Start/Stop: Si el servei esta aturat, ens sortira l'icona blau i posara Start, llavors l'icona pasara a ser de color vermell i posara Stop
 
