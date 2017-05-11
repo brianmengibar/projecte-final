@@ -221,7 +221,8 @@ x86/fpu: Enabled xstate features 0x3, context size is 576 bytes, using 'standard
 ```
 
   * ``short``
-  Mostra identicament lo mateix que cridar ``journalctl`` sense parametres.
+  Mostra identicament lo mateix que cridar ``journalctl`` sense 
+  parametres.
 ```
 journalctl -o short
 -- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:11:44 CEST. --
