@@ -7,7 +7,10 @@
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
-# DEJAR LA QUE SE VE PEQUEÑA O SOLO PONER LA DE HTTPD?
+# MIRAR TODO LO QUE HACE PLOT, PROBARLO CON OTROS TARGETS
+# PROFUNDIZAR DOT, VER SU MAN, VER FORM_PATTERN TO PATTERN
+# PONER VARIOS EJEMPLOS DE GRAFICAS I ENTONCES METERLAS EN UN ANNEXO
+O TODAS JUNTAS, ESO POR CONFIRMAR PERO HAY QUE EXPLORAR INTENSAMENTE DOT
 
 # Ordres visuals
 Dins del sistema podem trobar diferents tipus d'ordres visuals, podem
