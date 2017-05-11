@@ -245,7 +245,7 @@ ho tenim cal instal·lar ``systemd-manager``
 Una vegada instal·lada, des de terminal posem ``systemd-manager`` i ja 
 estem dins de l'aplicació.
 
-![intro-systemd-manager](./images/systemd-manager/intro-systemd-manager.png)
+![intro-systemd-manager](./images/systemd-manager/intro.png)
 
 > Cal dir que si no som root, també s'executa, pero en el moment que
 volem per exemple aturar el servei **bluetooh**, clarament no ens deixa
@@ -259,11 +259,15 @@ En el moment que executem aquesta aplicació, podem escollir amb dos opcions:
 * Systemd Units
 * Systemd Analyze
 
+![systemd-units-analyze](./images/systemd-manager/systemd-units-analyze.png)
+
 #### Systemd Units
 En aquest apartat podem trobar:
 * Services
 * Sockets
 * Timers
+
+![apartats](./images/systemd-manager/apartats-services-sockets-timers.png)
 
 ##### Services
 Aquesta es la part on podem iniciar i aturar serveis, també podem veure 
@@ -276,29 +280,58 @@ veig molt util. Trobem al costat del serveis dues rodones:
 
 Al clicar sobre un servei, podem observar tres apartats:
 * File: Ens surt el fitxer de configuració, on podrem mirar-ho o editar-ho i en el cas de editar-ho guardar la nova configuració.
+
+![service-sshd-file](./images/systemd-manager/service-sshd-file.png)
+
 * Journal: Ens mostra els logs del servei que nosaltres hem clicat, lo bo d'aquest log es que es com ``journalctl -f`` en el moment que aturem/engeguem fem enable/disable algun servei ens sortira al moment el missatge en aquest apartat.
+
+![service-sshd-journal](./images/systemd-manager/service-sshd-journal.png)
+
 * Dependencies: Ens diu de quins serveis depèn el servei que nosaltres hem clicat per que s'engegui
 
-![service-sshd-systemd-manager](./images/systemd-manager/service-sshd-systemd-manager.png)
+![service-sshd-dependencies](./images/systemd-manager/service-sshd-dependencies.png)
 
 Per ultim, tenim dos icones mes:
-* Enabled: Nomes clicant en aquest icone podem fer el servei enable o disable
+* Enabled/Disabled: Nomes clicant en aquest icone podem fer el servei **enable** o **disable**
 
 Com podem veure, el servei ``sshd`` ara mateix esta **disable**, en el moment
-que cliquem automaticament es posa enable
+que cliquem automaticament es posa enable.
 
-![service-sshd-enable-systemd-manager](./images/systemd-manager/service-sshd-enable-systemd-manager.png)
+![service-sshd-enable](./images/systemd-manager/service-sshd-enable.png)
 
-* Start/Stop: Si el servei esta aturat, ens sortira l'icona blau i posara Start, llavors l'icona pasara a ser de color vermell i posara Stop
+I si ho posem de nou **disable**:
 
-**SEGUIR AQUI METIENDO FOTOS**
+![service-sshd-disable](./images/systemd-manager/service-sshd-disable.png)
+
+* Start/Stop: Si el servei esta engegat, ens sortira l'icona vermell i posarà **Stop**, si cliquem llavors l'icona pasara a ser de color blau i posara **Start**
+
+![service-sshd-start](./images/systemd-manager/service-sshd-start.png)
+
+Com podem comprobar, ara mateix el servei esta engegat, aixi que ara ens
+posarem en l'apartat **journal** i aturarem el servei.
+
+![service-sshd-stop](./images/systemd-manager/service-sshd-stop.png)
+
+Una vegada hem aturat el servei, veiem que l'apartat **journal** actualment 
+ens dona l'informació de que el servei ``sshd`` s'ha aturat i veiem que
+l'icona actualment a cambiat.
 
 ##### Sockets and Timers
 Mateixes condicions que l'apartat **Services**.
 
+* Sockets
+
+![example-socket](./images/systemd-manager/example-socket.png)
+
+* Timers
+
+![example-timer](./images/systemd-manager/example-timer.png)
+
 #### Systemd Analyze
 Aquest apartat lo que fa simplement es comprovar el temps d'arrencada dels
-serveis que tarden de menys a mes temps durant el procés d'arrencada.
+serveis que tarden de **menys** a **mes** temps durant el procés d'arrencada.
+
+![systemd-analyze](./images/systemd-manager/systemd-analyze.png)
 
 [document]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#systemd-analyze
 
