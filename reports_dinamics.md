@@ -110,7 +110,7 @@ A l'esquerra tenim una serie de finestres que paso a continuació a explicar:
   * **Accounts**: Permet afegir i administrar usuaris, configurar i canviar les contrasenyes, afegir i administrar les claus SSH públiques per a cada usuari (**Obviament sempre que siguis root**).
   * **Terminal**: Conté un terminal completament funcional, amb l'implementació del tabulador, aixo ens permet realitzar qualsevol tasca que volguem.
 
-![intro-cockpit](./images/cockpit/intro.png)
+![finestres](./images/cockpit/finestres.png)
 
 Una vegada explicat la primera part, paso a explicar la segona finestra que tenim
 anomenada __Dashboard__. En aquesta finestra lo que trobem es una grafica
