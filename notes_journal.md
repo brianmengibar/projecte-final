@@ -386,6 +386,7 @@ Archived and active journals take up 480.1M on disk.
 ```
 
 I de nou hem comprovat que ha baixat bastant comparat amb abans.
+
 ------------------------------------------------------------------------
 # DEJARLO AQUI? SI? NO?
 

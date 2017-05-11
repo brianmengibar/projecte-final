@@ -52,8 +52,6 @@ tota l'informació per poder realitzar el projecte:
 * [FedoraProject Systemd][fedoraproject]
 * [F.D. Systemd][DocumentationSystemd]
 * [JournalDocumentation]
-* [Graphical-util?]
-* [More-graphical-visual-util?]
 * [Eines-systemd]
 * [How-to-Cockpit]
 * [Documentation-Oficial-Cockpit]
@@ -70,8 +68,6 @@ tota l'informació per poder realitzar el projecte:
 [fedoraproject]: https://fedoraproject.org/wiki/Systemd
 [DocumentationSystemd]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/ch-Services_and_Daemons.html
 [JournalDocumentation]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/s1-Using_the_Journal.html
-[Graphical-util?]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/s1-managing_log_files_in_a_graphical_environment.html
-[More-graphical-visual-util?]: http://www.estrellateyarde.org/logs-en-linux
 [Eines-systemd]: https://diversidadyunpocodetodo.blogspot.com.es/2016/07/systemd-analyze-kcm-systemadm-systemctl.html
 [How-to-Cockpit]: https://www.liquidweb.com/kb/how-to-use-cockpit-in-fedora-23/
 [Documentation-Oficial-Cockpit]: http://cockpit-project.org/guide/latest/
