@@ -89,6 +89,8 @@ nostre ordinador i grafics que mostren:
 * Disc I/O
 * Trafic de xarxa
 
+![grafiques](./images/cockpit/grafiques.png)
+
 A l'esquerra tenim una serie de finestres que paso a continuació a explicar:
 
 * **System**: Es la pagina principal, lo que es mostra res mes accedir a la pagina
