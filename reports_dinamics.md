@@ -76,6 +76,7 @@ que per defecte es el que escolta el servei ``cockpit``
 https://192.168.2.40:9090/
 ```
 
+![login-cockpit](./images/cockpit/login-cockpit.png)
 
 Al accedir ens demanarà un usuari i un password, en el meu cas amb 
 **root**.
