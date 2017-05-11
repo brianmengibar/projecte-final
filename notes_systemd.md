@@ -546,8 +546,8 @@ especificar si volem veure els units que depenen abans d'un unit especific
 els units que depenen de despres d'un unit especific, etc.
 
   * ``systemctl list-dependencies unit --before`` Amb aquesta opció
-  estem dient que ens mostri tots els units que fan falta abans de que
-  s'activi aquest unit. Per exemple mirarem el servei **httpd**.
+  estem dient que ens mostri tots els units **ordenats** que van 
+  __abans__ d'aquest unit especific. Per exemple mirarem el servei **httpd**.
 ```
   systemctl list-dependencies --before httpd
 httpd.service
@@ -559,8 +559,9 @@ httpd.service
 ```
 
   * ``systemctl list-dependencies --after unit`` Per lo que he deduït,
-  en teoria ``--after`` mostra tots els units que els cal aquest unit 
-  específic.
+  en teoria ``--after`` es l'inversa de ``--before``, es a dir, ens 
+  mostra tots els units **ordenats** que van __despres__ d'aquest unit 
+  específic. Per exemple tornarem a mirar el servei **httpd**.
 ```
 systemctl list-dependencies --after httpd
 httpd.service
@@ -577,18 +578,35 @@ httpd.service
 ```
   > No poso tot el resultat perque si no es massa extens.
   
-  * ``systemctl list-dependencies --reverse unit`` Amb ``--reverse``
-  podem veure els units que no depenen d'un unit especific (o aixo crec).
+  * ``systemctl list-dependencies --reverse unit`` Amb ``--reverse`` 
+  en mostra les dependències inverses, es a dir, mostra les dependències
+  de tipus **WantedBy =, RequiredBy =, partof =, BOUNDBY =, 
+  **en lloc de **Wants = i similar**.
 ```
 httpd.service
 ● └─multi-user.target
 ●   └─graphical.target
 ```
 
-  * ``systemctl list-dependencies --all unit`` Per lo que veig, desplega
-  tots els units amb tots els seus **"subcamps"**.
+  * ``systemctl list-dependencies --all unit`` Per lo que veig, quan possem
+  ``--all``, totes les altres unitats també s'expandiexen de forma 
+  recursiva.
+```
+systemctl list-dependencies --all httpd
+httpd.service
+● ├─-.mount
+● │ ├─quotaon.service
+● │ │ └─system.slice
+● │ │   └─-.slice
+● │ ├─system.slice
+● │ │ └─-.slice
+● │ └─systemd-quotacheck.service
+● │   └─system.slice
+● │     └─-.slice
+```
 
-> REVISAR ESTE APARTADO Y ENTENDERLO BIEN
+> No poso totes les linies ja que al utilitzar ``--all`` tots els units
+es despleguen i he vist que surten 481 linies.
 
 * ``systemctl cat service``
 Explorant, he trobat que ``systemctl`` també té el parametre ``cat``, que
@@ -727,7 +745,7 @@ Documentation=man:systemd.special(7)
 ```
 
 Pero que passa si volem veure les mateixes propietats pero per diferents
-units? Doncs també podem, com? Separant cada unit per un espai:
+units? Doncs també podem, com? Separant cada unit amb un espai:
 ```
 systemctl show --property Names,Requires graphical.target httpd sshd rescue.target
 Names=graphical.target runlevel5.target
@@ -741,6 +759,22 @@ Requires=system.slice sysinit.target
 
 Names=runlevel1.target rescue.target
 Requires=sysinit.target rescue.service
+```
+
+* ``sytemctl --failed`` Amb aquest parametre ens llista les unitats
+que han tingut algun problema i per aixo no estan actives.
+```
+systemctl --failed
+  UNIT                              LOAD   ACTIVE SUB    DESCRIPTION
+● mdmonitor.service                 loaded failed failed Software RAID monitoring and management
+● vncserver@:display_number.service loaded failed failed Remote desktop service (VNC)
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+
+2 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
 ```
 
 [systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#targets-en-systemd
