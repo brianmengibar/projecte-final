@@ -27,7 +27,7 @@ sobre l'ordre ``systemctl`` podem consultar  des de la nostra consola
 veure l'estat, etc d'un servei, sempre caldra ser **#root**.
 
 ## Analitzar l'estat del sistema
-A continuació comentare una serie d'ordres de la familia systemd:
+A continuació comentaré una serie d'ordres de la familia systemd:
 
 * ``systemctl list-units``
 Amb aquesta ordre podem llistar les unitats que tenim en execució.
@@ -590,5 +590,157 @@ httpd.service
 
 > REVISAR ESTE APARTADO Y ENTENDERLO BIEN
 
+* ``systemctl cat service``
+Explorant, he trobat que ``systemctl`` també té el parametre ``cat``, que
+crec que es molt util, ja que aquest parametre seguit d'un servei, ens
+mostra el fitxer de configuració del servei i també ens mostra la ruta
+de on esta ubicat el servei. Molt util per quan volem editar el fitxer
+i no ens recordem o no sabem on pot estar el fitxer la veritat.
+```
+systemctl cat sshd.service
+# /usr/lib/systemd/system/sshd.service
+[Unit]
+Description=OpenSSH server daemon
+Documentation=man:sshd(8) man:sshd_config(5)
+After=network.target sshd-keygen.target
+Wants=sshd-keygen.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/sshd.pid
+EnvironmentFile=-/etc/sysconfig/sshd
+ExecStart=/usr/sbin/sshd $OPTIONS
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartSec=42s
+
+[Install]
+WantedBy=multi-user.target
+```
+
+* ``systemctl edit --full service``
+Obviament, si ``systemctl`` permet fer un cat del fitxer de configuració,
+te que existir un altre parametre per poder modificar el fitxer, doncs
+be, per poder fer-ho es posant **edit** seguit de ``--full``. Aixó
+significa que directament anirà a editar el fitxer de configuració, si
+no fiquessim ``--edit`` s'obriria un fitxer en blanc que el podriem 
+utilitzar per anul·lar o afegir directives al fitxer de configuració.
+```
+systemctl edit --full sshd
+[Unit]
+Description=OpenSSH server daemon
+Documentation=man:sshd(8) man:sshd_config(5)
+After=network.target sshd-keygen.target
+Wants=sshd-keygen.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/sshd.pid
+EnvironmentFile=-/etc/sysconfig/sshd
+ExecStart=/usr/sbin/sshd $OPTIONS
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartSec=42s
+
+[Install]
+WantedBy=multi-user.target
+"/etc/systemd/system/.#sshd.servicead9647d9cc20c510" 18L, 396C 
+```
+
+> Clarament al fer aquesta ordre no surt el contingut, pero per aixo a 
+sota fico la directiva que surt al editar el fitxer.
+
+Si editem el fitxer, cal recordar que tindriem que fer ``systemctl daemon
+reload`` per que acceptar els cambis fets.
+
+* ``systemctl show [service]``
+Aquest parametre mostra una llista de propietats que s'estableixen per
+l'unitat especificada. Si no especifiquem cap unit, automaticament es
+mostraran les propietats del nostre sistema.
+```
+systemctl show
+Version=229
+Features=+PAM +AUDIT +SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD +IDN
+Architecture=x86-64
+FirmwareTimestampMonotonic=0
+LoaderTimestampMonotonic=0
+KernelTimestamp=Thu 2017-05-11 08:07:57 CEST
+KernelTimestampMonotonic=0
+InitRDTimestamp=Thu 2017-05-11 08:07:58 CEST
+InitRDTimestampMonotonic=773454
+UserspaceTimestamp=Thu 2017-05-11 08:08:00 CEST
+UserspaceTimestampMonotonic=2488979
+```
+
+> Cal mencionar que no poso tota l'informació per que son 86 linias i seria
+molt extens.
+
+Ara ho executem pero per exemple amb el servei httpd
+```
+systemctl show httpd
+Type=notify
+Restart=no
+NotifyAccess=main
+RestartUSec=100ms
+TimeoutStartUSec=1min 30s
+TimeoutStopUSec=1min 30s
+RuntimeMaxUSec=infinity
+WatchdogUSec=0
+WatchdogTimestamp=Thu 2017-05-11 08:08:01 CEST
+```
+
+> Idem que a dalt, massa linies.
+
+Com podem comprobar, clarament no ens dona la mateixa informació, ja
+que ara ens mostra la llista de propietats a baix nivell d'aquest
+servei especific. Clarament no cal que sigui un ``.service``, per exemple
+podem veure tot el llistat de ``rescue.target``.
+```
+systemctl show rescue.target
+Id=rescue.target
+Names=runlevel1.target rescue.target
+Requires=sysinit.target rescue.service
+Wants=systemd-update-utmp-runlevel.service
+Conflicts=shutdown.target
+ConflictedBy=graphical.target multi-user.target
+Before=systemd-update-utmp-runlevel.service graphical.target multi-user.target
+After=sysinit.target rescue.service
+```
+
+Es pot donar el cas de que de tot el llistat nomes volguem una linea o dos,
+podem fer el tipic ``grep`` i filtrar, pero clar, per que fer aixo
+quan ``systemctl`` ja te un parametre per poder buscar anomenat ``--property``.
+Que ens permet? Buscar nomes les propietats que nosaltres volguem com
+per exemple veure la propietat **Names** del target ``graphical.target``.
+```
+systemctl show --property Names graphical.target
+Names=graphical.target runlevel5.target
+```
+
+O si volem més d'una propietat, podem ficar-las separades per comes:
+```
+systemctl show --property Names,Documentation graphical.target
+Names=graphical.target runlevel5.target
+Documentation=man:systemd.special(7)
+```
+
+Pero que passa si volem veure les mateixes propietats pero per diferents
+units? Doncs també podem, com? Separant cada unit per un espai:
+```
+systemctl show --property Names,Requires graphical.target httpd sshd rescue.target
+Names=graphical.target runlevel5.target
+Requires=multi-user.target
+
+Names=httpd.service
+Requires=-.mount system.slice sysinit.target tmp.mount
+
+Names=sshd.service
+Requires=system.slice sysinit.target
+
+Names=runlevel1.target rescue.target
+Requires=sysinit.target rescue.service
+```
 
 [systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#targets-en-systemd
