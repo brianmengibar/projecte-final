@@ -76,7 +76,7 @@ que per defecte es el que escolta el servei ``cockpit``
 https://192.168.2.40:9090/
 ```
 
-![login-cockpit](./images/cockpit/login-cockpit.png)
+![login-cockpit](./images/cockpit/login.png)
 
 Al accedir ens demanarà un usuari i un password, en el meu cas amb 
 **root**.
@@ -108,14 +108,14 @@ A l'esquerra tenim una serie de finestres que paso a continuació a explicar:
   * **Accounts**: Permet afegir i administrar usuaris, configurar i canviar les contrasenyes, afegir i administrar les claus SSH públiques per a cada usuari (**Obviament sempre que siguis root**).
   * **Terminal**: Conté un terminal completament funcional, amb l'implementació del tabulador, aixo ens permet realitzar qualsevol tasca que volguem.
 
-![intro-cockpit](./images/cockpit/intro-cockpit.png)
+![intro-cockpit](./images/cockpit/intro.png)
 
 Una vegada explicat la primera part, paso a explicar la segona finestra que tenim
 anomenada __Dashboard__. En aquesta finestra lo que trobem es una grafica
 amb **4 finestretes**, que es per veure els mateixos grafics que ens surten
 en la pagina principal.
 
-![dashboard-cockpit](./images/cockpit/dashboard-cockpit.png)
+![dashboard-cockpit](./images/cockpit/dashboard.png)
 
 Bé, com he comentat a dalt, ``cockpit`` es un __multi-server__, llavors en aquest
 apartat podem fer:
@@ -130,19 +130,19 @@ el **hostname** de la maquina que volem afegir i amb quin color volem
 visualitzar-la (molt util per que si posem el mateix nom en dues maquines
 i amb el mateix color? Tindriem un gran problema). 
 
-![add-machine-cockpit](./images/cockpit/add-machine-cockpit.png)
+![add-machine-cockpit](./images/cockpit/add-machine.png)
 
 En el moment que posem
 la IP i le donem a ``Add`` ens diu **Unknown Host Key** ens esta dient que
 l'autenticitat de la IP no pot ser establerta, que si estem que volem continuar
 amb la connexió.
 
-![unknown-host-cockpit](./images/cockpit/unknown-host-cockpit.png)
+![unknown-host-cockpit](./images/cockpit/unknown-host.png)
 
 Obviament li donem a ``connect`` i ja tenim una maquina més i al 
 ser **root**, podrem modificar/visualitzar, etc.
 
-![new-machine-cockpit](./images/cockpit/new-machine-cockpit.png)
+![new-machine-cockpit](./images/cockpit/new-machine.png)
 
 #### Editar una maquina actual
 Per editar una maquina actual veiem el simbol del ``tick``, quan li donem
@@ -154,11 +154,11 @@ ens apareixen dos simbols:
 
 Per exemple, cambiar el nom i el color com veiem a continuació
 
-![edit-machine-cockpit](./images/cockpit/edit-machine-cockpit.png)
+![edit-machine-cockpit](./images/cockpit/edit-machine.png)
 
  * **Una paperera**: En el moment que cliquem no ens diu si estem segurs, si no que directament l'esborra.
 
-![delete-machine-cockpit](./images/cockpit/delete-machine-cockpit.png)
+![delete-machine-cockpit](./images/cockpit/delete-machine.png)
 
 Que passa? Que ara si volem tornar a afegir la maquina anterior ja no ens
 dirà **Unknown Host Key**, ja que ja coneix aquest finger print i sap que
@@ -174,7 +174,7 @@ mes apartats dins de services:
 * Timer: Aquest apartat conté tots els ``.timer``, son temporizadors que li diuen al servei quan es te que executar.
 * Paths: 
 
-![list-services-cockpit](./images/cockpit/list-services-cockpit.png)
+![list-services-cockpit](./images/cockpit/list-services.png)
 
 ##### System services
 Aquesta eina un dels defectes que té es que no te una busqueda de filtratge,
@@ -182,18 +182,18 @@ si no que per buscar podem fer ``ctrl+f`` i buscar per exemple __httpd.service__
 Quan cliquem ens mostra una pagina detallada on podem engegar/aturar el servei
 i tambe a sota veure els logs que ens dona actualment.
 
-![service-httpd-cockpit](./images/cockpit/service-httpd-cockpit.png)
+![service-httpd-cockpit](./images/cockpit/service-httpd.png)
 
 Com podem comprobar, ara mateix esta el servei engegat, ara cliquem
 a **stop** i podem veure com l'apartat ``Service Logs`` s'actualitza
 automaticament dient que s'aturat el servei
 
-![stop-httpd-cockpit](./images/cockpit/stop-httpd-cockpit.png)
+![stop-httpd-cockpit](./images/cockpit/stop-httpd.png)
 
 Gràcies a l'apartat ``tools``, podem veure l'estat del nostre servei 
 per comprobar que funciona correctament.
 
-![status-httpd-cockpit](./images/cockpit/status-httpd-cockpit.png)
+![status-httpd-cockpit](./images/cockpit/status-httpd.png)
 
 ## Que és systemd-manager?
 Systemd-manager es un programa construit amb llenguatge de programació
