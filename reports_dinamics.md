@@ -115,7 +115,7 @@ anomenada __Dashboard__. En aquesta finestra lo que trobem es una grafica
 amb **4 finestretes**, que es per veure els mateixos grafics que ens surten
 en la pagina principal.
 
-![dashboard-cockpit](./images/cockpit/dashboard.png)
+![dashboard](./images/cockpit/dashboard.png)
 
 Bé, com he comentat a dalt, ``cockpit`` es un __multi-server__, llavors en aquest
 apartat podem fer:
