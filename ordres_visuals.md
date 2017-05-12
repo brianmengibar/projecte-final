@@ -31,6 +31,13 @@ Si surt aquest missatge? Significa que a anat be
 
 ![Grafica-plot](./grafiques/grafica_plot.png)
 
+Aquesta grafica es de ``graphical.target``, ja que es en el target que
+estic per defecte, llavors lo que acabo de fer es reiniciar la maquina
+i entrar en **mode 1** --> ``rescue.target`` i aquesta es la grafica
+que com podem comprobar, es molt diferent.
+
+![grafica-rescue](./grafiques/grafica-rescue.png)
+
 ### Significat colors
 Com podem comprobar en aquesta grafica, a sota podem veure diferents colors tenim diferents colors que
 i al costat un nom, que cadascun vol dir:
