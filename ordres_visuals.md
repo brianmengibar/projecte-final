@@ -90,6 +90,27 @@ systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg
 
 ![Grafica-dot-httpd](./grafiques/httpd.png)
 
+### Parametres de systemd-analyze dot
+Hi ha moments que no volem veure tot el sistema, o no volem a partir d'un
+unit especific com hem fet a dalt con ``httpd.service``, per aixó he
+trobat aquests dos parametres que crec que son molt utils:
+
+* ``--from-pattern`` Amb aquest parametre podem especificar un unit
+i veure qui depen d'aquest unit especific. Com per exemple, veure l'us
+del sistema pero del target ``rescue.target``.
+```
+[isx39441584@i10 grafiques]$ systemd-analyze dot --from-pattern='rescue.target' | dot -Tsvg > from-rescue.svg
+   Color legend: black     = Requires
+                 dark blue = Requisite
+                 dark grey = Wants
+                 red       = Conflicts
+                 green     = After
+```
+
+![from-rescue](./grafiques/from-rescue.png)
+
+#FALTA METER EL --TO-PATTERN, EXPLICAR COLORES, METER MAS IMAGENES
+
 > Les imatges son en format ``.png`` per que he vist que **Github** no
 soporta el format ``.svg``, llavors des d'aquesta [pagina] he cambiat
 el format de ``.svg`` a ``.png``.
