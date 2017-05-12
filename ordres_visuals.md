@@ -38,6 +38,13 @@ que com podem comprobar, es molt diferent.
 
 ![grafica-rescue](./grafiques/grafica-rescue.png)
 
+
+Per ultim, des de **mode 1** he fet un ``systemctl isolate emergency.target``
+per anar a parar a **mode emergency** i aquesta es la grafica d'aquest
+target.
+
+![grafica-emergency](./grafiques/grafica-mode-emergency.png)
+
 ### Significat colors
 Com podem comprobar en aquesta grafica, a sota podem veure diferents colors tenim diferents colors que
 i al costat un nom, que cadascun vol dir:
