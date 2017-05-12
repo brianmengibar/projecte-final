@@ -109,7 +109,7 @@ del sistema pero del target ``rescue.target``.
 
 ![from-rescue](./grafiques/from-rescue.png)
 
-#FALTA METER EL --TO-PATTERN, EXPLICAR COLORES, METER MAS IMAGENES
+# FALTA METER EL --TO-PATTERN, EXPLICAR COLORES, METER MAS IMAGENES
 
 > Les imatges son en format ``.png`` per que he vist que **Github** no
 soporta el format ``.svg``, llavors des d'aquesta [pagina] he cambiat
