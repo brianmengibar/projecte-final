@@ -19,8 +19,8 @@ El propòsit d'aquest projecte es:
 * Trobar **Reports Elaborats**
 * Trobar si existeixen **reports dinàmics**
 
-A continuació teniu un breu **index** que conté tots els apartats que
-he realitzat.
+A continuació podeu veure un breu **index** que conté tots els apartats 
+que he realitzat.
 
 ### Index
 * [Systemd][]
