@@ -40,7 +40,7 @@ he realitzat.
   * [Boots][]
 * [Reports dinàmics][]
   * [Cockpit][]
-  * [Systemd Mànager][]
+  * [Systemd Manager][]
 
 A continuació, podeu veure un llistat de **links** d'on estic extreien 
 tota d'informació per poder realitzar el projecte:
