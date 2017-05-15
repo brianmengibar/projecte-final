@@ -83,16 +83,16 @@ tota l'informació per poder realitzar el projecte:
 [Eines de Systemd]: notes_eines_systemd.md#systemd-analyze
 [Journal]: notes_journal.md#journal
 [Que es journal]: notes_journal.md#que-es-journal
-[Parametres de journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#parametres-de-journalctl
-[Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#reports-dinamics
-[Ordres visuals]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#ordres-visuals
-[Reports elaborats]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#reports-elaborats
-[Cockpit]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-cockpit
-[Systemd Manager]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-systemd-manager
-[Plot]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#systemd-analyze-plot
-[Dot]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#systemd-analyze-dot
-[Prioritat]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#per-prioritat
-[Temps]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#per-temps
-[Prioritat i temps]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-per-prioritat-i-temps
-[Avançat]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-avan%C3%A7at
-[Boots]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#filtrat-per-boots
+[Parametres de journal]: notes_journal.md#parametres-de-journalctl
+[Reports dinamics]: reports_dinamics.md#reports-dinamics
+[Ordres visuals]: ordres_visuals.md#ordres-visuals
+[Reports elaborats]: reports_elaborats.md#reports-elaborats
+[Cockpit]: reports_dinamics.md#que-%C3%A9s-cockpit
+[Systemd Manager]: reports_dinamics.md#que-%C3%A9s-systemd-manager
+[Plot]: ordres_visuals.md#systemd-analyze-plot
+[Dot]: ordres_visuals.md#systemd-analyze-dot
+[Prioritat]: reports_elaborats.md#per-prioritat
+[Temps]: reports_elaborats.md#per-temps
+[Prioritat i temps]: reports_elaborats.md#filtrat-per-prioritat-i-temps
+[Avançat]: reports_elaborats.md#filtrat-avan%C3%A7at
+[Boots]: reports_elaborats.md#filtrat-per-boots
