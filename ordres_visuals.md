@@ -138,5 +138,3 @@ trobat aquests dos parametres que crec que son molt utils:
 Les imatges son en format `.png` per lo que he vist que **Github** no
 soporta el format `.svg`, llavors gracies a l'eina `inkscape` he cambiat
 el format de `.svg` a `.png`.
-
-[pagina]: http://svgtopng.com/es/

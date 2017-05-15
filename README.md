@@ -25,7 +25,7 @@ A continuació podeu veure un breu **index** que conté tots els apartats
 que he realitzat.
 
 ### Index
-* [Systemd][]
+* [Systemd](notes_systemd.md#systemd)
   * [Que es Systemd][]
   * [Eines de Systemd][]
 * [Journal][]
