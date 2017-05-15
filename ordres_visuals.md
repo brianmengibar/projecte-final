@@ -132,8 +132,8 @@ trobat aquests dos parametres que crec que son molt utils:
 * `--from-pattern` 
 
 	Amb aquest parametre podem especificar un unit
-	i veure qui depen d'aquest unit especific. Com per exemple, veure l'us
-	del sistema pero del target ``rescue.target``.
+	i veure qui depen d'aquest unit especific. Com per exemple del target
+	`rescue.target`.
 
 	```
 	$ systemd-analyze dot --from-pattern='rescue.target' | dot -Tsvg > from-rescue.svg; inkscape -e from-rescue.png from-rescue.svg
@@ -148,5 +148,15 @@ trobat aquests dos parametres que crec que son molt utils:
 	```
 
 	![from-rescue](grafiques/from-rescue.png)
+
+	Que com podem observar, després d'engegar `rescue.target`, s'engegarà
+	sysinit.target i rescue.service ja que esta indicat amb la flecheta verda
+	que significa `after` i a part es **requerit** per la fletcha negra.
+	A continuació veiem un Wants `systemd-update-umtp-runlevel.service` que
+	no s'engegarà automaticament pero saps que si vols que estigui engegat,
+	es necessari que `rescue.target` si que ho estigui i per ultim trobem
+	`shutdown.target` amb una fletcha vermella que ens diu que entra en 
+	conflicte, es a dir, si volem engegar `shutdown.target`? No pot estar
+	activat `rescue.target`.
 
 # FALTA METER EL --TO-PATTERN, EXPLICAR COLORES, METER MAS IMAGENES
