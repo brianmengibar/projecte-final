@@ -10,9 +10,9 @@
 # MOVER CRITICAL-CHAIN A eines_visuals?
 
 # Eines per analitzar i gestionar Systemd
-En l'altre document ja hem parlat sobre systemd i molts dels seus paràmetres,
+En l'altre document ja hem parlat sobre systemd i molts dels seus parametres,
 si encara no ho habeu llegit, aqui teniu un enllaç per llegir-ho
-abans de llegir aquest: [Systemd][].
+abans de llegir aquest: [Systemd].
 
 ## Systemd-analyze
 Permet evaluar el proces d'arrencada amb el fi de mostrar quines unitats
@@ -244,6 +244,9 @@ sftp.mount: Failed to create sftp.mount/start: Unit sftp.mount is not loaded pro
 Comprovem que aquest _"unit"_ te linies erroneas i a l'hora de verificar ens donen
 els **missatges d'error**.
 
+
+[Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
+
 ## Opcions de Systemd-analyze
 Una vegada hem vist tots els parametres que té l'ordre ``systemd-analyze``,
 paso a comentar totes les opcions que té que son aquestes:
@@ -380,4 +383,3 @@ Commands:
   verify FILE...          Check unit files for correctness
 ```
 
-[Systemd]:https://github.com/brianmengibar/projecte-final/blob/master/notes_systemd.md#que-%C3%A9s-systemd
