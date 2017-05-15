@@ -7,6 +7,8 @@
 ### Projecte: _Serveis informatius de Systemd_
 ---------------------------------------------------
 
+# Para corregir en casa faltas: [isx39441584@i10 projecte-final]$ aspell --lang=ca check **ARCHIVO**
+
 ## Introducció
 
 Benvinguts al meu projecte sobre **"Serveis informatius de Systemd"**.
