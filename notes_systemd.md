@@ -163,49 +163,67 @@ abrt-vmcore.service                         enabled
 abrt-xorg.service                           enabled 
 ```
 
-* ``systemctl start``
+* ``systemctl start service``
 Ens permet poder engegar un servei.
 ```
 systemctl start sshd
+
+systemctl status sshd
+● sshd.service - OpenSSH server daemon
+   Loaded: loaded (/etc/systemd/system/sshd.service; disabled; vendor preset: disabled)
+   Active: active (running) since Mon 2017-05-15 10:09:45 CEST; 2s ago
+     Docs: man:sshd(8)
+           man:sshd_config(5)
+  Process: 19167 ExecStart=/usr/sbin/sshd $OPTIONS (code=exited, status=0/SUCCESS)
+ Main PID: 19172 (sshd)
+    Tasks: 1 (limit: 512)
+   CGroup: /system.slice/sshd.service
+           └─19172 /usr/sbin/sshd
+
+May 15 10:09:45 i10 systemd[1]: Starting OpenSSH server daemon...
+May 15 10:09:45 i10 sshd[19172]: Server listening on 0.0.0.0 port 22.
+May 15 10:09:45 i10 sshd[19172]: Server listening on :: port 22.
+May 15 10:09:45 i10 systemd[1]: Started OpenSSH server daemon.
+
 ```
 
-* ``systemctl stop``
+* ``systemctl stop service``
 Ens permet poder aturar un servei.
 ```
 systemctl stop sshd
+
+systemctl status sshd
+● sshd.service - OpenSSH server daemon
+   Loaded: loaded (/etc/systemd/system/sshd.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: man:sshd(8)
+           man:sshd_config(5)
+
+May 15 10:09:45 i10 systemd[1]: Starting OpenSSH server daemon...
+May 15 10:09:45 i10 sshd[19172]: Server listening on 0.0.0.0 port 22.
+May 15 10:09:45 i10 sshd[19172]: Server listening on :: port 22.
+May 15 10:09:45 i10 systemd[1]: Started OpenSSH server daemon.
+May 15 10:10:03 i10 systemd[1]: Stopping OpenSSH server daemon...
+May 15 10:10:03 i10 sshd[19172]: Received signal 15; terminating.
+May 15 10:10:03 i10 systemd[1]: Stopped OpenSSH server daemon.
 ```
 
-* ``systemctl restart``
+* ``systemctl restart service``
 Ens permet poder reiniciar un servei.
-```
-systemctl restart httpd
-```
 
-* ``systemctl try-restart``
+* ``systemctl try-restart service``
 Similar a ``systemctl restart`` pero aquesta renicia el servei si s'esta
 executant, es a dir, si el servei esta aturat? Aquesta ordre no farà 
 **res**.
-```
-systemctl try-restart sshd
-```
 
 * ``systemctl reboot``
 Ens permet reiniciar el sistema
-```
-systemctl reboot
-```
 
 * ``systemctl poweroff``
 Ens permet apagar el sistema
-```
-systemctl poweroff
-```
 
 * ``systemctl halt``
 Ens permet tancar **tot** i apagar el sistema
-```
-systemctl halt
-```
 
 * ``systemctl status``
 Ens mostra l'estat del servei, inclós si esta en execució o no. A part
@@ -327,9 +345,6 @@ Query or send control commands to the systemd manager.
 
 * ``systemctl daemon-reload``
 Recarga systemd, escanejant en busca de serveis nous o modificats.
-```
-systemctl daemon-reload
-```
 
 * ``systemd-cgls``
 Per veure l'arbre de procesos iniciat per cada servei
@@ -777,4 +792,4 @@ SUB    = The low-level unit activation state, values depend on unit type.
 To show all installed unit files use 'systemctl list-unit-files'.
 ```
 
-[systemd]: https://github.com/brianmengibar/projecte-final/blob/master/notes_eines_systemd.md#targets-en-systemd
+[systemd]: notes_eines_systemd.md#targets-en-systemd

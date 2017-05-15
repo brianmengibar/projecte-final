@@ -50,33 +50,33 @@ tota d'informació per poder realitzar el projecte:
 * [Blog Systemd][]
 * [Blog Journalctl][]
 * [FedoraProject Systemd][]
-* [F.D. Systemd][]
-* [JournalDocumentation][]
+* [F.D.Systemd][]
+* [Journal Documentation][]
 * [Eines systemd][]
 * [How to Cockpit][]
 * [Documentation Oficial Cockpit][]
 * [ArchWiki Journal][]
-* [Para rellenar journal o systemd?][]
+* [Para rellenar journal o systemd][]
 * [Systemd Manager][]
-* [Otros de la familia systemd?][]
+* [Otros de la familia systemd][]
 * [Crear un service?][]
-* [Puede servir?][]
+* [Puede servir][]
 
 [Archlinux Systemd]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
 [Blog Systemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
 [Blog Journalctl]: https://juncotic.com/journalctl-comandos-interesantes/
 [FedoraProject Systemd]: https://fedoraproject.org/wiki/Systemd
-[F.D. Systemd]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/ch-Services_and_Daemons.html
-[JournalDocumentation]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/s1-Using_the_Journal.html
+[F.D.Systemd]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/ch-Services_and_Daemons.html
+[Journal Documentation]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/s1-Using_the_Journal.html
 [Eines systemd]: https://diversidadyunpocodetodo.blogspot.com.es/2016/07/systemd-analyze-kcm-systemadm-systemctl.html
 [How to Cockpit]: https://www.liquidweb.com/kb/how-to-use-cockpit-in-fedora-23/
 [Documentation Oficial Cockpit]: http://cockpit-project.org/guide/latest/
 [ArchWiki Journal]: https://wiki.archlinux.org/index.php/Systemd#Journal
-[Para rellenar journal o systemd?]: http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/
+[Para rellenar journal o systemd]: http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/
 [How to systemd manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
-[Otros de la familia systemd?]: https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl
+[Otros de la familia systemd]: https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl
 [Crear un service?]: https://www.tecmint.com/create-new-service-units-in-systemd/
-[Puede servir?]: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
+[Puede servir]: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
 
 [Systemd]: notes_systemd.md#systemd
 [Que es Systemd]:notes_systemd.md#que-%C3%A9s-systemd
