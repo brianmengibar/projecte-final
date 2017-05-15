@@ -409,15 +409,6 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 
 	No poso tota la sortida ja que es massa extensa.
 
-	A part de per **mes** podem especificar per:
-
-  * `s` segons
-  * `min` minuts
-  * `h` hora
-  * `days` dies
-  * `weeks` setmanes
-  * `suffixes` suffixos dels anys
-
 	Una vegada fet, tornem a comprobar quant ens ocupa ara els registres
 	de journald.
 
@@ -427,6 +418,15 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 	```
 
 	I de nou hem comprovat que ha baixat bastant comparat amb abans.
+
+	Cal dir que a part de per **mes** podem especificar per:
+
+  * `s` segons
+  * `min` minuts
+  * `h` hora
+  * `days` dies
+  * `weeks` setmanes
+  * `suffixes` suffixos dels anys
 
 * `journalctl /dev/sda`
 
