@@ -119,6 +119,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	document on seguim parlant sobre [systemd].
 
 * `systemctl get-default`
+
 	Gràcies a aquesta opció, podem sapiguer en quin target estem actualment
 	en aquest sistema, per cambiar de target, ho fariem amb l'opció `ìsolate`
 	que he comentat abans.
@@ -129,6 +130,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `systemctl set-default`
+
 	A vegades es pot donar el cas de que estem en un target en concret pero
 	que d'aqui dues hores volem estar per exemple en mode __rescue__, doncs be,
 	en comptes de fer `systemctl isolate rescue.target`, podem fer
@@ -136,6 +138,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	defecte s'iniciara en mode __rescue__, ja que a esborrar l'antic
 	`symbolic link` que apuntaba a __graphical.target__ i a creat un nou
 	`symbolic link` que apunta a __rescue.target__.
+	
 	```
 	$ systemctl set-default rescue.target 
 	Removed symlink /etc/systemd/system/default.target.
@@ -143,6 +146,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 	I llavors comprovem:
+	
 	```
 	$ systemctl get-default 
 		rescue.target
@@ -151,9 +155,11 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	Ara si fessim un reboot, automaticament entrariem en mode __rescue__.
 
 * `systemctl list-unit-files`
+
 	Les unitats disponibles es troben llistades en els directoris **/lib/systemd/system**
 	i en **/etc/systemd/system**. Pero amb aquesta opció, tambe es poden llistar.
 	Que ens dona aixo? La llista de les unitats disponibles i l'estatus de cadascuna.
+	
 	```
 	$ systemctl list-unit-files
 	UNIT FILE                                   STATE   
@@ -172,7 +178,9 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `systemctl start service`
+
 	Ens permet poder engegar un servei.
+	
 	```
 	$ systemctl start sshd
 
@@ -195,7 +203,9 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `systemctl stop service`
+
 	Ens permet poder aturar un servei.
+	
 	```
 	$ systemctl stop sshd
 
@@ -216,27 +226,34 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `systemctl restart service`
+
 	Ens permet poder reiniciar un servei.
 
 * `systemctl try-restart service`
+
 	Similar a `systemctl restart` pero aquesta renicia el servei si s'esta
 	executant, es a dir, si el servei esta aturat? Aquesta ordre no farà 
 	**res**.
 
 * `systemctl reboot`
+
 	Ens permet reiniciar el sistema
 
 * `systemctl poweroff`
+
 	Ens permet apagar el sistema
 
 * `systemctl halt`
+
 	Ens permet tancar **tot** i apagar el sistema
 
 * `systemctl status`
+
 	Ens mostra l'estat del servei, inclós si esta en execució o no. A part
 	de tambe mostrar-nos un petit log com el que fa `journalctl` pero
 	molt mes breu, encara que a vegades quan no sabem per que no s'engega
 	el servei ens pot ser util.
+	
 	```
 	$ systemctl status httpd
 	● httpd.service - The Apache HTTP Server
@@ -256,27 +273,35 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `systemctl enable`
+
 	Ens habilita el servei per que a partir d'ara, en el moment que s'arranqui
 	el sistema, aquest servei ja s'inici automaticament.
+	
 	```
 	$ systemctl enable sshd
 	Created symlink from /etc/systemd/system/multi-user.target.wants/sshd.service to /usr/lib/systemd/system/sshd.service.
 	```
+	
 	En el moment que fem enable, es crea un `symbolic link`, per que aixi
 	el sistema sapiga que en el moment que s'arranqui el sistema, calgui engegar
 	aquest servei.
 
 * `systemctl disable`
+
 	Ens deshabilita el servei per que a partir d'ara, en el moment que s'arranqui
 	el sistema, aquest servei no s'inici automaticament, aixi que s'esborra el
 	`symbolic link`.
+	
 	```
 	$ systemctl disable sshd
+	
 	Removed symlink /etc/systemd/system/multi-user.target.wants/sshd.service.
 	```
 
 * `systemctl is-enabled`
+
 	$ Molt util per comprobar si un servei especific ja esta habilitat o no.
+	
 	```
 	systemctl is-enabled sshd
 	disabled
@@ -287,6 +312,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 
 * `systemctl is-active`
 	Aquesta opció ens diu si un servei esta engegat o no.
+	
 	```
 	$ systemctl is-active dovecot
 	inactive
@@ -296,8 +322,10 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `systemctl -t`
+
 	S'utilitza per llistar per exemple els units .services que tenim en el 
 	sistema **actius**.
+	
 	```
 	$ systemctl -t service
 	  UNIT                                            LOAD   ACTIVE SUB     DESCRIPTION
@@ -334,8 +362,10 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	path, scope, slice, socket, swap, target, timer**)
 
 * `systemctl help`
+
 	Et mostra la pagina del manual asociada al servei especific que nosaltres
 	posem.
+	
 	```
 	$ systemctl --help
 	systemctl [OPTIONS...] {COMMAND} ...
@@ -351,10 +381,13 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `systemctl daemon-reload`
+
 	Recarga systemd, escanejant en busca de serveis nous o modificats.
 
 * `systemd-cgls`
-	Per veure l'arbre de procesos iniciat per cada servei
+
+	Per veure l'arbre de procesos iniciat per cada servei.
+	
 	```
 	$ systemd-cgls
 	Control group /:
@@ -371,6 +404,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `systemctl kill`
+
 	La veritat, es que no conexia aquesta ordre, per lo que he vist, a l'hora
 	de ver un **kill** a un servei per defecte fa un **SIGTERM** (numero 15
 	en el llistat al fer `kill -l`). **SIGTERM** lo que fa es finalitzar
@@ -387,6 +421,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	   Status: "Processing requests..."
 		Tasks: 33 (limit: 512)
 	```
+	
 	Podem comprobar que el servei **httpd** esta actiu, llavors executem
 	l'ordre i veiem que passa:
 
@@ -405,6 +440,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	Com podem comprobar, el servei s'ha aturat ja que no hi ha cap procés
 	en marxa. Pero me fixat que aquesta ordre te el parametre ``-s`` que
 	ens permet especificar la senyal que volem enviar.
+	
 	```
 	$ systemctl status sshd
 	● sshd.service - OpenSSH server daemon
@@ -428,6 +464,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	Veiem que el nº de proces es el **2916**, ara executem l'ordre amb el
 	parametre -s i diem que fassi un **SIGHUP** (numero 1 al fer el llistat)
 	que lo que farà serà reiniciar el servei.
+	
 	```
 	$ systemctl kill -s SIGHUP sshd
 
@@ -439,14 +476,15 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	i fessim un `kill -numero nº proces` pero m'he donat compte que també
 	es pot fer en el conjunt de parametres de `systemctl`.
 
-
 * `systemctl mask servei.service`
+
 	Aquest parametre no ho coneixia i la veritat es que la veig molt util,
 	a l'hora d'emmascarar un servei, a part de deshabilitar-ho, evitem que
 	es pugui iniciar ja sigui manualment o automaticament.
 
 	Lo primer que hi ha que comprobar es mostrar que el servei **sshd** esta
-	engegat
+	engegat.
+	
 	```
 	$ systemctl status sshd
 	● sshd.service - OpenSSH server daemon
@@ -469,6 +507,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 
 	Una vegada creat, tornem a comprobar que el servei segueix actiu i
 	l'aturem.
+	
 	```
 	$ systemctl status sshd
 	● sshd.service
@@ -483,6 +522,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 
 	Llavors, ara l'unic que falta es comprobar que el servei sshd no es pot
 	iniciar.
+	
 	```
 	$ systemctl start sshd
 	Failed to start sshd.service: Unit sshd.service is masked.
@@ -492,7 +532,9 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	esta **enmasquerat**.
 
 * `systemctl unmask servei.service`
+
 	Clarament, serveix per per desemmascarar un servei.
+	
 	```
 	$ systemctl unmask sshd
 	Removed symlink /etc/systemd/system/sshd.service.
@@ -500,6 +542,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 
 	En el moment que desemmascarem el servei, tornem a intentar engegar el
 	servei.
+	
 	```
 	$ systemctl start sshd
 
@@ -514,9 +557,11 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	Tot torna a la normalitat i en funcionament.
 
 * `systemctl list-dependencies`
+
 	Aquest parametre ens pot servir per sapiguer la dependencia d'un
 	unit especific o per defecte, si no especifiquem res, ens mostra tots 
 	els units que depenen del target actual que te el sistema
+	
 	```
 	$ systemctl list-dependencies 
 	default.target
@@ -539,6 +584,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	Ara hem vist tots els units que depenen de **default.target**, podem
 	també especificar un unit com per exemple, que ens mostri tots els
 	units que depenen de **reboot.target**.
+	
 	```
 	$ systemctl list-dependencies reboot.target 
 	reboot.target
@@ -548,6 +594,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 
 	O per exemple que ens mostri tots els units que depenen del servei
 	**sshd**.
+	
 	```
 	$ systemctl list-dependencies sshd
 	sshd.service
@@ -568,8 +615,10 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	els units que depenen de despres d'un unit especific, etc.
 
   * `systemctl list-dependencies unit --before`
+  
      Amb aquesta opció estem dient que ens mostri tots els units **ordenats** que van 
      __abans__ d'aquest unit especific. Per exemple mirarem el servei **httpd**.
+     
 	```
 	$ systemctl list-dependencies --before httpd
 	httpd.service
@@ -581,9 +630,11 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
   * `systemctl list-dependencies --after unit`
+  
      Per lo que he deduït, en teoria `--after` es l'inversa de `--before`, es a dir, ens 
      mostra tots els units **ordenats** que van __despres__ d'aquest unit 
      específic. Per exemple tornarem a mirar el servei **httpd**.
+     
 	```
 	$ systemctl list-dependencies --after httpd
 	httpd.service
@@ -598,12 +649,14 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	● │ ├─systemd-ask-password-plymouth.path
 	● │ ├─tmp.mount
 	```
+	
 	 No poso tot el resultat perque si no es massa extens.
   
   * `systemctl list-dependencies --reverse unit`
      Amb `--reverse` en mostra les dependències inverses, es a dir, mostra les dependències
      de tipus **WantedBy =, RequiredBy =, partof =, BOUNDBY =, 
      **en lloc de **Wants = i similar**.
+     
 	```
 	httpd.service
 	● └─multi-user.target
@@ -613,6 +666,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
   * `systemctl list-dependencies --all unit` 
     Per lo que veig, quan possem ``--all``, totes les altres unitats 
     també s'expandeixen de forma recursiva.
+    
 	```
 	$ systemctl list-dependencies --all httpd
 	httpd.service
@@ -631,11 +685,13 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	 es despleguen i he vist que surten 481 linies.
 
 * ``systemctl cat service``
+
 	Explorant, he trobat que `systemctl` també té el parametre `cat`, que
 	crec que es molt util, ja que aquest parametre seguit d'un servei, ens
 	mostra el fitxer de configuració del servei i també ens mostra la ruta
 	de on esta ubicat el servei. Molt util per quan volem editar el fitxer
 	i no ens recordem o no sabem on pot estar el fitxer la veritat.
+	
 	```
 	$ systemctl cat sshd.service
 	# /usr/lib/systemd/system/sshd.service
@@ -660,12 +716,14 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `systemctl edit --full service`
+
 	Obviament, si `systemctl` permet fer un cat del fitxer de configuració,
 	te que existir un altre parametre per poder modificar el fitxer, doncs
 	be, per poder fer-ho es posant **edit** seguit de `--full`. Aixó
 	significa que directament anirà a editar el fitxer de configuració, si
 	no fiquessim `--edit` s'obriria un fitxer en blanc que el podriem 
 	utilitzar per anul·lar o afegir directives al fitxer de configuració.
+	
 	```
 	$ systemctl edit --full sshd
 	[Unit]
@@ -696,9 +754,11 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	reload` per que acceptar els cambis fets.
 
 * `systemctl show [service]`
+
 	Aquest parametre mostra una llista de propietats que s'estableixen per
 	l'unitat especificada. Si no especifiquem cap unit, automaticament es
 	mostraran les propietats del nostre sistema.
+	
 	```
 	$ systemctl show
 	Version=229
@@ -717,6 +777,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	Cal mencionar que no poso tota l'informació per que son 86 linias i seria molt extens.
 
 	Ara ho executem pero per exemple amb el servei httpd.
+	
 	```
 	$ systemctl show httpd
 	Type=notify
@@ -736,6 +797,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	que ara ens mostra la llista de propietats a baix nivell d'aquest
 	servei especific. Clarament no cal que sigui un `.service`, per exemple
 	podem veure tot el llistat de `rescue.target`.
+	
 	```
 	$ systemctl show rescue.target
 	Id=rescue.target
@@ -753,12 +815,14 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	quan `systemctl` ja te un parametre per poder buscar anomenat `--property`.
 	Que ens permet? Buscar nomes les propietats que nosaltres volguem com
 	per exemple veure la propietat **Names** del target `graphical.target`.
+	
 	```
 	$ systemctl show --property Names graphical.target
 	Names=graphical.target runlevel5.target
 	```
 
 	O si volem més d'una propietat, podem ficar-las separades per comes:
+	
 	```
 	$ systemctl show --property Names,Documentation graphical.target
 	Names=graphical.target runlevel5.target
@@ -767,6 +831,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 
 	Pero que passa si volem veure les mateixes propietats pero per diferents
 	units? Doncs també podem, com? Separant cada unit amb un espai:
+	
 	```
 	$ systemctl show --property Names,Requires graphical.target httpd sshd rescue.target
 	Names=graphical.target runlevel5.target
@@ -783,8 +848,10 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 
 * `sytemctl --failed`
+
 	Amb aquest parametre ens llista les unitats
 	que han tingut algun problema i per aixo no estan actives.
+	
 	```
 	$ systemctl --failed
 	  UNIT                              LOAD   ACTIVE SUB    DESCRIPTION
