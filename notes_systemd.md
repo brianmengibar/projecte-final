@@ -116,7 +116,8 @@ Gràcies a aquesta opció, podem sapiguer en quin target estem actualment
 en aquest sistema, per cambiar de target, ho fariem amb l'opció ``ìsolate``
 que he comentat abans.
 
-```systemctl get-default 
+```
+systemctl get-default 
 	graphical.target
 ```
 
