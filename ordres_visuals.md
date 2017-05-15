@@ -25,28 +25,36 @@ Crea un archiu amb format `.svg` que descriu el procés d'arrancada de
 forma gráfica. 
 
 ```
-$ systemd-analyze plot > grafica.svg && echo "Si surt aquest missatge? Significa que a anat be"
-Si surt aquest missatge? Significa que a anat be
-
-$ ll | grep grafica.svg
--rw-r--r--. 1 isx39441584 hisx2 116182 Apr 26 12:36 grafica.svg
+$ systemd-analyze plot > grafica-plot-target-actual.svg; inkscape -e grafica-plot-target-actual.png grafica-plot-target-actual.svg
+Background RRGGBBAA: ffffff00
+Area 0:0:1901:5830 exported to 1901 x 5830 pixels (90 dpi)
+Bitmap saved as: grafica-plot-target-actual.png
 ```
 
-![Grafica-plot](./grafiques/grafica_plot.png)
+![Grafica-plot](grafiques/grafica-plot-target-actual.png)
+
+Com podem observar, en la linia d'ordre trobem l'eina `ìnkscape`, es necessaria
+per convertir de format `.svg` a `.png` ja que al pujar les imatges, m'he
+donat compte de que **github** no soporta l'extensió `.svg`. Així que
+tenia que buscar alguna manera per poder **transformar** de format i la 
+veritat que amb `inkscape` es molt fàcil i eficaç, només cal executar
+`dnf -y install inkscape`, en el moment que ho tenim instal·lat amb el 
+parametre `-e` per especificar amb quin format ho volem exportar i al 
+final de la linia posant la imatge? Ja fa la conversió automaticament.
 
 Aquesta grafica es de `graphical.target`, ja que es en el target que
 estic per defecte, llavors lo que acabo de fer es reiniciar la maquina
 i entrar en **mode 1** --> `rescue.target` i aquesta es la grafica
 que com podem comprobar, es molt diferent.
 
-![grafica-rescue](./grafiques/grafica-rescue.png)
+![grafica-rescue](grafiques/grafica-rescue.png)
 
 
 Per ultim, des de **mode 1** he fet un `systemctl isolate emergency.target`
 per anar a parar a **mode emergency** i aquesta es la grafica d'aquest
 target.
 
-![grafica-emergency](./grafiques/grafica-mode-emergency.png)
+![grafica-emergency](grafiques/grafica-mode-emergency.png)
 
 ### Significat colors
 
@@ -79,18 +87,21 @@ També crea un archiu amb format `.svg` que mostra un grafic de l'us
 del sistema pero cal dir, que es una mica "lio". Lo primer que cal fer
 es instal·lar el paquet **graphviz**. Una vegada instal·lat, ja podem 
 executar l'ordre, que com podem veure, el resultat s'emmagatzemara en un
-archiu `.svg` que en aquest cas s'anomenarà **systemd.svg**.
+archiu `.svg`.
 
 ```
-$ systemd-analyze dot --require | dot -Tsvg > systemd.svg
+$ systemd-analyze dot --require | dot -Tsvg > grafica-dot-target-actual.svg; inkscape -e grafica-dot-target-actual.png grafica-dot-target-actual.svg
    Color legend: black     = Requires
                  dark blue = Requisite
                  dark grey = Wants
                  red       = Conflicts
                  green     = After
+Background RRGGBBAA: ffffff00
+Area 0:0:32236.2:1225 exported to 32236 x 1225 pixels (90 dpi)
+Bitmap saved as: grafica-dot-target-actual.png
 ```
 
-![Grafica-dot-system](./grafiques/grafica_dot.png)
+![Grafica-dot-system](grafiques/grafica-dot-target-actual.png)
 
 Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
 pero també podem crear el grafic a partir d'un punt especific, per exemple
@@ -100,15 +111,17 @@ He agafat httpd per que la grafica es molt mes petita, ja que en
 la imatge d'abans de tot el sistema no es veu practicament **res**.
 
 ```
-$ systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg
-   Color legend: black     = Requires
+$ systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg; inkscape -e httpd.png httpd.svg   Color legend: black     = Requires
                  dark blue = Requisite
                  dark grey = Wants
                  red       = Conflicts
                  green     = After
+Background RRGGBBAA: ffffff00
+Area 0:0:767.5:235 exported to 768 x 235 pixels (90 dpi)
+Bitmap saved as: httpd.png
 ```
 
-![Grafica-dot-httpd](./grafiques/httpd.png)
+![Grafica-dot-httpd](grafiques/httpd.png)
 
 ### Parametres de systemd-analyze dot
 
@@ -123,18 +136,17 @@ trobat aquests dos parametres que crec que son molt utils:
 	del sistema pero del target ``rescue.target``.
 
 	```
-	$ systemd-analyze dot --from-pattern='rescue.target' | dot -Tsvg > from-rescue.svg
+	$ systemd-analyze dot --from-pattern='rescue.target' | dot -Tsvg > from-rescue.svg; inkscape -e from-rescue.png from-rescue.svg
 	   Color legend: black     = Requires
 					 dark blue = Requisite
 					 dark grey = Wants
 					 red       = Conflicts
 					 green     = After
+	Background RRGGBBAA: ffffff00
+	Area 0:0:902.5:145 exported to 903 x 145 pixels (90 dpi)
+	Bitmap saved as: from-rescue.png
 	```
 
-	![from-rescue](./grafiques/from-rescue.png)
+	![from-rescue](grafiques/from-rescue.png)
 
 # FALTA METER EL --TO-PATTERN, EXPLICAR COLORES, METER MAS IMAGENES
-
-Les imatges son en format `.png` per lo que he vist que **Github** no
-soporta el format `.svg`, llavors gracies a l'eina `inkscape` he cambiat
-el format de `.svg` a `.png`.
