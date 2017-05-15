@@ -56,7 +56,7 @@ tota l'informació per poder realitzar el projecte:
 * [How to Cockpit][]
 * [Documentation Oficial Cockpit][]
 * [ArchWiki Journal][]
-* [Para rellenar journal o systemd][]
+* [Para rellenar journal o systemd?][]
 * [Systemd Manager][]
 * [Otros de la familia systemd?][]
 * [Crear un service?][]
@@ -65,7 +65,7 @@ tota l'informació per poder realitzar el projecte:
 [Archlinux Systemd]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
 [Blog Systemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
 [Blog Journalctl]: https://juncotic.com/journalctl-comandos-interesantes/
-[FedoraProject Systemdt]: https://fedoraproject.org/wiki/Systemd
+[FedoraProject Systemd]: https://fedoraproject.org/wiki/Systemd
 [F.D. Systemd]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/ch-Services_and_Daemons.html
 [JournalDocumentation]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/s1-Using_the_Journal.html
 [Eines systemd]: https://diversidadyunpocodetodo.blogspot.com.es/2016/07/systemd-analyze-kcm-systemadm-systemctl.html
