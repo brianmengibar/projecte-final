@@ -23,57 +23,57 @@ A continuació teniu un breu **index** que conté tots els apartats que
 he realitzat.
 
 ### Index
-* [Systemd]
-  * [Que es Systemd]
-  * [Eines de Systemd]
-* [Journal]
-  * [Que es journal]
-  * [Parametres de journal]
-* [Ordres visuals]
-  * [Plot]
-  * [Dot]
-* [Reports elaborats]
-  * [Prioritat]
-  * [Temps]
-  * [Prioritat i temps]
-  * [Avançat]
-  * [Boots]
-* [Reports dinamics]
-  * [Cockpit]
-  * [Systemd-Manager]
+* [Systemd][]
+  * [Que es Systemd][]
+  * [Eines de Systemd][]
+* [Journal][]
+  * [Que es journal][]
+  * [Parametres de journal][]
+* [Ordres visuals][]
+  * [Plot][]
+  * [Dot][]
+* [Reports elaborats][]
+  * [Prioritat][]
+  * [Temps][]
+  * [Prioritat i temps][]
+  * [Avançat][]
+  * [Boots][]
+* [Reports dinamics][]
+  * [Cockpit][]
+  * [Systemd Manager][]
 
 A continuació, podeu veure un llistat de **links** d'on estic extreient 
 tota l'informació per poder realitzar el projecte:
 
 ### Links
-* [Archlinux Systemd][archlinux]
-* [Blog Systemd][blogsystemd]
-* [Blog Journalctl][blogjournal]
-* [FedoraProject Systemd][fedoraproject]
-* [F.D. Systemd][DocumentationSystemd]
-* [JournalDocumentation]
-* [Eines-systemd]
-* [How-to-Cockpit]
-* [Documentation-Oficial-Cockpit]
-* [ArchWiki-Journal]
-* [Para rellenar journal o systemd?]
-* [Systemd-Manager]
-* [Otros de la familia systemd?]
-* [Crear un service?]
-* [Puede servir?]
+* [Archlinux Systemd][]
+* [Blog Systemd][]
+* [Blog Journalctl][]
+* [FedoraProject Systemd][]
+* [F.D. Systemd][]
+* [JournalDocumentation][]
+* [Eines systemd][]
+* [How to Cockpit][]
+* [Documentation Oficial Cockpit][]
+* [ArchWiki Journal][]
+* [Para rellenar journal o systemd][]
+* [Systemd Manager][]
+* [Otros de la familia systemd?][]
+* [Crear un service?][]
+* [Puede servir?][]
 
-[archlinux]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
-[blogsystemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
-[blogjournal]: https://juncotic.com/journalctl-comandos-interesantes/
-[fedoraproject]: https://fedoraproject.org/wiki/Systemd
-[DocumentationSystemd]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/ch-Services_and_Daemons.html
+[Archlinux Systemd]: https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl
+[Blog Systemd]: http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/
+[Blog Journalctl]: https://juncotic.com/journalctl-comandos-interesantes/
+[FedoraProject Systemdt]: https://fedoraproject.org/wiki/Systemd
+[F.D. Systemd]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/ch-Services_and_Daemons.html
 [JournalDocumentation]: https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/s1-Using_the_Journal.html
-[Eines-systemd]: https://diversidadyunpocodetodo.blogspot.com.es/2016/07/systemd-analyze-kcm-systemadm-systemctl.html
-[How-to-Cockpit]: https://www.liquidweb.com/kb/how-to-use-cockpit-in-fedora-23/
-[Documentation-Oficial-Cockpit]: http://cockpit-project.org/guide/latest/
-[ArchWiki-Journal]: https://wiki.archlinux.org/index.php/Systemd#Journal
+[Eines systemd]: https://diversidadyunpocodetodo.blogspot.com.es/2016/07/systemd-analyze-kcm-systemadm-systemctl.html
+[How to Cockpit]: https://www.liquidweb.com/kb/how-to-use-cockpit-in-fedora-23/
+[Documentation Oficial Cockpit]: http://cockpit-project.org/guide/latest/
+[ArchWiki Journal]: https://wiki.archlinux.org/index.php/Systemd#Journal
 [Para rellenar journal o systemd?]: http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/
-[How-to-systemd-manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
+[How to systemd manager]: https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/
 [Otros de la familia systemd?]: https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl
 [Crear un service?]: https://www.tecmint.com/create-new-service-units-in-systemd/
 [Puede servir?]: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
@@ -88,7 +88,7 @@ tota l'informació per poder realitzar el projecte:
 [Ordres visuals]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#ordres-visuals
 [Reports elaborats]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#reports-elaborats
 [Cockpit]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-cockpit
-[Systemd-Manager]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-systemd-manager
+[Systemd Manager]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#que-%C3%A9s-systemd-manager
 [Plot]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#systemd-analyze-plot
 [Dot]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#systemd-analyze-dot
 [Prioritat]: https://github.com/brianmengibar/projecte-final/blob/master/reports_elaborats.md#per-prioritat
