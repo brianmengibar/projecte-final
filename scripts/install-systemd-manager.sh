@@ -9,3 +9,4 @@ wget https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/repo/fedor
 
 # Instal·lem el paquet
 dnf install systemd-manager
+exit 0

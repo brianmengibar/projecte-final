@@ -26,7 +26,7 @@ que he realitzat.
 
 ### Index
 * [Systemd](notes_systemd.md#systemd)
-  * [Que es Systemd](notes_systemd.md#que-%C3%A9s-systemd)
+  * [Que es Systemd](notes_systemd.md#que-es-systemd)
   * [Eines de Systemd](notes_eines_systemd.md#systemd-analyze)
 * [Journal](notes_journal.md#journal)
   * [Que es journal](notes_journal.md#que-es-journal)
