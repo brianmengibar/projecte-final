@@ -107,9 +107,11 @@ exit.target                 initrd.target               rescue.target           
 graphical.target            kexec.target                runlevel0.target            runlevel5.target    
 ```
 
-Al donar-li al tabulador veiem tots els targets en els qual podem accedir(cal dir
-que la explicació dels runlevels i targets ho tenim en l'altre document
-on seguim parlant sobre [systemd]).
+Al donar-li al tabulador veiem tots els targets en els qual podem accedir.
+
+
+> Cal dir que la explicació dels runlevels i targets ho tenim en l'altre
+document on seguim parlant sobre [systemd].
 
 * ``systemctl get-default``
 Gràcies a aquesta opció, podem sapiguer en quin target estem actualment
