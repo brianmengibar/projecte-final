@@ -367,16 +367,15 @@ Deleted archived journal /var/log/journal/0dd3a45452b340e3bece923b3eab00ec/syste
 Deleted archived journal /var/log/journal/0dd3a45452b340e3bece923b3eab00ec/system@fb325ac2f8a94f57a074211c7cd4590e-000000000027122f-00054b4dceb938da.journal (128.0M).
 ```
 
+> No poso tota la sortida ja que es massa extensa.
+
 A part de per **mes** podem especificar per:
 * ``s`` segons
 * ``min`` minuts
 * ``h`` hora
 * ``days`` dies
-* ``months`` mesos
 * ``weeks`` setmanes
 * ``suffixes`` suffixos dels anys
-
-> No poso tota la sortida ja que es massa extensa.
 
 Una vegada fet, tornem a comprobar quant ens ocupa ara els registres
 de journald.
