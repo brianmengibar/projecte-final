@@ -64,19 +64,19 @@ i al costat un nom, que cadascun vol dir:
 * `Activating`
 
 	Mostra el temps exacte que tarda a activar-se els units mentres esta en procés l'arrencada.
-	
+
 * `Active` 
 
 	Ens diu en que moment exacte s'activen els units.
-	
+
 * `Deactivating`
 
 	El temps que tarda en ser desactivar-se un unit per el motiu que sigui (ja sigui per un error, un problema, etc).
-	
+
 * `Setting up security module`
 
 	El temps que tarda Systemd en configurar el modul de seguretat.
-	
+
 * `Loading Unit Files`
 
 	El temps que tarda Systemd en carregar els archius dels units.
