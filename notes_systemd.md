@@ -567,7 +567,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	especificar si volem veure els units que depenen abans d'un unit especific
 	els units que depenen de despres d'un unit especific, etc.
 
-   * `systemctl list-dependencies unit --before`
+  * `systemctl list-dependencies unit --before`
      Amb aquesta opció estem dient que ens mostri tots els units **ordenats** que van 
      __abans__ d'aquest unit especific. Per exemple mirarem el servei **httpd**.
 	```
@@ -580,7 +580,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	● └─shutdown.target
 	```
 
-   * `systemctl list-dependencies --after unit`
+  * `systemctl list-dependencies --after unit`
      Per lo que he deduït, en teoria `--after` es l'inversa de `--before`, es a dir, ens 
      mostra tots els units **ordenats** que van __despres__ d'aquest unit 
      específic. Per exemple tornarem a mirar el servei **httpd**.
@@ -600,7 +600,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	```
 	 No poso tot el resultat perque si no es massa extens.
   
-   * `systemctl list-dependencies --reverse unit`
+  * `systemctl list-dependencies --reverse unit`
      Amb `--reverse` en mostra les dependències inverses, es a dir, mostra les dependències
      de tipus **WantedBy =, RequiredBy =, partof =, BOUNDBY =, 
      **en lloc de **Wants = i similar**.
