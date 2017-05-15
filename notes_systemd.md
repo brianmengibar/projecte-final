@@ -9,7 +9,7 @@
 
 # Systemd
 
-## Que és Systemd?
+## Que es Systemd?
 
 És un gestor del sistema i dels serveis per a Linux, compatible amb els 
 `initscript SysV i LSB`. Systemd proporciona una notable capacitat de 
