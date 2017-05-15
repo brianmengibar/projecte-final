@@ -103,6 +103,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
    * `verbose`
    
 		Que retorna els elements amb tots els camps.
+		
 		```
 		$ journalctl -o verbose
 		-- Logs begin at jue 2016-09-15 19:55:07 CEST, end at mar 2017-04-25 20:01:01 CEST. --
