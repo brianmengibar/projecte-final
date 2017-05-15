@@ -11,13 +11,13 @@
 
 Benvinguts al meu projecte sobre **"Serveis informatius de Systemd"**.
 
-El propòsit d'aquest projecte es:
-* Presentar de forma absolutament **exhaustiva** totes les ordres i opcions relacionada amb:
+El proposit d'aquest projecte es:
+* Presentar de forma absolutament **exhaustiva** totes les ordres i opcions relacionadas amb:
   * **Systemd**
   * **Journalctl**
 * Trobar **Ordres visuals**
 * Trobar **Reports Elaborats**
-* Trobar si existeixen **reports dinàmics**
+* Trobar si existeixen **reports dinamics**
 
 A continuació teniu un breu **index** que conté tots els apartats que
 he realitzat.
@@ -28,7 +28,7 @@ he realitzat.
   * [Eines de Systemd][]
 * [Journal][]
   * [Que es journal][]
-  * [Paràmetres de journal][]
+  * [Parametres de journal][]
 * [Ordres visuals][]
   * [Plot][]
   * [Dot][]
@@ -38,12 +38,12 @@ he realitzat.
   * [Prioritat i temps][]
   * [Avançat][]
   * [Boots][]
-* [Reports dinàmics][]
+* [Reports dinamics][]
   * [Cockpit][]
-  * [Systemd Mànager][]
+  * [Systemd Manager][]
 
-A continuació, podeu veure un llistat de **links** d'on estic extreien 
-tota d'informació per poder realitzar el projecte:
+A continuació, podeu veure un llistat de **links** d'on estic extreient 
+tota l'informació per poder realitzar el projecte:
 
 ### Links per extreure informació
 * [Archlinux Systemd][]
@@ -83,8 +83,8 @@ tota d'informació per poder realitzar el projecte:
 [Eines de Systemd]: notes_eines_systemd.md#systemd-analyze
 [Journal]: notes_journal.md#journal
 [Que es journal]: notes_journal.md#que-es-journal
-[Paràmetres de journal]: notes_journal.md#parametres-de-journalctl
-[Reports dinàmics]: reports_dinamics.md#reports-dinamics
+[Parametres de journal]: notes_journal.md#parametres-de-journalctl
+[Reports dinamics]: reports_dinamics.md#reports-dinamics
 [Ordres visuals]: ordres_visuals.md#ordres-visuals
 [Reports elaborats]: reports_elaborats.md#reports-elaborats
 [Cockpit]: reports_dinamics.md#que-%C3%A9s-cockpit
