@@ -78,11 +78,11 @@ tota l'informació per poder realitzar el projecte:
 [Crear un service?]: https://www.tecmint.com/create-new-service-units-in-systemd/
 [Puede servir?]: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
 
-[Systemd]: ./notes_systemd.md#systemd
-[Que es Systemd]:./notes_systemd.md#que-%C3%A9s-systemd
-[Eines de Systemd]: ./notes_eines_systemd.md#systemd-analyze
-[Journal]: ./notes_journal.md#journal
-[Que es journal]: ./notes_journal.md#que-es-journal
+[Systemd]: notes_systemd.md#systemd
+[Que es Systemd]:notes_systemd.md#que-%C3%A9s-systemd
+[Eines de Systemd]: notes_eines_systemd.md#systemd-analyze
+[Journal]: notes_journal.md#journal
+[Que es journal]: notes_journal.md#que-es-journal
 [Parametres de journal]: https://github.com/brianmengibar/projecte-final/blob/master/notes_journal.md#parametres-de-journalctl
 [Reports dinamics]: https://github.com/brianmengibar/projecte-final/blob/master/reports_dinamics.md#reports-dinamics
 [Ordres visuals]: https://github.com/brianmengibar/projecte-final/blob/master/ordres_visuals.md#ordres-visuals
