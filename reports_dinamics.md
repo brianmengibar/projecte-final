@@ -295,9 +295,7 @@ Saving to: ‘/etc/yum.repos.d/nunodias-systemd-manager-fedora-24.repo’
 Amb aquesta ordre ja esta instal·lat el paquet que necessitem, una vegada
 ho tenim cal instal·lar `systemd-manager`.
 
-```
-# dnf -y install systemd-manager
-```
+```# dnf -y install systemd-manager```
 
 Una vegada instal·lada, des de terminal posem `systemd-manager` i ja 
 estem dins de l'aplicació.
