@@ -46,9 +46,7 @@ tenen relació amb aquest tema.
 
 Lo primer de tot sera instal·lar el paquet anomenat `cockpit`.
 
-```
-[root@i10 ~]# dnf -y install cockpit
-```
+```# dnf -y install cockpit```
 
 Com podem observar, es un servei, aixi que caldrà iniciar aquest **servei**.
 
