@@ -167,10 +167,10 @@ trobat aquests dos parametres que crec que son molt utils:
                  dark grey = Wants
                  red       = Conflicts
                  green     = After
-Background RRGGBBAA: ffffff00
-Area 0:0:760:145 exported to 760 x 145 pixels (90 dpi)
-Bitmap saved as: to-rescue.png
-```
+	Background RRGGBBAA: ffffff00
+	Area 0:0:760:145 exported to 760 x 145 pixels (90 dpi)
+	Bitmap saved as: to-rescue.png
+	```
 
 	![to-rescue](grafiques/to-rescue.png)
 	
