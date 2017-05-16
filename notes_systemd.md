@@ -116,7 +116,7 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 
 
 	Cal dir que la explicació dels runlevels i targets ho tenim en l'altre
-	document on seguim parlant sobre [systemd].
+	document on seguim parlant sobre [systemd](notes_eines_systemd.md#targets-en-systemd)
 
 * `systemctl get-default`
 
@@ -866,4 +866,4 @@ A continuació comentaré una serie d'ordres de la familia systemd:
 	To show all installed unit files use 'systemctl list-unit-files'.
 	```
 
-[systemd]: notes_eines_systemd.md#targets-en-systemd
+
