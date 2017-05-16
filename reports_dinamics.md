@@ -178,6 +178,7 @@ ens apareixen dos simbols:
  * **Un llapis**
  
 	Si li donem al llapis ens deixara modificar:
+	
   * Host Name
   * Color
   * Avatar
