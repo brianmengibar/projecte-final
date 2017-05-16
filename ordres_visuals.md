@@ -152,7 +152,7 @@ trobat aquests dos parametres que crec que son molt utils:
 	
   * Es **requerit**(per la fletcha negra) que després d'engegar `rescue.target`, estigui engegat `sysinit.target` i `rescue.service` (per la fletcha verda).
   * Vol que estigui engegat el servei `systemd-update-utmp-runlevel.service` (per la fletcha gris).
-  * Si volguem entrar a shutdown.target ens diu que entrarà en conflicte(per la fletcha vermella) amb `shutdown.target`, lo que vol dir es que no poden estar els dos engegats.
+  * Si volguem engegar a `shutdown.target` ens diu que entrarà en conflicte(per la fletcha vermella), lo que vol dir es que no poden estar els dos engegats.
 
 * `--to-pattern`
 	
