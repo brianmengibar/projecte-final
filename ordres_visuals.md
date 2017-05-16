@@ -21,7 +21,7 @@ trobar ordres que ens retornen una imatge, ordres que ens retornen una
 grafica etc. Aquestes son les que jo he trobat i crec que les millors
 que tenim en el sistema:
 
-## Explorant parametre plot
+## Explorant plot
 
 L'ordre `systemd-analyze plot` crea un arxiu amb format `.svg` que descriu el procés d'arrancada de 
 forma gráfica. 
@@ -84,7 +84,7 @@ i al costat un nom, que cadascun vol dir:
 
 	El temps que tarda Systemd en carregar els archius dels units.
 
-## Explorant parametre dot
+## Explorant dot
 
 L'ordre `systemd-analyze dot` també crea un archiu amb format `.svg` 
 que mostra un grafic de l'us del sistema. Lo primer que cal fer es 
