@@ -24,11 +24,11 @@ servei `journald`. Es crea i manté arxius binaris anomenats
 
 * El nucli
 * A partir dels processos dels usuaris
-* Sortida estandard
+* Sortida A
 * Sortida d'error dels serveis del sistema
  
-Aquests `journals` estan estructurats e indexats, aixo fa que es
-proporcioni relativament una rapida busqueda. Les entrades de journals
+Aquests `journals` estan estructurats e indexats, això fa que es
+proporcioni relativament una rapida recerca. Les entrades de journals
 poden portar un identificador **únic.** El servei `journald` recull nombrosos 
 camps de metadades per a cada missatge de registre. Els arxius de journal 
 reals estan assegurats, i per tant **no es poden editar manualment.**
@@ -50,7 +50,7 @@ prioritat d'alerta.
 
 ## Parametres de journalctl
 
-A continuació es mostraran una serie de parametres que conte l'ordre
+A continuació es mostraran una serie de paràmetres que conte l'ordre
 ``journalctl``:
 
 * `journalctl`
@@ -59,8 +59,8 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 	continguts del `journal`, començant amb l'entrada més antiga que va ser guardada.
 
 	Cal dir que per defecte, les entrades més antigues es mostren 
-	al principi. La sortida és mostrada per la sortida standard i no es veu 
-	tota l'informacio ja que les línies estan truncades, tot i això podem 
+	al principi. La sortida és mostrada per la sortida estàndard i no es veu 
+	tota la informació ja que les línies estan truncades, tot i això podem 
 	moure'ns amb les tecles del cursor a esquerra i dreta per veure el 
 	contingut complet. I si volem veure les altres entrades, podem pressionar 
 	la tecla **d'espai** per desplaçar-nos pantalles senceres cap a munt, i 
@@ -81,8 +81,8 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 * `journalctl -n nombre`
 
 	En molts casos, només les últimes entrades al registre journal són 
-	rellevants. Gracies al parametre `-n` podem especificar les ultimes **n**
-	linies que volem veure.
+	rellevants. Gracies al paràmetre `-n` podem especificar les ultimes **n**
+	línies que volem veure.
 	
 	```
 	$ journalctl -n 5
@@ -97,7 +97,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 * `journalctl -o option`
 
 	L'ordre `journalctl` permet controlar la forma de la sortida gracies
-	al parametre `-o`, cal substituir `option` amb una paraula clau que 
+	al paràmetre `-o`, cal substituir `option` amb una paraula clau que 
 	especifiqui una forma desitjada de sortida. Hi ha diverses opcions com:
 	
   * `verbose`
@@ -146,7 +146,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 
      Que dóna format a les entrades com les estructures de dades JSON. (En l'exemple
      no esta posat tot el codi sencer, per que es massa gran i amb un exemple d'un
-     troç de fragment crec que ja es suficient).
+     tros de fragment crec que ja es suficient).
 
 	```
 	$ journalctl -o json
@@ -212,7 +212,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
      Entrades de dades JSON, però envoltades en un format adequat per
      esdeveniments enviats pel servidor. (En l'exemple
      no esta posat tot el codi sencer, per que es massa gran i amb un exemple d'un
-     troç de fragment crec que ja es suficient).
+     tros de fragment crec que ja es suficient).
 
 	```
 	$ journalctl -o json-sse
@@ -240,8 +240,8 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 
   * `short`
   
-     Mostra identicament lo mateix que cridar `journalctl` sense 
-     parametres.
+     Mostra idènticament lo mateix que cridar `journalctl` sense 
+     Parametres
      
 	```
 	$ journalctl -o short
@@ -257,7 +257,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 
   * `short-iso`
   
-     Es molt similar pero mostrant les marques de temps en el format
+     Es molt similar però mostrant les marques de temps en el format
      **ISO 8601**
 
 	```
@@ -329,7 +329,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 
 * `journalctl -u servei.service`
 
-	Amb aquest parametre, podem veure els logs generats d'un servei
+	Amb aquest paràmetre, podem veure els logs generats d'un servei
 	especific com per exemple el del servei `httpd`
 
 	```
@@ -346,7 +346,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 * `journalctl -k`
 
 	Una altra forma de veure informació és veure els missatges que ens proporciona
-	el **kernel** i gracies al parametre `-k` es possible observar-los.
+	el **kernel** i gracies al paràmetre `-k` es possible observar-los.
 
 	```
 	$ journalctl -k
@@ -362,21 +362,21 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 
 * `journalctl --disk-usage`
 
-	Parametre molt util per el tema de **quotes**, ja que amb aquest parametre
-	podem sapiguer quant ocupen els registres de `journald`.
+	Paràmetre molt útil per el tema de **quotes**, ja que amb aquest paràmetre
+	podem saber quant ocupen els registres de `journald`.
 
 	```
 	$ journalctl --disk-usage
 	Archived and active journals take up 3.9G on disk.
 	```
 
-	Comprobem que ens ocupa **3.9G** en el disc.
+	Comprovem que ens ocupa **3.9G** en el disc.
 
 * `journalctl --vacum-size=`
 
-	Amb l'altre parametre hem vist que podem sapiguer quant ens ocupa en disc
+	Amb l'altre paràmetre hem vist que podem saber quant ens ocupa en disc
 	els registres de journald, doncs amb `--vacum-size` podem eliminar espai
-	i retenir per exemple com a maxim 1.5G.
+	i retenir per exemple com a màxim 1.5G.
 
 	```
 	$ journalctl --vacuum-size=1.5G
@@ -386,7 +386,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 
 	No poso tota la sortida ja que es massa extensa.
 
-	Una vegada fet, tornem a comprobar quant ens ocupa ara els registres
+	Una vegada fet, tornem a comprovar quant ens ocupa ara els registres
 	de journald.
 
 	```
@@ -398,7 +398,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 
 * `journalctl --vacum-time=`
 
-	Té la mateixa finalitat que `--vacum-size` pero en aquest cas, podem
+	Té la mateixa finalitat que `--vacum-size` però en aquest cas, podem
 	eliminar espai i retenir per exemple els registres de __l'ultim mes__.
 
 	```
@@ -409,7 +409,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
 
 	No poso tota la sortida ja que es massa extensa.
 
-	Una vegada fet, tornem a comprobar quant ens ocupa ara els registres
+	Una vegada fet, tornem a comprovar quant ens ocupa ara els registres
 	de journald.
 
 	```
@@ -426,7 +426,7 @@ A continuació es mostraran una serie de parametres que conte l'ordre
   * `h` hora
   * `days` dies
   * `weeks` setmanes
-  * `suffixes` suffixos dels anys
+  * `suffixes` sufixos dels anys
 
 * `journalctl /dev/sda`
 

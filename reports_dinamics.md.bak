@@ -10,8 +10,8 @@
 # Reports Dinamics
 
 En aquest apartat comentaré les eines que he trobat per veure reports
-dinàmics, la veritat es que no sabia l'existència d'aquestes ordres,
-pot ser no tenen molt que veure però es lo mes assemblant que he trobat.
+dinamics, la veritat es que no sabia l'existencia d'aquestes ordres,
+pot ser no tenen molt que veure pero es lo mes assemblant que he trobat.
 Aquestes son les dues que he trobat:
 
 * Cockpit
@@ -24,7 +24,7 @@ els nostres servidors **GNU/Linux** a través d'un _navegador web_.
 
 ### Característiques de cockpit
 
-La veritat es que `cockpit` ho veig molt útil per els que comencen sent 
+La veritat es que `cockpit` ho veig molt util per els que comencen sent 
 administradors de sistemes, ja que permet realitzar fàcilment tasques 
 senzilles, com:
 
@@ -34,21 +34,21 @@ senzilles, com:
 
 També m'he donat compte de que te una molt bona utilitat i es que dins
 de la pagina web podem tenir una terminal, cosa que va molt be, ja que si
-sorgeix algun problema i ho vols veure gràficament ja ho tens tot en una
-mateixa pagina. I per ultim, també he vist que pot ser __multi-server__,
+surgeix algun problema i ho vols veure graficament ja ho tens tot en una
+mateixa pagina. I per ultim, tambe he vist que pot ser __multi-server__,
 es a dir, que podem supervisar i administrar diversos servidors al mateix
 temps.
 
-Peró jo només em centraré en els serveis i veure totes les utilitats que
+Pero jo només em centraré en els serveis i veure totes les utilitats que
 tenen relació amb aquest tema.
 
 ### Com funciona cockpit
 
-Lo primer de tot serà instal·lar el paquet anomenat `cockpit`.
+Lo primer de tot sera instal·lar el paquet anomenat `cockpit`.
 
 ```# dnf -y install cockpit```
 
-Com podem observar, es un servei, així que caldrà iniciar aquest **servei**.
+Com podem observar, es un servei, aixi que caldrà iniciar aquest **servei**.
 
 ```
 # systemctl start cockpit
@@ -85,16 +85,16 @@ Al accedir ens demanarà un usuari i un password, en el meu cas amb
 ### Funcionament de cockpit
 
 En el moment que accedim, la primera pagina ens mostra els detalls del
-nostre ordinador i gràfics que mostren:
+nostre ordinador i grafics que mostren:
 
 * CPU
-* Us de memòria
+* Us de memoria
 * Disc I/O
 * Trafic de xarxa
 
 ![grafiques](images/cockpit/grafiques.png)
 
-A l'esquerra tenim una serie de finestres que passo a continuació a explicar:
+A l'esquerra tenim una serie de finestres que paso a continuació a explicar:
 
 * **System**
 
@@ -102,7 +102,7 @@ A l'esquerra tenim una serie de finestres que passo a continuació a explicar:
 	
 * **Services**
 
-	Aquesta es la part que aprofundiré, al fer clic a qualsevol servei, ens porta a una pàgina de detallada que mostra un registre del servei i que ens permet:
+	Aquesta es la part que profundiré, al fer clic a qualsevol servei, ens porta a una pàgina de detallada que mostra un registre del servei i que ens permet:
   * Start/Stop
   * Restart
   * Enable/Disable
@@ -129,15 +129,15 @@ A l'esquerra tenim una serie de finestres que passo a continuació a explicar:
 	
 * **Tools**
 
-	Aquest menú es desplega per oferir dues eines de gestió de servidors i usuaris adicionals:
-  * **Accounts**: Permet afegir i administrar usuaris, configurar i canviar les contrasenyes, afegir i administrar les claus SSH públiques per a cada usuari (**Òbviament sempre que siguis root**).
-  * **Terminal**: Conté un terminal completament funcional, amb l'implementació del tabulador, això ens permet realitzar qualsevol tasca que vulguem.
+	Aquest menu es desplega per oferir dues eines de gestió de servidors i usuaris adicionals:
+  * **Accounts**: Permet afegir i administrar usuaris, configurar i canviar les contrasenyes, afegir i administrar les claus SSH públiques per a cada usuari (**Obviament sempre que siguis root**).
+  * **Terminal**: Conté un terminal completament funcional, amb l'implementació del tabulador, aixo ens permet realitzar qualsevol tasca que volguem.
 
   ![finestres](images/cockpit/finestres.png)
 
-Una vegada explicat la primera part, passo a explicar la segona finestra que tenim
-anomenada __Dashboard__. En aquesta finestra lo que trobem es una gràfica
-amb **4 finestretes**, que es per veure els mateixos gràfics que ens surten
+Una vegada explicat la primera part, paso a explicar la segona finestra que tenim
+anomenada __Dashboard__. En aquesta finestra lo que trobem es una grafica
+amb **4 finestretes**, que es per veure els mateixos grafics que ens surten
 en la pagina principal.
 
 ![dashboard](images/cockpit/dashboard.png)
@@ -151,10 +151,10 @@ apartat podem fer:
 
 #### Afegir una nova maquina
 
-Per afegir una nova maquina veiem el símbol **+** de color blau que
+Per afegir una nova maquina veiem el simbol **+** de color blau que
 significa `Add Server`. En el moment que cliquem ens demana la **IP** o
 el **hostname** de la maquina que volem afegir i amb quin color volem
-visualitzar-la (molt útil per que si posem el mateix nom en dues maquines
+visualitzar-la (molt util per que si posem el mateix nom en dues maquines
 i amb el mateix color? Tindriem un gran problema). 
 
 ![add-machine-cockpit](images/cockpit/add-machine.png)
@@ -165,15 +165,15 @@ ser establerta, que si estem segurs de continuar amb la connexió.
 
 ![unknown-host-cockpit](images/cockpit/unknown-host.png)
 
-Òbviament li donem a `connect` i ja tenim una maquina més i al 
+Obviament li donem a `connect` i ja tenim una maquina més i al 
 ser **root**, podrem modificar/visualitzar, etc.
 
 ![new-machine-cockpit](images/cockpit/new-machine.png)
 
 #### Editar una maquina actual
 
-Per editar una maquina actual veiem el símbol del `tick`, quan li donem
-ens apareixen dos símbols:
+Per editar una maquina actual veiem el simbol del `tick`, quan li donem
+ens apareixen dos simbols:
 
 * **Un llapis**
 
@@ -182,7 +182,7 @@ ens apareixen dos símbols:
   * Color
   * Avatar
 
-   Per exemple, canviar el nom i el color com veiem a continuació:
+   Per exemple, cambiar el nom i el color com veiem a continuació:
 
    ![edit-machine-cockpit](images/cockpit/edit-machine.png)
    
@@ -201,28 +201,28 @@ si que permetem la connexió amb aquella IP.
 #### Apartat services
 
 Com he dit abans a dalt, aquest apartat ens deixa poder veure tots els serveis
-que tenim actius, desactivats, engegats, aturats, etc. Peró també tenim
+que tenim actius, desactivats, engegats, aturats, etc. Pero també tenim
 mes apartats dins de services:
 
 * Targets
 
-	Ens mostra tots els targets que tenim en el sistema, es a dir, els que tenim enabled, disabled i statics. Vaig provar caminar d'un runlevel a un altre, clicant per exemple al target ``rescue.target`` i clicant a **start**, però sempre que ho faig es queda el sistema penjat i tinc que reiniciar manualment.
+	Ens motra tots els targets que tenim en el sistema, es a dir, els que tenim enabled, disabled i statics. Vaig probar cambiar d'un runlevel a un altre, clicant per exemple al target ``rescue.target`` i clicant a **start**, pero sempre que ho faig es queda el sistema penjat i tinc que reiniciar manualment.
 	
 * System services
 
-	Aquesta es la part on podem iniciar i aturar serveis, es molt útil aquesta part ja que també podem veure els que estan enabled, disabled i estàtics, també podem veure els logs que es creen automàticament, així sabríem si ens ha fallat alguna cosa o tot funciona be.
+	Aquesta es la part on podem iniciar i aturar serveis, es molt util aquesta part ja que tambe podem veure els que estan enabled, disabled i statics, també podem veure els logs que es crean automaticament, aixi sabriem si ens ha fallat alguna cosa o tot funciona be.
 	
 * Sockets
 
-	Ídem que els anteriors, ens mostren tots els sockets i podem iniciar o aturar el que nosaltres vulguem
+	Idem que els anteriors, ens mostren tots els sockets i podem iniciar o aturar el que nosaltres volguem
 	
 * Timer
 
-	Aquest apartat conté tots els `.timer`, son temporitzadors que li diuen al servei quan es te que executar.
+	Aquest apartat conté tots els `.timer`, son temporizadors que li diuen al servei quan es te que executar.
 
 * Paths
 
-	Aquest apartat conté tots els `.path`, lo que fan es codificar la informació sobre un camí monitoritzat per systemd.
+	Aquest apartat conté tots els `.path`, lo que fan es codificar l'informació sobre un camí monitoritzat per systemd.
 
   ![list-services-cockpit](images/cockpit/list-services.png)
 
@@ -231,40 +231,40 @@ mes apartats dins de services:
 Aquesta eina un dels defectes que té es que no te una busqueda de filtratge,
 si no que per buscar podem fer `ctrl+f` i buscar per exemple __httpd.service__.
 Quan cliquem ens mostra una pagina detallada on podem engegar/aturar el servei
-i també a sota veure els logs que ens dona actualment.
+i tambe a sota veure els logs que ens dona actualment.
 
 ![service-httpd-cockpit](images/cockpit/service-httpd.png)
 
-Com podem comprovar, ara mateix esta el servei engegat, ara cliquem
+Com podem comprobar, ara mateix esta el servei engegat, ara cliquem
 a **stop** i podem veure com l'apartat `Service Logs` s'actualitza
-automàticament dient que s'aturat el servei
+automaticament dient que s'aturat el servei
 
 ![stop-httpd-cockpit](images/cockpit/stop-httpd.png)
 
 Gràcies a l'apartat `tools`, podem veure l'estat del nostre servei 
-per comprovar que funciona correctament.
+per comprobar que funciona correctament.
 
 ![status-httpd-cockpit](images/cockpit/status-httpd.png)
 
 ## Que és systemd-manager?
 
-Systemd-manager es un programa construït amb llenguatge de programació
+Systemd-manager es un programa construit amb llenguatge de programació
 __RUST__, que s'integra a la perfecció en entorns d'escriptori **GTK**.
 
 ### Característiques de systemd-manager
 
-Es molt semblant a l'eina `cockpit` però aquesta son les seves característiques:
+Es molt semblant a l'eina `cockpit` pero aquesta son les seves característiques:
 
 * Enable/disable als units (serveis, sockets...)
 * Start/Stop als units (serveis, sockets...)
 * Veure i modificar els arxius de configuració del unit
-* Veure els logs que es creen al instant
+* Veure els logs que es crean al instant
 * Comprovar el temps d'arrencada utilitzant l'eina `systemd-analyze` (comentada en l'altre [document](notes_eines_systemd.md#systemd-analyze))
 
 ### Instal·lació systemd-manager
 
-Per poder utilitzar-lo en **Fedora**, necessitem descarregar-nos un paquet,
-ja que per defecte aquesta eina no la podem instal·lar al nostre sistema.
+Per poder utilitzar-lo en **Fedora**, necessitem descarregarnos un paquet,
+ja que per defecte aquesta eina no la podem instalar al nostre sistema.
 
 ```
 # dnf install systemd-manager
@@ -273,9 +273,9 @@ No package systemd-manager available.
 Error: Unable to find a match.
 ```
 
-En el moment que ho provava veia que em deia que no trobava coincidències,
+En el moment que ho probaba veia que em deia que no trobaba coincidencies,
 llavors, explorant per webs he trobat com es pot instal·lar, cal descarregar-se
-un paquet exclusiu per **Fedora 24** (també he trobat per la versió 22 i 23 però
+un paquet exclusiu per **Fedora 24** (també he trobat per la versió 22 i 23 pero
 en el meu cas no cal).
 
 ```
@@ -302,11 +302,11 @@ estem dins de l'aplicació.
 
 ![intro-systemd-manager](images/systemd-manager/intro.png)
 
-Cal dir que si no som root, també s'executa, però en el moment que
+Cal dir que si no som root, també s'executa, pero en el moment que
 volem per exemple aturar el servei **bluetooh**, clarament no ens deixa
 i en la terminal ens surt aquest missatge: 
 `systemd-manager: bluetooth.service failed to stop: 
-"Interactive authentication required."` que bàsicament ens diu que
+"Interactive authentication required."` que basicament ens diu que
 necessitem autenticació per poder aturar el servei.
 
 ### Funcionament systemd-manager
@@ -331,10 +331,10 @@ En aquest apartat podem trobar:
 ##### Services
 
 Aquesta es la part on podem iniciar i aturar serveis, també podem veure 
-els que estan enabled, disabled i statics, veure els logs que es creen 
-automàticament, així sabríem si ens ha fallat alguna cosa o tot funciona
+els que estan enabled, disabled i statics, veure els logs que es crean 
+automaticament, aixi sabriem si ens ha fallat alguna cosa o tot funciona
 be i també poder editar el fitxer de configuració, que la veritat que ho
-veig molt útil Trobem al costat del serveis dues rodones:
+veig molt util. Trobem al costat del serveis dues rodones:
 
 * La primera significa si esta **enabled(color verd)** o **disabled(color vermell)**
 * La segona significa si esta **start(color verd)** o **disabled(color vermell)**
@@ -363,10 +363,10 @@ Per ultim, tenim dos icones mes:
 
 * Enabled/Disabled
 
-	Nomes clicant en aquest icona podem fer el servei **enable** o **disable**
+	Nomes clicant en aquest icone podem fer el servei **enable** o **disable**
 
 	Com podem veure, el servei `sshd` ara mateix esta **enable**, en el moment
-	que cliquem automàticament es posa disable.
+	que cliquem automaticament es posa disable.
 	
 	![service-sshd-disable](images/systemd-manager/service-sshd-disable.png)
 
@@ -376,17 +376,17 @@ Per ultim, tenim dos icones mes:
 
 * Start/Stop
 
-	Si el servei esta engegat, ens sortira l'icona vermell i posarà **Stop**, si cliquem llavors l'icona passara a ser de color blau i posara **Start**
+	Si el servei esta engegat, ens sortira l'icona vermell i posarà **Stop**, si cliquem llavors l'icona pasara a ser de color blau i posara **Start**
 
 	![service-sshd-start](images/systemd-manager/service-sshd-start.png)
 
-	Com podem comprovar, ara mateix el servei esta engegat, així que ara ens
+	Com podem comprobar, ara mateix el servei esta engegat, aixi que ara ens
 	posarem en l'apartat **journal** i aturarem el servei.
 
 	![service-sshd-stop](images/systemd-manager/service-sshd-stop.png)
 
 	Una vegada hem aturat el servei, veiem que l'apartat **journal** actualment 
-	ens dona la informació de que el servei `sshd` s'ha aturat i veiem que
+	ens dona l'informació de que el servei `sshd` s'ha aturat i veiem que
 	l'icona actualment a cambiat.
 
 ##### Sockets and Timers

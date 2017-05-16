@@ -18,13 +18,13 @@ O TODAS JUNTAS, ESO POR CONFIRMAR PERO HAY QUE EXPLORAR INTENSAMENTE DOT
 
 Dins del sistema podem trobar diferents tipus d'ordres visuals, podem
 trobar ordres que ens retornen una imatge, ordres que ens retornen una
-grafica etc. Aquestes son les que jo he trobat i crec que les millors
+gràfica etc. Aquestes son les que jo he trobat i crec que les millors
 que tenim en el sistema:
 
 ## Explorant plot
 
 L'ordre `systemd-analyze plot` crea un arxiu amb format `.svg` que descriu el procés d'arrancada de 
-forma gráfica. 
+forma gràfica 
 
 ```
 $ systemd-analyze plot > grafica-plot-target-actual.svg
@@ -37,36 +37,36 @@ Bitmap saved as: grafica-plot-target-actual.png
 
 ![Grafica-plot](grafiques/grafica-plot-target-actual.png)
 
-Com podem observar, en la segona ordre trobem l'eina `ìnkscape`, es necessaria
+Com podem observar, en la segona ordre trobem l'eina `ìnkscape`, es necessària
 per convertir de format `.svg` a `.png` ja que al pujar les imatges, m'he
-donat compte de que **github** no soporta l'extensió `.svg`. Així que
+donat compte de que **github** no suporta l'extensió `.svg`. Així que
 tenia que buscar alguna manera per poder **transformar** de format i la 
 veritat que amb `inkscape` es molt fàcil i eficaç, només cal executar
 `dnf -y install inkscape`, en el moment que ho tenim instal·lat amb el 
-parametre `--export-png=` per especificar amb quin format ho volem exportar i al 
-final de la linia posant la imatge? Ja fa la conversió automaticament.
+paràmetre `--export-png=` per especificar amb quin format ho volem exportar i al 
+final de la línia posant la imatge? Ja fa la conversió automàticament
 
-Aquesta grafica es de `graphical.target`, ja que es en el target que
+Aquesta gràfica es de `graphical.target`, ja que es en el target que
 estic per defecte, llavors lo que acabo de fer es reiniciar la maquina
-i entrar en **mode 1** --> `rescue.target` i aquesta es la grafica
-que com podem comprobar, es molt diferent.
+i entrar en **mode 1** --> `rescue.target` i aquesta es la gràfica
+que com podem comprovar, es molt diferent.
 
 ![grafica-rescue](grafiques/grafica-rescue.png)
 
 Per ultim, des de **mode 1** he fet un `systemctl isolate emergency.target`
-per anar a parar a **mode emergency** i aquesta es la grafica d'aquest
+per anar a parar a **mode emergency** i aquesta es la gràfica d'aquest
 target.
 
 ![grafica-emergency](grafiques/grafica-mode-emergency.png)
 
 ### Significat colors
 
-Com podem comprobar en aquesta grafica, a sota podem veure diferents colors tenim diferents colors que
+Com podem comprovar en aquesta gràfica, a sota podem veure diferents colors tenim diferents colors que
 i al costat un nom, que cadascun vol dir:
 
 * `Activating`
 
-	Mostra el temps exacte que tarda a activar-se els units mentres esta en procés l'arrencada.
+	Mostra el temps exacte que tarda a activar-se els units mentre esta en procés l'arrencada.
 
 * `Active` 
 
@@ -82,15 +82,15 @@ i al costat un nom, que cadascun vol dir:
 
 * `Loading Unit Files`
 
-	El temps que tarda Systemd en carregar els archius dels units.
+	El temps que tarda Systemd en carregar els arxius dels units.
 
 ## Explorant dot
 
-L'ordre `systemd-analyze dot` també crea un archiu amb format `.svg` 
-que mostra un grafic de l'us del sistema. Lo primer que cal fer es 
+L'ordre `systemd-analyze dot` també crea un arxiu amb format `.svg` 
+que mostra un gràfic de l'us del sistema. Lo primer que cal fer es 
 instal·lar el paquet **graphviz**. Una vegada instal·lat, ja podem 
 executar l'ordre, que com podem veure, el resultat s'emmagatzemara en un
-archiu `.svg`.
+arxiu `.svg`.
 
 ```
 $ systemd-analyze dot --require \
@@ -110,11 +110,11 @@ Bitmap saved as: grafica-dot-target-actual.png
 ![Grafica-dot-system](grafiques/grafica-dot-target-actual.png)
 
 Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
-pero també podem crear el grafic a partir d'un punt especific, per exemple
-podem dir que comenci el grafic a partir de httpd.service.
+però també podem crear el gràfic a partir d'un punt especific, per exemple
+podem dir que comenci el gràfic a partir de httpd.service.
 
-He agafat httpd per que la grafica es molt mes petita, ja que en
-la imatge d'abans de tot el sistema no es veu practicament **res**.
+He agafat httpd per que la gràfica es molt mes petita, ja que en
+la imatge d'abans de tot el sistema no es veu pràcticament **res**.
 
 ```
 $ systemd-analyze dot 'httpd.service' --require \
@@ -136,7 +136,7 @@ Bitmap saved as: httpd.png
 ### Significat dels colors
 
 En el moment que executem aquesta ordre, a sota ens apareix sempre
-aixó:
+això:
 
 ```
 Color legend: black     = Requires
@@ -146,8 +146,8 @@ Color legend: black     = Requires
         green     = After
 ```
 
-Aquests colors són els que es reflecteixen en les **fletches de les
-grafiques** que obviament, cadascuna te un significat:
+Aquests colors són els que es reflecteixen en les **fletxes de les
+gràfiques** que òbviament, cadascuna te un significat:
 
 * black
 
@@ -159,25 +159,25 @@ grafiques** que obviament, cadascuna te un significat:
 
 * dark grey
 
-	On apunti una fletxa de color gris vol dir que aquell unit que estem mirant? Vol que estigui activat un unit especific.
+	On apunti una fletxa de color gris vol dir que aquell unit que estem mirant? Vol que estigui activat un unit especific
 
 * red
 
 	On apunti una fletxa de color vermell vol dir que no poden estar el unit que estem mirant i el que apunta la fletxa activats, ja que entre ells podrueixen conflicte.
 
 * green
-	On apunti una fletxa de color verd vol dir que despres s'engegara el unit especific o que en el moment que aquest unit específic estigui activat, després ha d'activar el unit que apunta la fletxa.
+	On apunti una fletxa de color verd vol dir que després s'engegara el unit especific o que en el moment que aquest unit específic estigui activat, després ha d'activar el unit que apunta la fletxa.
 
 ### Parametres de systemd-analyze dot
 
 Hi ha moments que no volem veure tot el sistema, o no volem a partir d'un
-unit especific com hem fet a dalt con `httpd.service`, per aixó he
-trobat aquests dos parametres que crec que son molt utils:
+unit especific com hem fet a dalt con `httpd.service`, per això he
+trobat aquests dos paràmetres que crec que son molt útils:
 
 * `--from-pattern` 
 
-	Amb aquest parametre podem especificar un unit
-	i veure qui depen d'aquest unit especific. Com per exemple del target
+	Amb aquest paràmetre podem especificar un unit
+	i veure qui depèn d'aquest unit especific Com per exemple del target
 	`rescue.target`.
 
 	```
@@ -201,12 +201,12 @@ trobat aquests dos parametres que crec que son molt utils:
 	
   * Es **requerit**(per la fletxa negra) que després d'engegar `rescue.target`, estigui activat `sysinit.target` i `rescue.service` (per la fletxa verda).
   * Vol que estigui activat el servei `systemd-update-utmp-runlevel.service` (per la fletxa gris).
-  * Si volguem engegar a `shutdown.target` ens diu que entrarà en conflicte(per la fletxa vermella), lo que vol dir es que no poden estar els dos activats.
+  * Si volem engegar a `shutdown.target` ens diu que entrarà en conflicte(per la fletxa vermella), lo que vol dir es que no poden estar els dos activats.
 
 * `--to-pattern`
 	
-	Amb aquest parametre, igual que `--from-pattern` podem especificar
-	un unit i veure aquest unit, que necessita per poder engegarse. Per
+	Amb aquest paràmetre, igual que `--from-pattern` podem especificar
+	un unit i veure aquest unit, que necessita per poder engegar-se Per
 	seguir amb el mateix exemple, ho he tornat a fer amb `rescue.target`.
 	
 	```
@@ -227,7 +227,7 @@ trobat aquests dos parametres que crec que son molt utils:
 	![to-rescue](grafiques/to-rescue.png)
 	
 	Que com podem observar
-  * Te que estar activat `systemd-update-utmp-runlevel.service` per despres engegar `rescue.target`
+  * Te que estar activat `systemd-update-utmp-runlevel.service` per després engegar `rescue.target`
   * Si estem en `multi-user.target` o `graphical.target` entrarà en conflicte amb `rescue.target`, lo que vol dir que no poden estar els dos activats
 
 

@@ -12,9 +12,9 @@
 
 # Reports elaborats
 
-Com hem parlat abans, al executar `journalctl` sense parametres,
+Com hem parlat abans, al executar `journalctl` sense paràmetres,
 dona una informació massa extensa, per tant, es pot utilitzar diversos
-metodes de filtrat per extreure l'informació per satisfer les nostres
+mètodes de filtrat per extreure la informació per satisfer les nostres
 necessitats. 
 
 A continuació, mostro les opcions per les quals es poden filtrar:
@@ -49,7 +49,7 @@ A continuació, mostro les opcions per les quals es poden filtrar:
 	sep 15 20:20:13 localhost.localdomain gnome-session-binary[1124]: GLib-GObject-CRITICAL: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
 	```
 
-	O si no tambe podem escriure `--priority=N` on substituim **N** per un
+	O si no també podem escriure `--priority=N` on substituïm **N** per un
 	nombre
 
 	```
@@ -64,7 +64,7 @@ A continuació, mostro les opcions per les quals es poden filtrar:
 ## Per temps
 
 En aquests casos, el filtrat basat en el temps és més útil amb aquests
-**parametres**:
+**paràmetres**:
 
 * `journalctl --since "data hora" --until "data hora"`
 
@@ -86,8 +86,8 @@ En aquests casos, el filtrat basat en el temps és més útil amb aquests
 	mar 04 13:10:08 localhost.localdomain kernel: Linux version 4.7.3-200.fc24.x86_64 (mockbuild@bkernel01.phx2.fedoraproject.org) (gcc version 6.1.1 20160621 (Red Hat 6.1.1-3) (GCC) ) #1 SMP Wed Sep 7 17:31:21 UTC 2016
 	```
 
-	Obviament, tambe podem ometre el parametre `--since` o `--until`
-	com en aquest cas que nomes utilitzo `--since` per mostrar tota l'informació
+	Òbviament, també podem ometre el paràmetre `--since` o `--until`
+	com en aquest cas que nomes utilitzo `--since` per mostrar tota la informació
 	d'avui des de les **12:59:59**
 
 	```
@@ -103,7 +103,7 @@ En aquests casos, el filtrat basat en el temps és més útil amb aquests
 ## Filtrat per prioritat i temps
 
 Les opcions de filtrat es poden combinar, per exemple podem veure
-els missatges que ens donen d'error des de fa **1 mes** que seria aixi:
+els missatges que ens donen d'error des de fa **1 mes** que seria així:
 
 ```
 journalctl -p err --since "1 month ago"
@@ -120,10 +120,10 @@ abr 03 14:01:44 localhost.localdomain setroubleshoot[816]: SELinux is preventing
 
 * `journalctl fieldname=value`
 
-	Idem al parametre `export` que hem vist abans en l'opció `-o`.
+	Ídem al paràmetre `export` que hem vist abans en l'opció `-o`.
 	Cal substituir _fieldname_ amb un nom d'un camp (**Per exemple 
 	HOSTNAME**) i _value_ amb un valor especific del camp que hem posat, llavors
-	com a resultat, nomes es retornaran es linies que coincideixin amb
+	com a resultat, nomes es retornaran es línies que coincideixin amb
 	aquesta condició.
 	
 	```
@@ -134,7 +134,7 @@ abr 03 14:01:44 localhost.localdomain setroubleshoot[816]: SELinux is preventing
 	sep 15 19:55:07 localhost.localdomain kernel: Linux version 4.7.3-200.fc24.x86_64 (mockbuild@bkernel01.phx2.fedoraproject.org) (gcc version 6.1.1 20160621 (Red Hat 6.1.1-3) (GCC) ) #1 S
 	```
 
-	Podem dir per exemple que es mostrin totes les linies que son del
+	Podem dir per exemple que es mostrin totes les línies que son del
 	**executable** _/usr/bin/passwd_.
 
 	```
@@ -151,13 +151,13 @@ abr 03 14:01:44 localhost.localdomain setroubleshoot[816]: SELinux is preventing
 ## Filtrat per boots
 
 En les altres comandes, si si ens fixem, el numero dels missatges la veritat
-es que es molt gran, aixi que explorant m'he donat compte que podem
+es que es molt gran, així que explorant m'he donat compte que podem
 filtrar per els diferents processos d'arrancada que hagi tingut el nostre
 ordinador.
 
 * `journalctl --list-boots`
 
-	Amb aquest parametre, podem veure:
+	Amb aquest paràmetre, podem veure:
   * Un llistat de tots els nombres d'arrencada, es a dir els logs de cada vegada que s'ha arrencat el sistema.
   * Els seus documents d'identitat
   * El timestamp d'inici de l'arrencada i un altre timestamp quan finalitza l'arrencada.
@@ -173,12 +173,12 @@ ordinador.
 	  0 83e2602aee6947d4ba47d1cf123e57c6 Fri 2017-05-05 09:02:09 CEST—Fri 2017-05-05 11:57:44 CEST
 	```
 
-	Com es pot veure, he tallat el resultat pero si no, quedaria molt extens
+	Com es pot veure, he tallat el resultat però si no, quedaria molt extens
 
 * `journalctl -b`
 
-	Amb aquest parametre podem veure les entrades del registre nomes des de
-	**l'inici actual**, es a dir, si fessim un `--list-boots` seria el 
+	Amb aquest paràmetre podem veure les entrades del registre nomes des de
+	**l'inici actual**, es a dir, si féssim un `--list-boots` seria el 
 	numero 0.
 	
 	```
@@ -206,7 +206,7 @@ ordinador.
 
 	En aquest cas estem dient que ens mostri el de fa 2 dies
 
-  2. Utilitzar el ID del boot que ens va apareixer al llistar els processos d'arrencada amb `--list-boots`.
+  2. Utilitzar el ID del boot que ens va aparèixer al llistar els processos d'arrencada amb `--list-boots`.
   
 	```
 	journalctl _BOOT_ID=8675532f691d4a85bb5ee21713193289
