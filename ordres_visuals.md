@@ -158,7 +158,7 @@ trobat aquests dos parametres que crec que son molt utils:
 	
 	Amb aquest parametre, igual que `--from-pattern` podem especificar
 	un unit i veure aquest unit, que necessita per poder engegarse. Per
-	seguir amb el mateix exemple, tornaré a fer-ho amb `rescue.target`.
+	seguir amb el mateix exemple, ho he tornat a fer amb `rescue.target`.
 	
 	```
 	$ systemd-analyze dot --to-pattern='rescue.target' | dot -Tsvg > to-rescue.svg; inkscape -e to-rescue.png to-rescue.svg
