@@ -71,7 +71,7 @@ tota d'informació per poder realitzar el projecte:
 * Sobre systemd-manager
   * [Systemd Manager](https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/)
 
-* Altres
+* Altres (no se si els utilitzaré)
   * [Para rellenar journal o systemd](http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/)
   * [Systemd Manager](https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/)
   * [Otros de la familia systemd]( https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl)
