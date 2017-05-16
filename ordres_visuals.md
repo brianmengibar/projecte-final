@@ -49,7 +49,6 @@ que com podem comprobar, es molt diferent.
 
 ![grafica-rescue](grafiques/grafica-rescue.png)
 
-
 Per ultim, des de **mode 1** he fet un `systemctl isolate emergency.target`
 per anar a parar a **mode emergency** i aquesta es la grafica d'aquest
 target.
@@ -149,14 +148,34 @@ trobat aquests dos parametres que crec que son molt utils:
 
 	![from-rescue](grafiques/from-rescue.png)
 
-	Que com podem observar, després d'engegar `rescue.target`, s'engegarà
-	sysinit.target i rescue.service ja que esta indicat amb la flecheta verda
-	que significa `after` i a part es **requerit** per la fletcha negra.
-	A continuació veiem un Wants `systemd-update-umtp-runlevel.service` que
-	no s'engegarà automaticament pero saps que si vols que estigui engegat,
-	es necessari que `rescue.target` si que ho estigui i per ultim trobem
-	`shutdown.target` amb una fletcha vermella que ens diu que entra en 
-	conflicte, es a dir, si volem engegar `shutdown.target`? No pot estar
-	activat `rescue.target`.
+	Que com podem observar:
+	
+  * Es **requerit**(per la fletcha negra) que després d'engegar `rescue.target`, estigui engegat `sysinit.target` i `rescue.service` (per la fletcha verda).
+  * Vol que estigui engegat el servei `systemd-update-utmp-runlevel.service` (per la fletcha gris).
+  * Si volguem entrar a shutdown.target ens diu que entrarà en conflicte(per la fletcha vermella) amb `shutdown.target`, lo que vol dir es que no poden estar els dos engegats.
 
+* `--to-pattern`
+	
+	Amb aquest parametre, igual que `--from-pattern` podem especificar
+	un unit i veure aquest unit, que necessita per poder engegarse. Per
+	seguir amb el mateix exemple, tornaré a fer-ho amb `rescue.target`.
+	
+	```
+	$ systemd-analyze dot --to-pattern='rescue.target' | dot -Tsvg > to-rescue.svg; inkscape -e to-rescue.png to-rescue.svg
+   Color legend: black     = Requires
+                 dark blue = Requisite
+                 dark grey = Wants
+                 red       = Conflicts
+                 green     = After
+Background RRGGBBAA: ffffff00
+Area 0:0:760:145 exported to 760 x 145 pixels (90 dpi)
+Bitmap saved as: to-rescue.png
+```
+
+	![to-rescue](grafiques/to-rescue.png)
+	
+	Que com podem observar
+  * Te que estar engegat `systemd-update-utmp-runlevel.service` per despres engegar `rescue.target`
+  * Si estem en `multi-user.target` o `graphical.target` entrarà en conflicte amb `rescue.target`, lo que vol dir que no poden estar els dos engegats
+  
 # FALTA METER EL --TO-PATTERN, EXPLICAR COLORES, METER MAS IMAGENES
