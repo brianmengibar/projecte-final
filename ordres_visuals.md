@@ -27,7 +27,9 @@ L'ordre `systemd-analyze plot` crea un arxiu amb format `.svg` que descriu el pr
 forma gráfica. 
 
 ```
-$ systemd-analyze plot > grafica-plot-target-actual.svg; inkscape -e grafica-plot-target-actual.png grafica-plot-target-actual.svg
+$ systemd-analyze plot > grafica-plot-target-actual.svg
+
+$ inkscape --export-png=grafica-plot-target-actual.png grafica-plot-target-actual.svg
 Background RRGGBBAA: ffffff00
 Area 0:0:1901:5830 exported to 1901 x 5830 pixels (90 dpi)
 Bitmap saved as: grafica-plot-target-actual.png
@@ -35,13 +37,13 @@ Bitmap saved as: grafica-plot-target-actual.png
 
 ![Grafica-plot](grafiques/grafica-plot-target-actual.png)
 
-Com podem observar, en la linia d'ordre trobem l'eina `ìnkscape`, es necessaria
+Com podem observar, en la segona ordre trobem l'eina `ìnkscape`, es necessaria
 per convertir de format `.svg` a `.png` ja que al pujar les imatges, m'he
 donat compte de que **github** no soporta l'extensió `.svg`. Així que
 tenia que buscar alguna manera per poder **transformar** de format i la 
 veritat que amb `inkscape` es molt fàcil i eficaç, només cal executar
 `dnf -y install inkscape`, en el moment que ho tenim instal·lat amb el 
-parametre `-e` per especificar amb quin format ho volem exportar i al 
+parametre `--export-png=` per especificar amb quin format ho volem exportar i al 
 final de la linia posant la imatge? Ja fa la conversió automaticament.
 
 Aquesta grafica es de `graphical.target`, ja que es en el target que
@@ -90,12 +92,15 @@ Una vegada instal·lat, ja podem executar l'ordre, que com podem veure,
 el resultat s'emmagatzemara en un archiu `.svg`.
 
 ```
-$ systemd-analyze dot --require | dot -Tsvg > grafica-dot-target-actual.svg; inkscape -e grafica-dot-target-actual.png grafica-dot-target-actual.svg
+$ systemd-analyze dot --require \
+  | dot -Tsvg > grafica-dot-target-actual.svg
    Color legend: black     = Requires
                  dark blue = Requisite
                  dark grey = Wants
                  red       = Conflicts
                  green     = After
+
+$ inkscape --export-png=grafica-dot-target-actual.png grafica-dot-target-actual.svg
 Background RRGGBBAA: ffffff00
 Area 0:0:32236.2:1225 exported to 32236 x 1225 pixels (90 dpi)
 Bitmap saved as: grafica-dot-target-actual.png
@@ -112,12 +117,14 @@ la imatge d'abans de tot el sistema no es veu practicament **res**.
 
 ```
 $ systemd-analyze dot 'httpd.service' --require \
-  | dot -Tsvg > httpd.svg; inkscape -e httpd.png httpd.svg
+  | dot -Tsvg > httpd.svg
          Color legend: black     = Requires
                  dark blue = Requisite
                  dark grey = Wants
                  red       = Conflicts
                  green     = After
+
+$ inkscape --export-png=httpd.png httpd.svg
 Background RRGGBBAA: ffffff00
 Area 0:0:767.5:235 exported to 768 x 235 pixels (90 dpi)
 Bitmap saved as: httpd.png
@@ -175,12 +182,13 @@ trobat aquests dos parametres que crec que son molt utils:
 	```
 	$ systemd-analyze dot --from-pattern='rescue.target' \
 	  | dot -Tsvg > from-rescue.svg
-	$ inkscape --export-png=from-rescue.png from-rescue.svg
 	   Color legend: black     = Requires
 					 dark blue = Requisite
 					 dark grey = Wants
 					 red       = Conflicts
 					 green     = After
+
+	$ inkscape --export-png=from-rescue.png from-rescue.svg
 	Background RRGGBBAA: ffffff00
 	Area 0:0:902.5:145 exported to 903 x 145 pixels (90 dpi)
 	Bitmap saved as: from-rescue.png
@@ -201,12 +209,15 @@ trobat aquests dos parametres que crec que son molt utils:
 	seguir amb el mateix exemple, ho he tornat a fer amb `rescue.target`.
 	
 	```
-	$ systemd-analyze dot --to-pattern='rescue.target' | dot -Tsvg > to-rescue.svg; inkscape -e to-rescue.png to-rescue.svg
+	$ systemd-analyze dot --to-pattern='rescue.target' \
+	| dot -Tsvg > to-rescue.svg
    Color legend: black     = Requires
                  dark blue = Requisite
                  dark grey = Wants
                  red       = Conflicts
                  green     = After
+    
+    $ inkscape --export-png=to-rescue.png to-rescue.svg
 	Background RRGGBBAA: ffffff00
 	Area 0:0:760:145 exported to 760 x 145 pixels (90 dpi)
 	Bitmap saved as: to-rescue.png
@@ -219,6 +230,7 @@ trobat aquests dos parametres que crec que son molt utils:
   * Si estem en `multi-user.target` o `graphical.target` entrarà en conflicte amb `rescue.target`, lo que vol dir que no poden estar els dos activats
 
 
-
+<!--
 # FALTA METER EL EXPLICAR COLORES, METER MAS IMAGENES COMO ABRTD.SERVICE
 # EXPLICAR DIFERENCIA ENTRE --FROM-PATTERN I --TO-PATTERN
+-->
