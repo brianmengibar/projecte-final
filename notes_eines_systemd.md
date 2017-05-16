@@ -16,11 +16,11 @@ En l'altre document ja hem parlat sobre systemd i molts dels seus paràmetres,
 si encara no ho habeu llegit, aqui teniu un enllaç per llegir-ho
 abans de llegir aquest: [Systemd](notes_systemd.md#que-es-systemd).
 
-## Systemd-analyze
+## Explorant analyze
 
-Permet evaluar el proces d'arrencada amb el fi de mostrar quines unitats
-estan ocasionan una demora en el procés en el procés d'arrencada. Aquestes
-unitats, fan referencia fundamentalment a:
+L'ordre `systemd-analyze` permet evaluar el proces d'arrencada amb el 
+fi de mostrar quines unitats estan ocasionan una demora en el procés 
+d'arrencada. Aquestes unitats, fan referencia fundamentalment a:
 
 * serveis (.service)
 * punts de montatje (.mount)
@@ -30,7 +30,7 @@ unitats, fan referencia fundamentalment a:
 Una vegada obtinguda tota aquesta informació, es podria optimitzar el sistema
 per minimitzar els temps d'arrencada.
 
-### Parametres de Systemd-analyze
+### Els seus parametres
 
 A continuació comentaré tots els parametres que te aquesta ordre:
 
@@ -256,7 +256,7 @@ A continuació, mostro una taula que contindrà:
 	Comprovem que aquest _"unit"_ te linies erroneas i a l'hora de verificar ens donen
 	els **missatges d'error**.
 
-## Opcions de Systemd-analyze
+## Les seves opcions
 
 Una vegada hem vist tots els parametres que té l'ordre `systemd-analyze`,
 paso a comentar totes les opcions que té que son aquestes:
