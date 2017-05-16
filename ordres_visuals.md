@@ -110,7 +110,8 @@ He agafat httpd per que la grafica es molt mes petita, ja que en
 la imatge d'abans de tot el sistema no es veu practicament **res**.
 
 ```
-$ systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg; inkscape -e httpd.png httpd.svg   Color legend: black     = Requires
+$ systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg; inkscape -e httpd.png httpd.svg
+         Color legend: black     = Requires
                  dark blue = Requisite
                  dark grey = Wants
                  red       = Conflicts
@@ -121,6 +122,42 @@ Bitmap saved as: httpd.png
 ```
 
 ![Grafica-dot-httpd](grafiques/httpd.png)
+
+### Significat dels colors
+
+En el moment que executem aquesta ordre, a sota ens apareix sempre
+aixó:
+
+```
+Color legend: black     = Requires
+        dark blue = Requisite
+        dark grey = Wants
+        red       = Conflicts
+        green     = After
+```
+
+Aquests colors són els que es reflecteixen en les **fletches de les
+grafiques** que obviament, cadascuna te un significat:
+
+* black
+
+	On apunti una fletxa de color negra vol dir que es requerit que aquell unit estigui activat.
+
+* dark blue
+
+	On apunti una fletxa de color blau fosc vol dir que es un requisit que aquell unit estigui activat.
+
+* dark grey
+
+	On apunti una fletxa de color gris vol dir que aquell unit que estem mirant? Vol que estigui activat un unit especific.
+
+* red
+
+	On apunti una fletxa de color vermell vol dir que no poden estar el unit que estem mirant i el que apunta la fletxa activats, ja que entre ells podrueixen conflicte.
+
+* green
+
+	On apunti una fletxa de color verd vol dir que despres s'engegara el unit especific o que en el moment que aquest unit específic estigui activat, després ha d'activar el unit que apunta la fletxa.
 
 ### Parametres de systemd-analyze dot
 
@@ -150,9 +187,9 @@ trobat aquests dos parametres que crec que son molt utils:
 
 	Que com podem observar:
 	
-  * Es **requerit**(per la fletcha negra) que després d'engegar `rescue.target`, estigui engegat `sysinit.target` i `rescue.service` (per la fletcha verda).
-  * Vol que estigui engegat el servei `systemd-update-utmp-runlevel.service` (per la fletcha gris).
-  * Si volguem engegar a `shutdown.target` ens diu que entrarà en conflicte(per la fletcha vermella), lo que vol dir es que no poden estar els dos engegats.
+  * Es **requerit**(per la fletxa negra) que després d'engegar `rescue.target`, estigui activat `sysinit.target` i `rescue.service` (per la fletxa verda).
+  * Vol que estigui activat el servei `systemd-update-utmp-runlevel.service` (per la fletxa gris).
+  * Si volguem engegar a `shutdown.target` ens diu que entrarà en conflicte(per la fletxa vermella), lo que vol dir es que no poden estar els dos activats.
 
 * `--to-pattern`
 	
@@ -175,8 +212,10 @@ trobat aquests dos parametres que crec que son molt utils:
 	![to-rescue](grafiques/to-rescue.png)
 	
 	Que com podem observar
-  * Te que estar engegat `systemd-update-utmp-runlevel.service` per despres engegar `rescue.target`
-  * Si estem en `multi-user.target` o `graphical.target` entrarà en conflicte amb `rescue.target`, lo que vol dir que no poden estar els dos engegats
-  
+  * Te que estar activat `systemd-update-utmp-runlevel.service` per despres engegar `rescue.target`
+  * Si estem en `multi-user.target` o `graphical.target` entrarà en conflicte amb `rescue.target`, lo que vol dir que no poden estar els dos activats
+
+
+
 # FALTA METER EL EXPLICAR COLORES, METER MAS IMAGENES COMO ABRTD.SERVICE
 # EXPLICAR DIFERENCIA ENTRE --FROM-PATTERN I --TO-PATTERN
