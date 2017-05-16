@@ -51,7 +51,7 @@ tota d'informació per poder realitzar el projecte:
 ### Links on extreure informació
 
 * Links sobre systemd
-  * [Archlinux Systemd](https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)
+  * [Archlinux Systemd](https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1olUso_b.C3.A1sico_de_systemctl))
   * [Blog Systemd](http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/)
   * [FedoraProject Systemd](https://fedoraproject.org/wiki/Systemd)
   * [F.D.Systemd](https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/ch-Services_and_Daemons.html)
@@ -77,4 +77,4 @@ tota d'informació per poder realitzar el projecte:
   * [Crear un service?](https://www.tecmint.com/create-new-service-units-in-systemd/)
   * [Puede servir](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
 
-#Uso_b.C3.A1sico_de_systemctl)
+
