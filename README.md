@@ -29,7 +29,7 @@ que he realitzat.
 
 * [Systemd](notes_systemd.md#systemd)
   * [Que es Systemd](notes_systemd.md#que-es-systemd)
-  * [Eines de Systemd](notes_eines_systemd.md#systemd-analyze)
+  * [Eines de Systemd](notes_eines_systemd.md#explorant-analyze)
 * [Journal](notes_journal.md#journal)
   * [Que es journal](notes_journal.md#que-es-journal)
   * [Paràmetres de journal](notes_journal.md#parametres-de-journalctl)
