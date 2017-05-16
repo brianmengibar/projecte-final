@@ -51,7 +51,7 @@ tota d'informació per poder realitzar el projecte:
 ### Links on extreure informació
 
 * Links sobre systemd
-  * [Archlinux Systemd](https://wiki.archlinux.org/index.php/systemd_(Espa%C3%B1ol)
+  * [Archlinux Systemd](https://wiki.archlinux.org/index.php/systemd)
   * [Blog Systemd](http://www.rafaelrojas.net/2012/08/24/entendiendo-a-systemd/)
   * [FedoraProject Systemd](https://fedoraproject.org/wiki/Systemd)
   * [F.D.Systemd](https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/ch-Services_and_Daemons.html)
