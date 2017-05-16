@@ -178,4 +178,5 @@ trobat aquests dos parametres que crec que son molt utils:
   * Te que estar engegat `systemd-update-utmp-runlevel.service` per despres engegar `rescue.target`
   * Si estem en `multi-user.target` o `graphical.target` entrarà en conflicte amb `rescue.target`, lo que vol dir que no poden estar els dos engegats
   
-# FALTA METER EL --TO-PATTERN, EXPLICAR COLORES, METER MAS IMAGENES
+# FALTA METER EL EXPLICAR COLORES, METER MAS IMAGENES COMO ABRTD.SERVICE
+# EXPLICAR DIFERENCIA ENTRE --FROM-PATTERN I --TO-PATTERN
