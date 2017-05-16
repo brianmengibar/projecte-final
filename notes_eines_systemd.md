@@ -6,8 +6,9 @@
 
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
-
+<!--
 # MOVER CRITICAL-CHAIN A eines_visuals?
+-->
 
 # Eines per analitzar i gestionar Systemd
 
