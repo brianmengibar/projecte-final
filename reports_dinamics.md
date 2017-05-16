@@ -175,9 +175,7 @@ ser **root**, podrem modificar/visualitzar, etc.
 Per editar una maquina actual veiem el simbol del `tick`, quan li donem
 ens apareixen dos simbols:
 
- * **Un llapis**
- 
-	Si li donem al llapis ens deixara modificar:
+ * **Un llapis que ens deixara modificar**
   * Host Name
   * Color
   * Avatar
