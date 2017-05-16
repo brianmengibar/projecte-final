@@ -7,10 +7,12 @@
 ### Projecte: _Serveis informatius de Systemd_
 ------------------------------------------------------
 
+<!--
 # MIRAR TODO LO QUE HACE PLOT, PROBARLO CON OTROS TARGETS
 # PROFUNDIZAR DOT, VER SU MAN, VER FORM_PATTERN TO PATTERN
 # PONER VARIOS EJEMPLOS DE GRAFICAS I ENTONCES METERLAS EN UN ANNEXO
 O TODAS JUNTAS, ESO POR CONFIRMAR PERO HAY QUE EXPLORAR INTENSAMENTE DOT
+-->
 
 # Ordres visuals
 
@@ -19,9 +21,9 @@ trobar ordres que ens retornen una imatge, ordres que ens retornen una
 grafica etc. Aquestes son les que jo he trobat i crec que les millors
 que tenim en el sistema:
 
-## Systemd-analyze plot
+## Dibuixant el "boot"
 
-Crea un archiu amb format `.svg` que descriu el procés d'arrancada de 
+L'ordre `systemd-analyze plot` crea un arxiu amb format `.svg` que descriu el procés d'arrancada de 
 forma gráfica. 
 
 ```
@@ -83,10 +85,9 @@ i al costat un nom, que cadascun vol dir:
 ## Systemd-analyze dot
 
 També crea un archiu amb format `.svg` que mostra un grafic de l'us
-del sistema pero cal dir, que es una mica "lio". Lo primer que cal fer
-es instal·lar el paquet **graphviz**. Una vegada instal·lat, ja podem 
-executar l'ordre, que com podem veure, el resultat s'emmagatzemara en un
-archiu `.svg`.
+del sistema. Lo primer que cal fer es instal·lar el paquet **graphviz**.
+Una vegada instal·lat, ja podem executar l'ordre, que com podem veure, 
+el resultat s'emmagatzemara en un archiu `.svg`.
 
 ```
 $ systemd-analyze dot --require | dot -Tsvg > grafica-dot-target-actual.svg; inkscape -e grafica-dot-target-actual.png grafica-dot-target-actual.svg
@@ -110,7 +111,8 @@ He agafat httpd per que la grafica es molt mes petita, ja que en
 la imatge d'abans de tot el sistema no es veu practicament **res**.
 
 ```
-$ systemd-analyze dot 'httpd.service' --require | dot -Tsvg > httpd.svg; inkscape -e httpd.png httpd.svg
+$ systemd-analyze dot 'httpd.service' --require \
+  | dot -Tsvg > httpd.svg; inkscape -e httpd.png httpd.svg
          Color legend: black     = Requires
                  dark blue = Requisite
                  dark grey = Wants
@@ -156,7 +158,6 @@ grafiques** que obviament, cadascuna te un significat:
 	On apunti una fletxa de color vermell vol dir que no poden estar el unit que estem mirant i el que apunta la fletxa activats, ja que entre ells podrueixen conflicte.
 
 * green
-
 	On apunti una fletxa de color verd vol dir que despres s'engegara el unit especific o que en el moment que aquest unit específic estigui activat, després ha d'activar el unit que apunta la fletxa.
 
 ### Parametres de systemd-analyze dot
@@ -172,7 +173,9 @@ trobat aquests dos parametres que crec que son molt utils:
 	`rescue.target`.
 
 	```
-	$ systemd-analyze dot --from-pattern='rescue.target' | dot -Tsvg > from-rescue.svg; inkscape -e from-rescue.png from-rescue.svg
+	$ systemd-analyze dot --from-pattern='rescue.target' \
+	  | dot -Tsvg > from-rescue.svg
+	$ inkscape --export-png=from-rescue.png from-rescue.svg
 	   Color legend: black     = Requires
 					 dark blue = Requisite
 					 dark grey = Wants
