@@ -175,14 +175,14 @@ ser **root**, podrem modificar/visualitzar, etc.
 Per editar una maquina actual veiem el simbol del `tick`, quan li donem
 ens apareixen dos simbols:
 
- * **Un llapis que ens deixara modificar**
+ * Un llapis que ens deixara modificar
   * Host Name
   * Color
   * Avatar
 
-   Per exemple, cambiar el nom i el color com veiem a continuació:
+	Per exemple, cambiar el nom i el color com veiem a continuació:
 
-   ![edit-machine-cockpit](images/cockpit/edit-machine.png)
+	![edit-machine-cockpit](images/cockpit/edit-machine.png)
    
    Una vegada fet, li donem a `set` per desar els canvis.
 
