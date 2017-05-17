@@ -222,7 +222,7 @@ mes apartats dins de services:
 
 * Paths
 
-	Aquest apartat conté tots els `.path`, lo que fan es codificar la informació sobre un camí monitoritzat per systemd.
+	Aquest apartat conté tots els `.path`, es poden utilitzar per activar altres serveis quan els objectes del sistema d'arxius canvien o es modifiquen
 
   ![list-services-cockpit](images/cockpit/list-services.png)
 
