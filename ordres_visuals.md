@@ -121,14 +121,13 @@ Area 0:0:32236.2:1225 exported to 32236 x 1225 pixels (90 dpi)
 Bitmap saved as: grafica-dot-target-actual.png
 ```
 
-![Grafica-dot-system](grafiques/grafica-dot-target-actual.png)
-
 Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
 però també podem crear el gràfic a partir d'un punt especific, per exemple
 podem dir que comenci el gràfic a partir de httpd.service.
 
 He agafat httpd per que la gràfica es molt mes petita, ja que en
-la imatge d'abans de tot el sistema no es veu pràcticament **res**.
+la imatge d'abans de tot el sistema no la he posat per el motiu de que
+no es veu pràcticament **res**.
 
 ```
 $ systemd-analyze dot 'httpd.service' --require \
