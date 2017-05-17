@@ -27,16 +27,20 @@ A continuació, mostro les opcions per les quals es poden filtrar:
 * `journalctl -p prioritat`
 
 	Cal substituir la paraula _prioritat_ amb una de les següents paraules 
-	clau (o amb un nombre): 
-	
-  * debug --> **7**
-  * info --> **6**
-  * notice --> **5**
-  * warning --> **4**
-  * err --> **3**
-  * crit --> **2**
-  * alert --> **1**
-  * emerg --> **0**
+	clau (o amb un nombre) que son els nivells de registre que tenim
+	en el sistema: 
+
+	| Constant  | Level value  | Meaning                                     |
+	|-----------|:------------:|--------------------------------------------:|
+	| EMERG     |      0       | El sistema és inutilitzable                 |
+	| ALERT     |      1       | S'han de prendre mesures **immediatament**  |
+	| CRIT      |      2       | Condicions crítiques                        |
+	| ERR       |      3       | Condicions d'errors                         |
+	| WARNING   |      4       | Condicions d'advertència                    |
+	| NOTICE    |      5       | Condició normal pero significativa          |
+	| INFO      |      6       | Informatiu                                  |
+	| DEBUG     |      7       | Missatges de nivell de depuració            |
+
 
 	```
 	journalctl -p crit
