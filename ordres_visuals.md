@@ -243,8 +243,30 @@ trobat aquests dos paràmetres que crec que son molt útils:
   * Te que estar activat `systemd-update-utmp-runlevel.service` per després engegar `rescue.target`
   * Si estem en `multi-user.target` o `graphical.target` entrarà en conflicte amb `rescue.target`, lo que vol dir que no poden estar els dos activats
 
+Per ultim, poso un ultim cas, ja que com podem comprovar hem vist tots
+els colors de les fletxes en imatges excepte un: \"**dark blue**". Així
+que per probar-ho, os mostro la grafica de `abrtd.service`.
 
-<!--
-# FALTA METER EL EXPLICAR COLORES, METER MAS IMAGENES COMO ABRTD.SERVICE
-# EXPLICAR DIFERENCIA ENTRE --FROM-PATTERN I --TO-PATTERN
--->
+```
+$ systemd-analyze dot abrtd.service --require | dot -Tsvg > abrtd.svg
+   Color legend: black     = Requires
+                 dark blue = Requisite
+                 dark grey = Wants
+                 red       = Conflicts
+                 green     = After
+                 
+$ inkscape --export-png=abrtd.png abrtd.svg
+	Background RRGGBBAA: ffffff00
+	Area 0:0:760:145 exported to 760 x 145 pixels (90 dpi)
+	Bitmap saved as: abrtd.png
+	```
+
+![service-abrtd](grafiques/abrtd.png)
+
+Com podem veure, al no especificar parametre, ens mostra els serveis que
+son requerits(fletxa blau fosc) que s'activin per poder activar-se i 
+vem el target `multi-user.target` que vol que estigui activar(fletxa gris).
+Finalment a sota veiem que en el moment que s'activat `abrtd.service` es
+requerit(fletxa negra) que s'activi una serie de units i que no estigui
+en activat el target `shutdown.target` ja que entrarien en conflicte(fletxa
+vermella).

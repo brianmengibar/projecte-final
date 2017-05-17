@@ -32,7 +32,7 @@ then
 	--from-pattern=$2 \
 	--require \
 	| dot \
-	-Tsvg > $2.svg
+	-Tsvg > from-$2.svg
 
 # Si l'opcio es igual a 3 creara una grafica del unit que especifiquem
 # per veure que necessita per engegarse
@@ -43,7 +43,7 @@ then
 	--to-pattern=$2 \
 	--require \
 	| dot \
-	-Tsvg > $2.svg
+	-Tsvg > to-$2.svg
 
 # Si l'opció conté qualsevol altre numero, creara una grafica dels dos
 # units que especifiquem per veure tota la relació que tenen
