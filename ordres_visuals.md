@@ -217,8 +217,8 @@ trobat aquests dos paràmetres que crec que son molt útils:
 	Que com podem observar:
 	
   * Es **requerit**(per la fletxa negra) que després d'engegar `rescue.target`, estigui activat `sysinit.target` i `rescue.service` (per la fletxa verda).
-  * Vol que estigui activat el servei `systemd-update-utmp-runlevel.service` (per la fletxa gris).
-  * Si volem engegar a `shutdown.target` ens diu que entrarà en conflicte(per la fletxa vermella), lo que vol dir es que no poden estar els dos activats.
+  * **Vol** que estigui activat el servei `systemd-update-utmp-runlevel.service` (per la fletxa gris).
+  * Si volem engegar a `shutdown.target` ens diu que entrarà en **conflicte**(per la fletxa vermella), lo que vol dir es que no poden estar els dos activats.
 
 * `--to-pattern`
 	
@@ -244,8 +244,8 @@ trobat aquests dos paràmetres que crec que son molt útils:
 	![to-rescue](grafiques/to-rescue.png)
 	
 	Que com podem observar
-  * Te que estar activat `systemd-update-utmp-runlevel.service` per després engegar `rescue.target`
-  * Si estem en `multi-user.target` o `graphical.target` entrarà en conflicte amb `rescue.target`, lo que vol dir que no poden estar els dos activats
+  * Te que estar activat `systemd-update-utmp-runlevel.service` per **després** engegar `rescue.target`
+  * Si estem en `multi-user.target` o `graphical.target` entrarà en **conflicte** amb `rescue.target`, lo que vol dir que no poden estar els dos activats
 
 Per ultim, poso un ultim cas, ja que com podem comprovar hem vist tots
 els colors de les fletxes en imatges excepte un: \"**dark blue**". Així
@@ -267,10 +267,9 @@ $ inkscape --export-png=abrtd.png abrtd.svg
 
 ![service-abrtd](grafiques/abrtd.png)
 
-Com podem veure, al no especificar parametre, ens mostra els serveis que
-son requerits(fletxa blau fosc) que s'activin per poder activar-se i 
-vem el target `multi-user.target` que vol que estigui activar(fletxa gris).
-Finalment a sota veiem que en el moment que s'activat `abrtd.service` es
-requerit(fletxa negra) que s'activi una serie de units i que no estigui
-en activat el target `shutdown.target` ja que entrarien en conflicte(fletxa
-vermella).
+Com podem veure, al no especificar parametre: 
+
+* Ens mostra els serveis que son **requerits**(fletxa blau fosc) que s'activin per que es pugui activar `abrtd.service`.
+* Ens mostra que **vol** que estigui activat(fletxa gris) el target `multi-user.target`
+* Ens mostra que en el moment que s'activat `abrtd.service` es **requerit**(fletxa negra) que s'activi una serie de units.
+* Ens mostra que no te que estar activat el target `shutdown.target` ja que entrarien en **conflicte**(fletxa vermella).
