@@ -44,11 +44,13 @@ tenia que buscar alguna manera per poder **transformar** de format i la
 veritat que amb `inkscape` es molt fàcil i eficaç, només cal executar
 `dnf -y install inkscape`, en el moment que ho tenim instal·lat amb el 
 paràmetre `--export-png=` per especificar amb quin format ho volem exportar i al 
-final de la línia posant la imatge? Ja fa la conversió automàticament
+final de la línia posant la imatge? Ja fa la conversió automàticament peró
+té un inconvenient, que lamentablement obre un pop-up que he explorat
+com fer per que no sorti pero no hi ha cap ordre.
 
 Aquesta gràfica es de `graphical.target`, ja que es en el target que
-estic per defecte, llavors lo que acabo de fer es reiniciar la maquina
-i entrar en **mode 1** --> `rescue.target` i aquesta es la gràfica
+estic per defecte, llavors lo que acabo de fer es **reiniciar** la maquina
+i entrar en **mode 1** (\ `rescue.target`) i aquesta es la seva gràfica
 que com podem comprovar, es molt diferent.
 
 ![grafica-rescue](grafiques/grafica-rescue.png)
