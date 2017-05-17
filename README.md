@@ -57,12 +57,14 @@ tota d'informació per poder realitzar el projecte:
   * [FedoraProject Systemd](https://fedoraproject.org/wiki/Systemd)
   * [F.D.Systemd](https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/ch-Services_and_Daemons.html)
   * [Eines systemd](https://diversidadyunpocodetodo.blogspot.com.es/2016/07/systemd-analyze-kcm-systemadm-systemctl.html)
+  * [Journal & Systemd](http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/)
 
 * Sobre journal
   * [Blog Journalctl](https://juncotic.com/journalctl-comandos-interesantes/)
   * [Journal Documentation](https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/s1-Using_the_Journal.html)
   * [ArchWiki Journal](https://wiki.archlinux.org/index.php/Systemd#Journal)
   * [Para rellenar journal o systemd](http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/)
+  * [Journal & Systemd](http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/)
 
 * Sobre cockpit
   * [How to Cockpit](https://www.liquidweb.com/kb/how-to-use-cockpit-in-fedora-23/)
@@ -71,11 +73,9 @@ tota d'informació per poder realitzar el projecte:
 * Sobre systemd-manager
   * [Systemd Manager](https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/)
 
-* Altres (no se si els utilitzaré)
-  * [Para rellenar journal o systemd](http://www.elarraydejota.com/guia-tecnica-de-gestion-de-servicios-en-systemd-para-administradores-de-sistemas/)
-  * [Systemd Manager](https://copr.fedorainfracloud.org/coprs/nunodias/systemd-manager/)
-  * [Otros de la familia systemd]( https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl)
-  * [Crear un service?](https://www.tecmint.com/create-new-service-units-in-systemd/)
-  * [Puede servir](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
+* Altres (no se si trobaré informació d'aquests)
+  * [Altres de la familia systemd?]( https://wiki.christophchamp.com/index.php?title=Systemd#timedatectl)
+  * [Creacio service?](https://www.tecmint.com/create-new-service-units-in-systemd/)
+  * [Fa falta?](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
 
 
