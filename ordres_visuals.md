@@ -56,7 +56,7 @@ que com podem comprovar, es molt diferent.
 ![grafica-rescue](grafiques/grafica-rescue.png)
 
 Per ultim, des de **mode 1** he fet un `systemctl isolate emergency.target`
-per anar a parar a **mode emergency** i aquesta es la gràfica d'aquest
+per anar a **mode emergency** i aquesta es la gràfica d'aquest
 target.
 
 ![grafica-emergency](grafiques/grafica-mode-emergency.png)
