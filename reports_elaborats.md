@@ -30,16 +30,16 @@ A continuació, mostro les opcions per les quals es poden filtrar:
 	clau (o amb un nombre) que son els nivells de registre que tenim
 	en el sistema: 
 
-	| Constant  | Level value  | Meaning                                     |
-	|-----------|:------------:|--------------------------------------------:|
-	| EMERG     |      0       | El sistema és inutilitzable                 |
-	| ALERT     |      1       | S'han de prendre mesures **immediatament**  |
-	| CRIT      |      2       | Condicions crítiques                        |
-	| ERR       |      3       | Condicions d'errors                         |
-	| WARNING   |      4       | Condicions d'advertència                    |
-	| NOTICE    |      5       | Condició normal pero significativa          |
-	| INFO      |      6       | Informatiu                                  |
-	| DEBUG     |      7       | Missatges de nivell de depuració            |
+	| Constant  | Valor de nivell  | Significat                                  |
+	|-----------|:----------------:|--------------------------------------------:|
+	| EMERG     |        0         | El sistema és inutilitzable                 |
+	| ALERT     |        1         | S'han de prendre mesures **immediatament**  |
+	| CRIT      |        2         | Condicions crítiques                        |
+	| ERR       |        3         | Condicions d'errors                         |
+	| WARNING   |        4         | Condicions d'advertència                    |
+	| NOTICE    |        5         | Condició normal pero significativa          |
+	| INFO      |        6         | Informatiu                                  |
+	| DEBUG     |        7         | Missatges de nivell de depuració            |
 
 
 	```
