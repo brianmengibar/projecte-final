@@ -32,14 +32,14 @@ A continuació, mostro les opcions per les quals es poden filtrar:
 
 	| Constant  | Valor de nivell  | Significat                                  |
 	|-----------|:----------------:|--------------------------------------------:|
-	| EMERG     |        0         | El sistema és inutilitzable                 |
-	| ALERT     |        1         | S'han de prendre mesures **immediatament**  |
-	| CRIT      |        2         | Condicions crítiques                        |
-	| ERR       |        3         | Condicions d'errors                         |
-	| WARNING   |        4         | Condicions d'advertència                    |
-	| NOTICE    |        5         | Condició normal pero significativa          |
-	| INFO      |        6         | Informatiu                                  |
-	| DEBUG     |        7         | Missatges de nivell de depuració            |
+	| emerg     |        0         | El sistema és inutilitzable                 |
+	| alert     |        1         | S'han de prendre mesures **immediatament**  |
+	| crit      |        2         | Condicions crítiques                        |
+	| err       |        3         | Condicions d'errors                         |
+	| warning   |        4         | Condicions d'advertència                    |
+	| notice    |        5         | Condició normal pero significativa          |
+	| info      |        6         | Informatiu                                  |
+	| debug     |        7         | Missatges de nivell de depuració            |
 
 
 	```

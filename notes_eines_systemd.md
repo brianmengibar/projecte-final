@@ -150,11 +150,11 @@ A continuació, mostro una taula que contindrà:
 |-----------|:---------------------------------------:|-----------------------------------------------------------------------------:|
 | 0         | runlevel0.target, `poweroff.target`     | Apaga el sistema                                                             |
 | 1         | runlevel1.target, `rescue.target`       | Mode mono-usuari                                                             |
-| 2         | runlevel2.target, `multi-user.target``  | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
-| 3         | runlevel3.target, `multi-user.target``  | Multiusuari, entorn grafic                                                   |
-| 4         | runlevel4.target, `multi-user.target``  | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
-| 5         | runlevel5.target, `graphical.target``   | Mutiusuari, entorn grafic, tots els serveis del mode 3 mes un entorn grafic  |
-| 6         | runlevel6.target, `reboot.target``      | Reiniciar                                                                    |
+| 2         | runlevel2.target, `multi-user.target`   | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
+| 3         | runlevel3.target, `multi-user.target`   | Multiusuari, entorn grafic                                                   |
+| 4         | runlevel4.target, `multi-user.target`   | Mode inici definit per l'usuari/sistema, per defecte identic a mode 3        |
+| 5         | runlevel5.target, `graphical.target`    | Mutiusuari, entorn grafic, tots els serveis del mode 3 mes un entorn grafic  |
+| 6         | runlevel6.target, `reboot.target`       | Reiniciar                                                                    |
 | emergency | `emergency.target`                      | Shell d'emergencia                                                           |
 
 * `systemd-analyze time`
@@ -205,16 +205,18 @@ A continuació, mostro una taula que contindrà:
 * `systemd-analyze set-log-level`
 	Cambia el nivell de registre actual del daemon de systemd al nivell que
 	nosaltres volguem, que per defecte tenim el nivell **info**. Els nivells
-	son:
+	son els de **registre** que tenim en el sistema (en l'altre 
+	[document](reports_elaborats.md#per-prioritat) podeu veure una petita
+	taula amb el significat de cada nivell).
 
+  * **emerg**
   * **alert**
   * **crit**
-  * **debug**
-  * **emerg**
   * **err**
-  * **info**
-  * **notice**
   * **warning**
+  * **notice**
+  * **info**
+  * **debug**
 
 * `systemd-analyze set-log-target`
 	Cambia el target del registre actual del daemon de systemd al target que
