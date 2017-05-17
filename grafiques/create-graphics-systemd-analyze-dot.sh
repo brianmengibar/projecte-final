@@ -1,8 +1,8 @@
 #! /bin/bash
 # Nom: Brian Mengibar Garcia
 # Curs: hisx2
-# Synopsis: Script que per crear grafiques de l'us del sistema
-#----------------------------------------------------------------
+# Synopsis: Script per crear grafiques de l'us del sistema
+#----------------------------------------------------------
 
 OPTION="$1"
 
