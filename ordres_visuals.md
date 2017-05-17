@@ -50,7 +50,7 @@ com fer per que no sorti pero no hi ha cap ordre.
 
 Aquesta gràfica es de `graphical.target`, ja que es en el target que
 estic per defecte, llavors lo que acabo de fer es **reiniciar** la maquina
-i entrar en __mode 1__ (\ `rescue.target`) i aquesta es la seva gràfica
+i entrar en __mode 1__ (`rescue.target`) i aquesta es la seva gràfica
 que com podem comprovar, es molt diferent.
 
 ![grafica-rescue](grafiques/grafica-rescue.png)
