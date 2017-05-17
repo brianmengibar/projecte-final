@@ -6,9 +6,6 @@
 
 ### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
-<!--
-# TODO EL TEMA DE PODER FILTRAR DE (--SINCE, --UNTIL, PRIORITY), MOVERLO DE JOURNAL A ESTE!
--->
 
 # Reports elaborats
 
