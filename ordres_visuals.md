@@ -122,11 +122,11 @@ Bitmap saved as: grafica-dot-target-actual.png
 ```
 
 Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
-partint del target nostre actual, llavors ens mostrarà tot lo necessari
-per que s'activi el nostre target i despres tot lo que s'activarà al tenir
-activat el nostre target, però també podem crear el gràfic a partir d'un
-punt especific, per exemple podem dir que comenci el gràfic a partir de
-httpd.service.
+partint del nostre target actual, llavors mostrarà tots els units necessaris
+per que s'activi el nostre target i tots els units que s'activaran despres
+ja sigui per que es requerit, per que es un requisit, per que vol, etc.
+També podem crear el gràfic a partir d'un punt especific, per exemple, 
+podem dir que comenci el gràfic a partir de httpd.service.
 
 He agafat httpd per que la gràfica es molt mes petita, ja que en
 la imatge d'abans de tot el sistema no la he ficat per el motiu de que
@@ -182,6 +182,7 @@ gràfiques** que òbviament, cadascuna te un significat:
 	On apunti una fletxa de color vermell vol dir que no poden estar el unit que estem mirant i el que apunta la fletxa activats, ja que entre ells podrueixen conflicte.
 
 * green
+
 	On apunti una fletxa de color verd vol dir que després s'engegara el unit especific o que en el moment que aquest unit específic estigui activat, després ha d'activar el unit que apunta la fletxa.
 
 ### Parametres de systemd-analyze dot
@@ -262,7 +263,7 @@ $ inkscape --export-png=abrtd.png abrtd.svg
 	Background RRGGBBAA: ffffff00
 	Area 0:0:760:145 exported to 760 x 145 pixels (90 dpi)
 	Bitmap saved as: abrtd.png
-	```
+```
 
 ![service-abrtd](grafiques/abrtd.png)
 
