@@ -61,18 +61,6 @@ target.
 
 ![grafica-emergency](grafiques/grafica-mode-emergency.png)
 
-### Diferencies entre les gràfiques emergency i rescue
-
-El unit `emergency.target` proporciona l'entorn més mínim possible, es
-a dir, el sistema munta el sistema de fitxers arrel només per a **lectura**,
-no intenta muntar altres sistemes d'arxius locals, no activa les interfícies
-de xarxa, i només inicia uns serveis **essencials**. Per aixó en la gràfica
-podem observar que fa el pas de desactivar tots els serveis que veu que no
-son essencials per l'arrencada del sistema. En cambi, en el unit `rescue.target`,
-proporciona un entorn d'usuari únic convenient, el sistema intenta
-muntar tots els sistemes de fitxers locals i iniciar alguns serveis
-del sistema **importants**, però no activa les interfícies de xarxa.
-
 ### Significat colors
 
 Com podem comprovar en aquesta gràfica, a sota podem veure diferents colors tenim diferents colors que
@@ -97,6 +85,18 @@ i al costat un nom, que cadascun vol dir:
 * `Loading Unit Files`
 
 	El temps que tarda Systemd en carregar els arxius dels units.
+
+### Diferencies entre les gràfiques emergency i rescue
+
+El unit `emergency.target` proporciona l'entorn més mínim possible, es
+a dir, el sistema munta el sistema de fitxers arrel només per a **lectura**,
+no intenta muntar altres sistemes d'arxius locals, no activa les interfícies
+de xarxa, i només inicia uns serveis **essencials**. Per aixó en la gràfica
+podem observar que fa el pas de desactivar tots els serveis que veu que no
+son essencials per l'arrencada del sistema. En cambi, en el unit `rescue.target`,
+proporciona un entorn d'usuari únic convenient, el sistema intenta
+muntar tots els sistemes de fitxers locals i iniciar alguns serveis
+del sistema **importants**, però no activa les interfícies de xarxa.
 
 ## Explorant dot
 
