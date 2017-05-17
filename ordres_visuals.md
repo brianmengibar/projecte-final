@@ -103,7 +103,7 @@ del sistema **importants**, però no activa les interfícies de xarxa.
 L'ordre `systemd-analyze dot` també crea un arxiu amb format `.svg` 
 que mostra un gràfic de l'us del sistema. Lo primer que cal fer es 
 instal·lar el paquet **graphviz**. Una vegada instal·lat, ja podem 
-executar l'ordre, que com podem veure, el resultat s'emmagatzemara en un
+executar l'ordre, que com he dit avans, el resultat s'emmagatzemara en un
 arxiu `.svg`.
 
 ```
@@ -122,11 +122,14 @@ Bitmap saved as: grafica-dot-target-actual.png
 ```
 
 Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
-però també podem crear el gràfic a partir d'un punt especific, per exemple
-podem dir que comenci el gràfic a partir de httpd.service.
+partint del target nostre actual, llavors ens mostrarà tot lo necessari
+per que s'activi el nostre target i despres tot lo que s'activarà al tenir
+activat el nostre target, però també podem crear el gràfic a partir d'un
+punt especific, per exemple podem dir que comenci el gràfic a partir de
+httpd.service.
 
 He agafat httpd per que la gràfica es molt mes petita, ja que en
-la imatge d'abans de tot el sistema no la he posat per el motiu de que
+la imatge d'abans de tot el sistema no la he ficat per el motiu de que
 no es veu pràcticament **res**.
 
 ```
