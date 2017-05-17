@@ -44,9 +44,9 @@ tenia que buscar alguna manera per poder **transformar** de format i la
 veritat que amb `inkscape` es molt fàcil i eficaç, només cal executar
 `dnf -y install inkscape`, en el moment que ho tenim instal·lat amb el 
 paràmetre `--export-png=` per especificar amb quin format ho volem exportar i al 
-final de la línia posant la imatge? Ja fa la conversió automàticament peró
+final de la línia posant la imatge? Ja fa la conversió automàticament però
 té un inconvenient, que lamentablement obre un pop-up que he explorat
-com fer per que no sorti pero no hi ha cap ordre.
+com fer per que no sorti però no hi ha cap ordre.
 
 Aquesta gràfica es de `graphical.target`, ja que es en el target que
 estic per defecte, llavors lo que acabo de fer es **reiniciar** la maquina
@@ -91,7 +91,7 @@ i al costat un nom, que cadascun vol dir:
 El unit `emergency.target` proporciona l'entorn més mínim possible, es
 a dir, el sistema munta el sistema de fitxers arrel només per a **lectura**,
 no intenta muntar altres sistemes d'arxius locals, no activa les interfícies
-de xarxa, i només inicia uns serveis **essencials**. Per aixó en la gràfica
+de xarxa, i només inicia uns serveis **essencials**. Per això en la gràfica
 podem observar que fa el pas de desactivar tots els serveis que veu que no
 son essencials per l'arrencada del sistema. En cambi, en el unit `rescue.target`,
 proporciona un entorn d'usuari únic convenient, el sistema intenta
@@ -103,7 +103,7 @@ del sistema **importants**, però no activa les interfícies de xarxa.
 L'ordre `systemd-analyze dot` també crea un arxiu amb format `.svg` 
 que mostra un gràfic de l'us del sistema. Lo primer que cal fer es 
 instal·lar el paquet **graphviz**. Una vegada instal·lat, ja podem 
-executar l'ordre, que com he dit avans, el resultat s'emmagatzemara en un
+executar l'ordre, que com he dit abans, el resultat s'emmagatzemara en un
 arxiu `.svg`.
 
 ```
@@ -123,7 +123,7 @@ Bitmap saved as: grafica-dot-target-actual.png
 
 Amb aquesta ordre hem extret una imatge de l'us de **tot** el sistema,
 partint del nostre target actual, llavors mostrarà tots els units necessaris
-per que s'activi el nostre target i tots els units que s'activaran despres
+per que s'activi el nostre target i tots els units que s'activaran després
 ja sigui per que es requerit, per que es un requisit, per que vol, etc.
 També podem crear el gràfic a partir d'un punt especific, per exemple, 
 podem dir que comenci el gràfic a partir de httpd.service.
@@ -249,7 +249,7 @@ trobat aquests dos paràmetres que crec que son molt útils:
 
 Per ultim, poso un ultim cas, ja que com podem comprovar hem vist tots
 els colors de les fletxes en imatges excepte un: \"**dark blue**". Així
-que per probar-ho, os mostro la grafica de `abrtd.service`.
+que per provar-ho, os mostro la gràfica de `abrtd.service`.
 
 ```
 $ systemd-analyze dot abrtd.service --require | dot -Tsvg > abrtd.svg
@@ -267,7 +267,7 @@ $ inkscape --export-png=abrtd.png abrtd.svg
 
 ![service-abrtd](grafiques/abrtd.png)
 
-Com podem veure, al no especificar parametre: 
+Com podem veure, al no especificar paràmetre: 
 
 * Ens mostra els serveis que son **requerits**(fletxa blau fosc) que s'activin per que es pugui activar `abrtd.service`.
 * Ens mostra que **vol** que estigui activat(fletxa gris) el target `multi-user.target`
