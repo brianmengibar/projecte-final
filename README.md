@@ -22,6 +22,19 @@ El propòsit d'aquest projecte es:
 * Trobar **Reports Elaborats**
 * Trobar si existeixen **Reports Dinàmics**
 
+A continuació comentare una breu explicació per cada apartat d'aquest
+repositori:
+
+* grafiques
+
+	Aquest directori conté totes les grafiques que he utilitzat per completar
+	les explicacions
+
+* images
+
+	Aquest directori conté totes les imatges necesaries per completar
+	les explicacions dels **reports dinàmics**
+
 A continuació podeu veure un breu **index** que conté tots els apartats 
 que he realitzat.
 
