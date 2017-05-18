@@ -1,20 +1,20 @@
 # Serveis Informatius de Systemd
-**Alumne**: Brian Mengibar Garcia
 
-**Centre**: Escola del Treball
+### Alumne: Brian Mengibar Garcia
 
-**Curs**: ASIX-2 (2016-2017)
+### Centre: Escola del Treball
 
-**Data**: 2017/05/23
+### Curs: ASIX-2 (2016-2017)
+
+### Data: 2017/05/23
 
 ---------------
 
 # REPORTS ELABORATS (PART 1)
 
-Opcions per filtrar
+**Opcions per filtrar**
 
 * Per prioritat
-
 	* emerg
 	* alert
 	* crit
@@ -29,39 +29,31 @@ Opcions per filtrar
 # REPORTS ELABORATS (PART 2)
 
 * Per temps
-
-	* since
-	* until
+	* --since
+	* --until
 
 * Per prioritat i temps
-
 	* prioritat + temps
 
 * Per filtrat avançat
-
-	 * fieldname=value
-
----------------
-
-# REPORTS ELABORATS (PART 3)
+	 * --fieldname=value
 
 * Per boot
-
 	* --list-boots
 	* -b
 
+---------------
+
 # REPORTS DINAMICS
 
-Eines
+**Eines**
 
 * Cockpit
-
 	* Característiques
 	* Funcionament
 	* Services
 
 * Systemd-manger
-
 	* Característiques
 	* Funcionament
 	* Services
@@ -70,19 +62,18 @@ Eines
 
 # ORDRES VISUALS
 
-* Explorant plot
+**Llistat d'ordres**
 
+* Explorant plot
 	* Significat dels colors
 	* Diferencia entre grafiques
 
 * Explorant dot
-
 	* Significat del color de les fletxes
 	* Parametres
 	* Diferencia entre parametres
 
 * Explorant critical-chain
-
 	* Funcionament
 	* Parametres
 
@@ -93,4 +84,3 @@ Eines
 ---------------
 
 # GRÀCIES
-

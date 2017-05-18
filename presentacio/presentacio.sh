@@ -5,5 +5,3 @@
 #----------------------------------------------------------
 
 pandoc -t dzslides -s presentacio.md -o presentacio.html
-
-sed -i 's/html { background-color: black; }/html { background-color: #000031; }/g' presentacio.html
