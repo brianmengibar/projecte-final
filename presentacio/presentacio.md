@@ -1,12 +1,12 @@
 # Serveis Informatius de Systemd
 
-**Alumne**: Brian Mengibar Garcia
+### Alumne: Brian Mengibar Garcia
 
-**Centre**: Escola del Treball
+### Centre: Escola del Treball
 
-**Curs**: ASIX-2 (2016-2017)
+### Curs: ASIX-2 (2016-2017)
 
-**Data**: 2017/05/23
+### Data: 2017/05/23
 
 ---------------
 
