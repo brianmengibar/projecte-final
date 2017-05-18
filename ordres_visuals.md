@@ -376,3 +376,7 @@ sistema? Doncs be, a continuació, mostro una taula que contindrà:
 | 5         | runlevel5.target, `graphical.target`    | Mutiusuari, entorn grafic, tots els serveis del mode 3 mes un entorn grafic  |
 | 6         | runlevel6.target, `reboot.target`       | Reiniciar                                                                    |
 | emergency | `emergency.target`                      | Shell d'emergencia                                                           |
+
+<!--
+Si se queda aqui? Cambiar el link de un documento a otro, recordar
+-->
