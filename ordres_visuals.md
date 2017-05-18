@@ -274,3 +274,18 @@ Com podem veure, al no especificar paràmetre:
 * Ens mostra que **vol** que estigui activat(fletxa gris) el target `multi-user.target`
 * Ens mostra que en el moment que s'activat `abrtd.service` es **requerit**(fletxa negra) que s'activi una serie de units.
 * Ens mostra que no te que estar activat el target `shutdown.target` ja que entrarien en **conflicte**(fletxa vermella).
+
+#### Diferencia entre els dos parametres
+
+Una vegada he comentat per separat cada paràmetre, dono pas a explicar 
+la seva clara diferència que veig que és necessària explicar:
+
+* `--to-pattern`
+
+	Ens mostra els units que depenen avans del unit que nosaltres especifiquem(idem que l'ordre `systemctl list-dependencies --before unit`
+	pero en aquest cas els altres units no es despleguen de forma recursiva).
+
+* `--from-pattern`
+
+	Ens mostra els units que depenen del unit que nosaltres hem especificat(idem que l'ordre `systemctl list-dependencies --after unit`
+	pero en aquest cas els altres units no es despleguen de forma recursiva).

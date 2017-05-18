@@ -611,13 +611,14 @@ A continuació comentaré una serie d'ordres de la família systemd:
 	```
 
 	Després de veure varis exemples, m'he donat compte de que també podem
-	especificar si volem veure els units que depenen abans d'un unit especific
-	els units que depenen de despres d'un unit especific, etc.
+	especificar si volem veure els units que depenen abans del unit que
+	nosaltres especifiquem o els units que depenen del unit que nosaltres
+	hem especificat, etc.
 
   * `systemctl list-dependencies unit --before`
   
      Amb aquesta opció estem dient que ens mostri tots els units **ordenats** que van 
-     __abans__ d'aquest unit especific Per exemple mirarem el servei **httpd**.
+     __abans__ d'aquest unit especific. Per exemple mirarem el servei **httpd**.
      
 	```
 	$ systemctl list-dependencies --before httpd
@@ -664,8 +665,8 @@ A continuació comentaré una serie d'ordres de la família systemd:
 	```
 
   * `systemctl list-dependencies --all unit` 
-    Per lo que veig, quan posem ``--all``, totes les altres unitats 
-    també s'expandeixen de forma recursiva.
+    Per lo que veig, quan posem ``--all``, també s'expandeixen tots els 
+    units de forma recursiva.
     
 	```
 	$ systemctl list-dependencies --all httpd
