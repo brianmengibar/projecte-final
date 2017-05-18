@@ -27,12 +27,12 @@ que he realitzat.
 
 ### Index
 
-* [Systemd](notes_systemd.md#systemd)
-  * [Que es Systemd](notes_systemd.md#que-es-systemd)
-  * [Eines de Systemd](notes_eines_systemd.md#explorant-analyze)
-* [Journal](notes_journal.md#journal)
-  * [Que es journal](notes_journal.md#que-es-journal)
-  * [Paràmetres de journal](notes_journal.md#parametres-de-journalctl)
+* [Systemd](systemd.md#systemd)
+  * [Que es Systemd](systemd.md#que-es-systemd)
+  * [Eines de Systemd](eines_systemd.md#explorant-analyze)
+* [Journal](journal.md#journal)
+  * [Que es journal](journal.md#que-es-journal)
+  * [Paràmetres de journal](journal.md#parametres-de-journalctl)
 * [Ordres visuals](ordres_visuals.md#ordres-visuals)
   * [Plot](ordres_visuals.md#explorant-plot)
   * [Dot](ordres_visuals.md#explorant-dot)
