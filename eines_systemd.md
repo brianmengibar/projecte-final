@@ -52,7 +52,7 @@ A continuació comentaré tots els parametres que te aquesta ordre:
 
 	Al ser distribució __Fedora__, apareix `intird`, en cambi en altres distribucions
 	com **Debian/Ubuntu**, no apareixen i la seva assignació de temps es carrega
-	en el kernel.
+	en el **kernel**.
 
 * `systemd-analyze blame`
 
@@ -76,11 +76,15 @@ A continuació comentaré tots els parametres que te aquesta ordre:
 			   434ms lvm2-monitor.service
 	```
 
+<!--
+
+ESTO AQUI? EN ORDRES VISUALS?
+
 * `systemd-analyze critical-chain`
 
 	Aquest parametre es molt util, ja que ens mostra la informació mes gràfica
-	a mode d'arbre amb la cadena de units que tenen major temps de
-	carrega a l'hora d'arrencar el sistema
+	a mode d'arbre amb la cadena de units que triguen mes en carregar
+	a l'hora d'arrencar el sistema
 
 	```
 	$ systemd-analyze critical-chain 
@@ -114,7 +118,7 @@ A continuació comentaré tots els parametres que te aquesta ordre:
 	
 	En el cas de no especificar l'opció **UNIT**, el target que es mostra es el 
 	que té el sistema per defecte, es a dir, nosaltres podem visualitzar la grafica
-	del target que nosaltres volguem, com per exemple el target `emergency.target`
+	del unit que nosaltres volguem, com per exemple el target `emergency.target`
 
 	```
 	$ systemd-analyze critical-chain emergency.target
@@ -138,13 +142,14 @@ A continuació comentaré tots els parametres que te aquesta ordre:
 #### Targets en systemd
 
 Estem veient que gracies a `systemd-analyze critical-chain [UNIT]` podem
-veure les grafiques dels diferents targets del nostre sistema, pero clar,
-quins son tots els _Targets Units_ que tenim en el sistema?
-A continuació, mostro una taula que contindrà:
+veure les grafiques dels diferents units del nostre sistema. De tots
+els units crec que en aquest cas es millor veure les grafiques dels
+targets, pero clar, quins son tots els _Targets Units_ que tenim en el 
+sistema? Doncs be, a continuació, mostro una taula que contindrà:
 
-* runlevel
-* Targets Units
-* Descripció
+* Els runlevel
+* Els targets units
+* La descripció
 
 | Runlevel  | Target Units                            | Descripció                                                                   |
 |-----------|:---------------------------------------:|-----------------------------------------------------------------------------:|
@@ -156,6 +161,8 @@ A continuació, mostro una taula que contindrà:
 | 5         | runlevel5.target, `graphical.target`    | Mutiusuari, entorn grafic, tots els serveis del mode 3 mes un entorn grafic  |
 | 6         | runlevel6.target, `reboot.target`       | Reiniciar                                                                    |
 | emergency | `emergency.target`                      | Shell d'emergencia                                                           |
+
+-->
 
 * `systemd-analyze time`
 
@@ -312,8 +319,8 @@ paso a comentar totes les opcions que té que son aquestes:
 * `--host`
 	Aquesta opció ens permet executar l'ordre remotament, cal especificar
 	el nom de l'usuari i nom del host, obviament separat per **@**, es la mateixa
-	sintaxis. Cal dir que es necessari que les dues maquines tinguin el servei
-	`ssh` engegat.
+	sintaxis. Ojo, es necessari que les dues maquines tinguin el servei
+	`ssh` **engegat**.
 
 	```
 	$ systemd-analyze blame --host=root@i12
@@ -333,7 +340,7 @@ paso a comentar totes les opcions que té que son aquestes:
 			   207ms lvm2-pvscan@9:0.service
 	```
 
-	Com podem comprobar, al fer l'ordre ens demana el password de l'altre
+	Com podem comprovar, al fer l'ordre ens demana el password de l'altre
 	usuari, en el moment que la posem ens surt el llistat dels units que han
 	tardat mes en arrencar aquella maquina.
 
