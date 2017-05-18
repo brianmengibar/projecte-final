@@ -18,9 +18,9 @@ El propòsit d'aquest projecte es:
 * Presentar de forma absolutament **exhaustiva** totes les ordres i opcions relacionada amb:
   * **Systemd**
   * **Journalctl**
-* Trobar **Ordres visuals**
+* Trobar **Ordres Visuals**
 * Trobar **Reports Elaborats**
-* Trobar si existeixen **reports dinàmics**
+* Trobar si existeixen **Reports Dinàmics**
 
 A continuació podeu veure un breu **index** que conté tots els apartats 
 que he realitzat.
