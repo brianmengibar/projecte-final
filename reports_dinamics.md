@@ -17,12 +17,12 @@ Aquestes son les dues que he trobat:
 * Cockpit
 * Systemd-manager
 
-## Que és cockpit?
+## Que es cockpit?
 
 És un **administrador de servidor** que fa que sigui fàcil d'administrar
 els nostres servidors **GNU/Linux** a través d'un _navegador web_.
 
-### Característiques de cockpit
+### Caracteristiques de cockpit
 
 La veritat es que `cockpit` ho veig molt útil per els que comencen sent 
 administradors de sistemes, ja que permet realitzar fàcilment tasques 
@@ -246,12 +246,12 @@ per comprovar que funciona correctament.
 
 ![status-httpd-cockpit](images/cockpit/status-httpd.png)
 
-## Que és systemd-manager?
+## Que es systemd-manager?
 
 Systemd-manager es un programa construït amb llenguatge de programació
 __RUST__, que s'integra a la perfecció en entorns d'escriptori **GTK**.
 
-### Característiques de systemd-manager
+### Caracteristiques de systemd-manager
 
 Es molt semblant a l'eina `cockpit` però aquesta son les seves característiques:
 
@@ -261,7 +261,7 @@ Es molt semblant a l'eina `cockpit` però aquesta son les seves característique
 * Veure els logs que es creen al instant
 * Comprovar el temps d'arrencada utilitzant l'eina `systemd-analyze` (comentada en l'altre [document](notes_eines_systemd.md#systemd-analyze))
 
-### Instal·lació systemd-manager
+### Instal·lacio systemd-manager
 
 Per poder utilitzar-lo en **Fedora**, necessitem descarregar-nos un paquet,
 ja que per defecte aquesta eina no la podem instal·lar al nostre sistema.
