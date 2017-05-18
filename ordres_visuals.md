@@ -187,14 +187,15 @@ gràfiques** que òbviament, cadascuna te un significat:
 
 ### Parametres de systemd-analyze dot
 
-Hi ha moments que no volem veure tot el sistema, o no volem a partir d'un
-unit especific com hem fet a dalt con `httpd.service`, per això he
-trobat aquests dos paràmetres que crec que son molt útils:
+Hi ha moments que no volem veure l'us de tot el sistema, o no volem veure
+tot l'us del sistema d'un unit específic com hem fet a dalt amb
+`httpd.service`, per això he trobat aquests dos paràmetres que crec que
+son molt útils:
 
 * `--from-pattern` 
 
 	Amb aquest paràmetre podem especificar un unit
-	i veure qui depèn d'aquest unit especific Com per exemple del target
+	i veure qui depèn d'aquest unit especific, com per exemple del target
 	`rescue.target`.
 
 	```
@@ -216,15 +217,15 @@ trobat aquests dos paràmetres que crec que son molt útils:
 
 	Que com podem observar:
 	
-  * Es **requerit**(per la fletxa negra) que després d'engegar `rescue.target`, estigui activat `sysinit.target` i `rescue.service` (per la fletxa verda).
-  * **Vol** que estigui activat el servei `systemd-update-utmp-runlevel.service` (per la fletxa gris).
+  * Es **requerit**(per la fletxa negra) que **després**(per la fletxa verda) d'engegar `rescue.target`, estigui activat `sysinit.target` i `rescue.service`.
+  * **Vol**(per la fletxa gris) que estigui activat el servei `systemd-update-utmp-runlevel.service`.
   * Si volem engegar a `shutdown.target` ens diu que entrarà en **conflicte**(per la fletxa vermella), lo que vol dir es que no poden estar els dos activats.
 
 * `--to-pattern`
 	
-	Amb aquest paràmetre, igual que `--from-pattern` podem especificar
-	un unit i veure aquest unit, que necessita per poder engegar-se Per
-	seguir amb el mateix exemple, ho he tornat a fer amb `rescue.target`.
+	Amb aquest paràmetre, també podem especificar un unit i veure que 
+	necessita per poder engegar-se. Per veure la diferencia entre un parametre
+	i altre ho he tornat a fer amb `rescue.target`.
 	
 	```
 	$ systemd-analyze dot --to-pattern='rescue.target' \
@@ -244,12 +245,12 @@ trobat aquests dos paràmetres que crec que son molt útils:
 	![to-rescue](grafiques/to-rescue.png)
 	
 	Que com podem observar
-  * Te que estar activat `systemd-update-utmp-runlevel.service` per **després** engegar `rescue.target`
-  * Si estem en `multi-user.target` o `graphical.target` entrarà en **conflicte** amb `rescue.target`, lo que vol dir que no poden estar els dos activats
+  * Te que estar activat `systemd-update-utmp-runlevel.service` per **després**(fletxa verda) engegar `rescue.target`
+  * Si estem en `multi-user.target` o `graphical.target` entrarà en **conflicte**(fletxa vermella) amb `rescue.target`, lo que vol dir que no poden estar els dos activats
 
 Per ultim, poso un ultim cas, ja que com podem comprovar hem vist tots
 els colors de les fletxes en imatges excepte un: \"**dark blue**". Així
-que per provar-ho, os mostro la gràfica de `abrtd.service`.
+que per provar-ho, mostro la gràfica de `abrtd.service`.
 
 ```
 $ systemd-analyze dot abrtd.service --require | dot -Tsvg > abrtd.svg
