@@ -43,8 +43,8 @@ que he realitzat.
   * [Avançat](reports_elaborats.md#filtrat-avan%C3%A7at)
   * [Boots](reports_elaborats.md#filtrat-per-boots)
 * [Reports dinamics](reports_dinamics.md#reports-dinamics)
-  * [Cockpit](reports_dinamics.md#que-%C3%A9s-cockpit)
-  * [Systemd Manager](reports_dinamics.md#que-%C3%A9s-systemd-manager)
+  * [Cockpit](reports_dinamics.md#que-es-cockpit)
+  * [Systemd Manager](reports_dinamics.md#que-es-systemd-manager)
 
 A continuació, podeu veure un llistat de **links** d'on estic extreien 
 tota d'informació per poder realitzar el projecte:
