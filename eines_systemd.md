@@ -78,7 +78,7 @@ A continuació comentaré tots els parametres que te aquesta ordre:
 
 <!--
 
-ESTO AQUI? EN ORDRES VISUALS?
+ESTO AQUI O EN ORDRES VISUALS?
 
 * `systemd-analyze critical-chain`
 
