@@ -54,7 +54,7 @@ else
 	--to-pattern=$3 \
 	--require \
 	| dot \
-	-Tsvg > $2-$3.svg
+	-Tsvg > from_$2-to_$3.svg
 fi
 
 exit 0
