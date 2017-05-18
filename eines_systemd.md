@@ -79,7 +79,7 @@ A continuació comentaré tots els parametres que te aquesta ordre:
 * `systemd-analyze critical-chain`
 
 	Aquest parametre es molt util, ja que ens mostra la informació mes gràfica
-	a mode d'arbre amb la cadena d'unitats que tenen els majors temps de
+	a mode d'arbre amb la cadena de units que tenen el major temps de
 	carrega a l'hora d'arrencar el sistema
 
 	```
