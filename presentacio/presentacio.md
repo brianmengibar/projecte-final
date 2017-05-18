@@ -10,7 +10,7 @@
 
 ---------------
 
-## REPORTS ELABORATS (PART 1)
+##### REPORTS ELABORATS (PART 1)
 
 **Opcions per filtrar**
 
@@ -26,7 +26,7 @@
 
 ---------------
 
-## REPORTS ELABORATS (PART 2)
+##### REPORTS ELABORATS (PART 2)
 
 * Per temps
 	* --since
@@ -44,7 +44,7 @@
 
 ---------------
 
-## REPORTS DINAMICS
+##### REPORTS DINAMICS
 
 **Eines**
 
@@ -60,7 +60,7 @@
 
 ---------------
 
-## ORDRES VISUALS
+##### ORDRES VISUALS
 
 **Llistat d'ordres**
 
@@ -79,8 +79,8 @@
 
 ---------------
 
-## PREGUNTES?
+##### PREGUNTES?
 
 ---------------
 
-## GRÀCIES
+##### GRÀCIES
