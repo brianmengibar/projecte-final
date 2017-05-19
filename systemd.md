@@ -866,3 +866,5 @@ A continuació comentaré una serie d'ordres de la família systemd:
 	2 loaded units listed. Pass --all to see loaded but inactive units, too.
 	To show all installed unit files use 'systemctl list-unit-files'.
 	```
+
+[Tornar al Index](README.md#index)
