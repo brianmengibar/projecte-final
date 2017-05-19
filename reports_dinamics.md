@@ -407,3 +407,5 @@ Aquest apartat lo que fa simplement es comprovar el temps d'arrencada dels
 serveis que tarden de **menys** a **mes** temps durant el procés d'arrencada.
 
 ![systemd-analyze](images/systemd-manager/systemd-analyze.png)
+
+[Tornar al Index](README.md#index)
