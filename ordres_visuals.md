@@ -373,3 +373,5 @@ sistema? Doncs be, a continuació, mostro una taula que contindrà:
 <!--
 Si se queda aqui? Cambiar el link de un documento a otro, recordar
 -->
+
+[Tornar al Index](README.md#index)
