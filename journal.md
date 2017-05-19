@@ -445,3 +445,5 @@ A continuació es mostraran una serie de paràmetres que conte l'ordre
 	May 05 09:02:09 localhost.localdomain kernel: scsi host3: ahci
 	May 05 09:02:09 localhost.localdomain kernel: scsi 3:0:0:0: Direct-Access     ATA      KINGSTON SHFS37A BBF0 PQ: 0 ANSI: 5
 	```
+
+[Tornar al Index](projecte-serveis-informatius-systemd#index)
