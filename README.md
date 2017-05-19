@@ -22,7 +22,7 @@ El propòsit d'aquest projecte es:
 * Trobar **Reports Elaborats**
 * Trobar si existeixen **Reports Dinàmics**
 
-** Imporant**: En el directori que posa __man__ trobareu tots els manuals
+**Imporant**: En el directori que posa __man__ trobareu tots els manuals
 del sistema en format PDF de totes les ordres que utilitzo en aquest
 projecte.
 
