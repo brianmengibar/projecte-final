@@ -116,7 +116,7 @@ A continuació comentaré una serie d'ordres de la família systemd:
 
 
 	Cal dir que la explicació dels runlevels i targets ho tenim en l'altre
-	document on seguim parlant sobre [systemd](notes_eines_systemd.md#targets-en-systemd)
+	document on seguim parlant sobre [systemd](ordres_visuals.md#targets-en-systemd)
 
 * `systemctl get-default`
 
