@@ -4,4 +4,4 @@
 # Sinopsys: Script per pasar un file de extensió md a html
 #----------------------------------------------------------
 
-pandoc -t dzslides -s presentacio.md -o presentacio.html
+pandoc --standalone --to=dzslides --incremental presentacio.md --output=presentacio.html
