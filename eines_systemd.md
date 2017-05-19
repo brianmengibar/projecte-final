@@ -402,3 +402,5 @@ paso a comentar totes les opcions que té que son aquestes:
 	  dump                    Output state serialization of service manager
 	  verify FILE...          Check unit files for correctness
 	```
+
+[Tornar al Index](README.md#index)
