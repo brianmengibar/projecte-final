@@ -220,3 +220,5 @@ ordinador.
 	
 	Si ens fixem, quan he fet `journalctl --list-boots` el ID del -1
 	es el mateix que he fet ara per realitzar l'exemple.
+
+[Tornar al Index](README.md#index)
