@@ -115,8 +115,8 @@ A continuació comentaré una serie d'ordres de la família systemd:
 	Al donar-li al tabulador veiem tots els targets en els qual podem accedir.
 
 
-	Cal dir que la explicació dels runlevels i targets ho tenim en l'altre
-	document on seguim parlant sobre [systemd](ordres_visuals.md#targets-en-systemd)
+	Cal dir que la explicació dels runlevels i targets la podeu trobar en
+	aquest altre [document](ordres_visuals.md#targets-en-systemd)
 
 * `systemctl get-default`
 
