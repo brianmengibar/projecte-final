@@ -49,7 +49,7 @@ que he realitzat.
 * [Reports dinamics](reports_dinamics.md#reports-dinamics)
   * [Cockpit](reports_dinamics.md#que-es-cockpit)
   * [Systemd Manager](reports_dinamics.md#que-es-systemd-manager)
-* [conclusio](conclusio.md#conclusió-personal)
+* [Conclusio](conclusio.md#conclusió-personal)
 
 A continuació, podeu veure un llistat de **links** d'on estic extreien 
 tota d'informació per poder realitzar el projecte:
