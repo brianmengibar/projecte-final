@@ -7,7 +7,7 @@
 ### Projecte: _Serveis informatius de Systemd_
 ----------------------------------------------
 
-# Conclusió personal
+# Conclusio personal
 
 La veritat és que aquest projecte m'ha donat a conèixer moltes ordres i
 paràmetres que mai havia sentit parlar d'ells i que són molt útils
