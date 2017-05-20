@@ -263,7 +263,7 @@ $ inkscape --export-png=abrtd.png abrtd.svg
 
 Com podem veure, al no especificar paràmetre: 
 
-* Ens mostra els serveis que son **requerits**(fletxa blau fosc) que s'activin per que es pugui activar `abrtd.service`.
+* Ens mostra els serveis son **requisits**(fletxa blau fosc) que s'activin per que es pugui activar `abrtd.service`.
 * Ens mostra que **vol** que estigui activat(fletxa gris) el target `multi-user.target`
 * Ens mostra que en el moment que s'activat `abrtd.service` es **requerit**(fletxa negra) que s'activi una serie de units.
 * Ens mostra que no te que estar activat el target `shutdown.target` ja que entrarien en **conflicte**(fletxa vermella).
