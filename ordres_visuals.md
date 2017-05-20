@@ -276,11 +276,11 @@ la seva clara diferència que veig que és necessària explicar:
 * `--to-pattern`
 
 	Ens mostra els units que depenen avans del unit que nosaltres especifiquem(idem que l'ordre `systemctl list-dependencies --before unit`
-	pero en aquest cas els altres units no es despleguen de forma recursiva.
+	pero en aquest cas els altres units no es despleguen de forma recursiva).
 
 * `--from-pattern`
 	Ens mostra els units que depenen del unit que nosaltres hem especificat(idem que l'ordre `systemctl list-dependencies --after unit`
-	pero en aquest cas els altres units no es despleguen de forma recursiva.
+	pero en aquest cas els altres units no es despleguen de forma recursiva).
 
 ## Explorant critical-chain
 
