@@ -1,86 +1,85 @@
 # Serveis Informatius de Systemd
 
-### Alumne: Brian Mengibar Garcia
+**Alumne**: Brian Mengibar Garcia
 
-### Centre: Escola del Treball
+**Centre**: Escola del Treball
 
-### Curs: ASIX-2 (2016-2017)
+**Curs**: ASIX-2 (2016-2017)
 
-### Data: 23/05/2017
-
----
-
-# REPORTS ELABORATS (PART 1)
-
-**Opcions per filtrar**
-
-- Per prioritat:
-	- emerg
-	- alert
-	- crit
-	- err
-	- warning
-	- notice
-	- info
-	- debug
+**Data**: 2017/05/23
 
 ---
 
-# REPORTS ELABORATS (PART 2)
+## Reports elaborats (part 1)
 
-- Per temps:
-	- \-\-since
-	- \-\-until
+### Opcions per filtrar
 
-- Per prioritat i temps
-	- prioritat + temps
-
-- Per filtrat avançat
-	 - \-\-fieldname=value
-
-- Per boot
-	- \-\-list-boots
-	- \-b
+* Per prioritat
+	* `emerg`
+	* `alert`
+	* `crit`
+	* `err`
+	* `warning`
+	* `notice`
+	* `info`
+	* `debug`
 
 ---
 
-# REPORTS DINAMICS
+## Reports elaborats (part 2)
+
+* Per temps
+	* `--since`
+	* `--until`
+
+* Per prioritat i temps
+	* prioritat + temps
+
+* Per filtrat avançat
+	 * `--fieldname=value`
+
+* Per boot
+	* `--list-boots`
+	* `-b`
+
+---
+
+## Reports dinamics
 
 **Eines**
 
-- Cockpit
-	- Característiques
-	- Funcionament
-	- Services
+* Cockpit
+	* Característiques
+	* Funcionament
+	* Services
 
-- Systemd-manger
-	- Característiques
-	- Funcionament
-	- Services
-
----
-
-# ORDRES VISUALS
-
-**Llistat d'ordres**
-
-- Explorant plot
-	- Significat dels colors
-	- Diferencia entre grafiques
-
-- Explorant dot
-	- Significat del color de les fletxes
-	- Parametres
-	- Diferencia entre parametres
-
-- Explorant critical-chain
-	- Funcionament
-	- Parametres
+* Systemd-manager
+	* Característiques
+	* Funcionament
+	* Services
 
 ---
 
-# PREGUNTES?
+## Ordres visuals
+
+### Llistat d'ordres
+
+* Explorant `plot`
+	* Significat dels colors
+
+* Explorant `dot`
+	* Significat del color de les fletxes
+	* Parametres
+	* Diferencia entre parametres
+
+* Explorant `critical-chain`
+	* Funcionament
+	* Parametres
 
 ---
 
-# GRÀCIES
+## Preguntes?
+
+---
+
+## Gràcies
