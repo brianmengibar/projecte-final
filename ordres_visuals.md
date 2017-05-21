@@ -75,6 +75,10 @@ i al costat un nom, que cadascun vol dir:
 
 	El temps que tarda Systemd en configurar el modul de seguretat.
 
+* `Generators`
+
+	El temps que targa Systemd en generar els archius dels units.
+
 * `Loading Unit Files`
 
 	El temps que tarda Systemd en carregar els arxius dels units.
