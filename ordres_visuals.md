@@ -242,7 +242,6 @@ son molt útils:
 	![to-rescue](grafiques/to-rescue.png)
 	
 	Que com podem observar
-  * Te que estar activat `systemd-update-utmp-runlevel.service` per **després**(fletxa verda) engegar `rescue.target`
   * Si estem en `multi-user.target` o `graphical.target` entrarà en **conflicte**(fletxa vermella) amb `rescue.target`, lo que vol dir que no poden estar els dos activats
 
 Per ultim, poso un ultim cas, ja que com podem comprovar hem vist tots

@@ -44,7 +44,7 @@
 
 ---
 
-## Reports dinamics
+## Reports dinàmics
 
 **Eines**
 
@@ -69,12 +69,12 @@
 
 * Explorant `dot`
 	* Significat del color de les fletxes
-	* Parametres
-	* Diferencia entre parametres
+	* Paràmetres
+	* Diferencia entre paràmetres
 
 * Explorant `critical-chain`
 	* Funcionament
-	* Parametres
+	* Paràmetres
 
 ---
 

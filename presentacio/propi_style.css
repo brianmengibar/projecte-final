@@ -3,7 +3,7 @@
   body { background-color: white; border-radius: 1px}
   /* A section is a slide. It's size is 800x600, and this will never change */
   section {
-      font-family: Arial, serif;
+      font-family: monospace;
       font-size: 20pt;
     }
   address, blockquote, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, ol, p, pre, table, ul, dl { padding: 10px 20px 10px 20px; }
