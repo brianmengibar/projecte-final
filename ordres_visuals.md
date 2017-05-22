@@ -242,7 +242,7 @@ son molt útils:
 	![to-rescue](grafiques/to-rescue.png)
 	
 	Que com podem observar
-  * Si estem en `multi-user.target` o `graphical.target` entrarà en **conflicte**(fletxa vermella) amb `rescue.target`, lo que vol dir que no poden estar els dos activats
+  * Si estem en `multi-user.target` o `graphical.target` entrarà en **conflicte**(fletxa vermella) amb `rescue.target`, lo que vol dir que no poden estar els dos activats.
 
 Per ultim, poso un ultim cas, ja que com podem comprovar hem vist tots
 els colors de les fletxes en imatges excepte un: \"**dark blue**". Així
