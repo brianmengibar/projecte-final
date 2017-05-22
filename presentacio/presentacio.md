@@ -1,12 +1,6 @@
-# Serveis Informatius de Systemd
-
-**Alumne**: Brian Mengibar Garcia
-
-**Centre**: Escola del Treball
-
-**Curs**: ASIX-2 (2016-2017)
-
-**Data**: 2017/05/23
+% Serveis Informatius de Systemd
+% Brian Mengibar Garcia
+% 2017/05/23
 
 ---
 
@@ -31,20 +25,17 @@
 * Per temps
 	* `--since`
 	* `--until`
-
 * Per prioritat i temps
 	* prioritat + temps
-
 * Per filtrat avançat
 	 * `--fieldname=value`
-
 * Per boot
 	* `--list-boots`
 	* `-b`
 
 ---
 
-## Reports dinàmics
+## Reports dinamics
 
 **Eines**
 
@@ -69,17 +60,13 @@
 
 * Explorant `dot`
 	* Significat del color de les fletxes
-	* Paràmetres
-	* Diferencia entre paràmetres
+	* Parametres
+	* Diferencia entre parametres
 
 * Explorant `critical-chain`
 	* Funcionament
-	* Paràmetres
+	* Parametres
 
 ---
 
-## Preguntes?
-
----
-
-## Gràcies
+![any-questions](yoda-any-questions-do-you-have.png)
